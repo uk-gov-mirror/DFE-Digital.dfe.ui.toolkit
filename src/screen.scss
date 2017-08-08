@@ -1,11 +1,28 @@
 @import "govuk-elements";
+@import "layout";
+
+$font-stack:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 body {
   background: $grey-3;
+  font-family: $font-stack;
+}
+
+* {
+  font-family: $font-stack !important;
 }
 
 .wrapper {
   background: #fff;
+}
+
+.identity {
+  color: #fff;
+  margin: 10px 15px;
+  font-size: 16px;
+  @include media(tablet) {
+    font-size: 24px;
+  }
 }
 
 #global-header-bar {
