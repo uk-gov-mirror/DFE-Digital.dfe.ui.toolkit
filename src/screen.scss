@@ -1,0 +1,17 @@
+@import "govuk-elements";
+
+body {
+  background: $grey-3;
+}
+
+.wrapper {
+  background: #fff;
+}
+
+#global-header-bar {
+  background: $department-for-education-websafe;
+}
+
+h1.heading-xlarge {
+  margin: 1.25em 0 0.625em;
+}

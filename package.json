@@ -1,7 +1,28 @@
 {
-  "name": "DfE Front-end Toolkit",
-  "description": "DfE Front-end Toolkit",
+  "name": "dfe-frontend-toolkit",
+  "version": "1.0.0",
+  "description": "DfE front-end toolkit",
+  "main": "index.js",
+  "dependencies": {
+    "govuk-elements-sass": "^3.1.1",
+    "govuk_frontend_toolkit": "^7.0.1",
+    "govuk_template_jinja": "^0.22.3",
+    "gulp-sass": "^3.1.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DFE-Digital/frontend-toolkit.git"
+  },
+  "author": "DfE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DFE-Digital/frontend-toolkit/issues"
+  },
+  "homepage": "https://github.com/DFE-Digital/frontend-toolkit#readme"
 }
