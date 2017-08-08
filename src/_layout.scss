@@ -1,0 +1,44 @@
+// Grid layout
+
+
+
+
+.row {
+  @extend %grid-row;
+}
+
+.row > div > span {
+  background: $grey-3;
+  color: $grey-4;
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 15px;
+  @include media(tablet) {
+    margin-bottom: 30px;
+  }
+}
+
+.col-1 {
+  @include grid-column(1 / 12);
+}
+
+.col-2 {
+  @include grid-column(2 / 12);
+}
+
+.col-3 {
+  @include grid-column(3 / 12);
+}
+
+.col-4 {
+  @include grid-column(4 / 12);
+}
+
+.col-5 {
+  @include grid-column(5 / 12);
+}
+
+.col-6 {
+  @include grid-column(6 / 12);
+}
