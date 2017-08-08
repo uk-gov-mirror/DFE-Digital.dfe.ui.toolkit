@@ -19,26 +19,8 @@
   }
 }
 
-.col-1 {
-  @include grid-column(1 / 12);
-}
-
-.col-2 {
-  @include grid-column(2 / 12);
-}
-
-.col-3 {
-  @include grid-column(3 / 12);
-}
-
-.col-4 {
-  @include grid-column(4 / 12);
-}
-
-.col-5 {
-  @include grid-column(5 / 12);
-}
-
-.col-6 {
-  @include grid-column(6 / 12);
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include grid-column($i / 12);
+  }
 }
