@@ -1,8 +1,16 @@
 fieldset.highlight {
   background: $grey-4;
+  border-top: 5px solid $department-for-education-websafe;
   padding: 15px;
   box-sizing: border-box;
+  @include media(tablet) {
+    padding: 30px;
+  }
   .form-control {
     width: 100%;
   }
+}
+
+.button {
+  padding-bottom: .5em;
 }
