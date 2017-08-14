@@ -1,6 +1,9 @@
+label {
+  margin-bottom: 5px;
+}
+
 fieldset.highlight {
-  background: $grey-4;
-  border-top: 5px solid $department-for-education-websafe;
+  background: lighten($grey-3, 5%);
   padding: 15px;
   box-sizing: border-box;
   @include media(tablet) {
@@ -13,4 +16,15 @@ fieldset.highlight {
 
 .button {
   padding-bottom: .5em;
+}
+
+fieldset {
+  .panel {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    @include media(tablet) {
+      margin-bottom: 30px;
+    }
+  }
 }

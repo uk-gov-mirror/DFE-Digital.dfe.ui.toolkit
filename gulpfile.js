@@ -14,6 +14,12 @@ var sassOptions = {
 };
 
 
+gulp.task('copy', function() {
+  gulp.src("node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css")
+      .pipe(gulp.dest(output + 'govuk/'));
+});
+
+
 gulp.task('watch', function() {
   gulp.watch(input, ['sass'])
     .on('change', function(event) {
@@ -30,4 +36,4 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('default', [ 'sass', 'watch' ]);
+gulp.task('default', [ 'sass', 'watch' , 'copy' ]);

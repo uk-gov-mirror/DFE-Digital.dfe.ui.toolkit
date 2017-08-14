@@ -1,6 +1,7 @@
 @import "govuk-elements";
 @import "layout";
 @import "forms";
+@import "footer";
 
 $font-stack:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -38,12 +39,9 @@ h1.heading-xlarge {
   @extend .visuallyhidden;
 }
 
-
-
 nav.prototype {
   position: fixed;
-  background: $grey-2;
-  border-top: 1px solid $grey-1;
+  background: #000;
   bottom: 0;
   left: 0;
   right: 0;
@@ -53,10 +51,16 @@ nav.prototype {
     margin: 0 auto;
     li {
       display: inline-block;
+      color: $grey-3;
       a {
         display: block;
         padding: 5px 10px 10px;
+        color: #fff;
       }
     }
   }
 }
+
+
+
+
