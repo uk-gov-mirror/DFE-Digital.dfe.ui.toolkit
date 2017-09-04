@@ -21,3 +21,27 @@
     @include grid-column($i / 12);
   }
 }
+
+.services--list {
+  @extend %grid-row;
+  li {
+
+    margin-bottom: -1px;
+
+    h2 {
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include media(tablet) {
+  .services--list {
+    li {
+      @include grid-column(6 / 12);
+      padding: 15px;
+    }
+  }
+}

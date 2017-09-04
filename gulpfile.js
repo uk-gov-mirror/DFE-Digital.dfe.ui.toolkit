@@ -4,13 +4,14 @@ var sass = require('gulp-sass');
 var input = './src/*.scss';
 var output = './dist/css/';
 
-var sassOptions = {
-  errLogToConsole: true,
-  outputStyle: 'compressed',
-  includePaths: [
-    'node_modules/govuk_frontend_toolkit/stylesheets',
-    'node_modules/govuk-elements-sass/public/sass'
-  ]
+var sassOptions;
+sassOptions = {
+    errLogToConsole: true,
+    outputStyle: 'compressed',
+    includePaths: [
+        'node_modules/govuk_frontend_toolkit/stylesheets',
+        'node_modules/govuk-elements-sass/public/sass'
+    ]
 };
 
 
