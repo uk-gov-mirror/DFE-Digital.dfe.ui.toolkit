@@ -1,0 +1,21 @@
+$success: $turquoise;
+$warning: orange;
+$error:   red;
+
+.notification {
+  background: #eee;
+  border-left: 5px solid $border-colour;
+  margin: 15px 0;
+  padding: 15px;
+  &:focus {
+
+  }
+  h2 {
+    font-weight:bold;
+    font-size: 110%;
+  }
+}
+
+.notification--success {
+  border-color: $success;
+}

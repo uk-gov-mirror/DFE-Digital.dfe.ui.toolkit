@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Forgot Password</title>
+    <title>User - Jane Murphy</title>
     <link rel="stylesheet" href="css/govuk/govuk-template.css">
     <link rel="stylesheet" href="css/screen.css">
 </head>
@@ -29,38 +29,53 @@
 
     <div id="global-header-bar"></div>
 
-
-
     <main id="content" role="main" tabindex="-1">
-
-        <a href="#" class="link-back">Back</a>
 
         <div class="grid-row">
             <div class="column-two-thirds">
                 <h1 class="heading-xlarge">
-                    Forgotten password
+                    Jane Murphy
                 </h1>
-                <p class="lede">Enter your work email address in the form below to reset your password.</p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-9">
-                <form method="get" action="forgotpasswordemail.html">
-                    <fieldset>
-                        <legend class="vh">Forgotten password</legend>
-                        <div class="form-group">
-                            <label class="form-label-bold" for="email">Email address</label>
-                            <input class="form-control" id="email" type="text">
-                        </div>
-                        <div class="form-submit">
-                            <button type="submit" class="button">Submit</button>
-                        </div>
-                    </fieldset>
-                </form>
+            <div class="col-8">
+                <h2 class="heading-medium">User details</h2>
+                <table>
+                    <tr>
+                        <th scope="row">First name</th>
+                        <td>Jane</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Last name</th>
+                        <td>Murphy</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Organisation</th>
+                        <td>St Patrick's school, Earlsfield (URN: 654321)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Role</th>
+                        <td>Management information officer</td>
+                    </tr>
+                </table>
+                <h2 class="heading-medium">Services user has access to</h2>
+                <p>The user doesn't have access to any services.</p>
+
+            </div>
+            <div class="col-4">
+                <aside>
+                    <h2 class="heading-medium">Profile actions</h2>
+                    <nav class="subnav">
+                        <ul>
+                            <li><a href="suspend.html">Suspend user</a></li>
+                            <li><a href="give-access.html">Give user access to a service</a></li>
+                        </ul>
+                    </nav>
+                </aside>
             </div>
         </div>
-
 
     </main>
 
@@ -84,6 +99,7 @@
         <li>Example layouts:</li>
         <li><a href="index.html">Grid</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="user-profile-access-request.html">User Access</a></li>
     </ul>
 </nav>
 
