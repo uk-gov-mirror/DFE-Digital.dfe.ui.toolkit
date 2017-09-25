@@ -1,4 +1,4 @@
-# DfE Front-end Toolkit 
+# DfE UI Toolkit
 
 ## Running this site locally
 
@@ -10,5 +10,5 @@ Clone this repository
 Install all dependencies
 
     npm install
-    
-There are some static HTML views in the `dist` folder 
+
+There are some static HTML views in the `dist` folder
