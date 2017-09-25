@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var cleanCSS = require('gulp-clean-css');
 
 var input = './src/*.scss';
 var output = './dist/css/';
@@ -14,12 +15,11 @@ sassOptions = {
     ]
 };
 
-
-gulp.task('copy', function() {
+gulp.task('copy-minify', function() {
   gulp.src("node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css")
+      .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(gulp.dest(output + 'govuk/'));
 });
-
 
 gulp.task('watch', function() {
   gulp.watch(input, ['sass'])
@@ -27,7 +27,6 @@ gulp.task('watch', function() {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
 });
-
 
 gulp.task('sass', function () {
   return gulp
@@ -37,4 +36,4 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('default', [ 'sass', 'watch' , 'copy' ]);
+gulp.task('default', [ 'sass', 'watch' , 'copy-minify' ]);

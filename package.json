@@ -11,6 +11,7 @@
     "gulp-sass": "^3.1.0"
   },
   "devDependencies": {
+    "gulp-clean-css": "^3.9.0",
     "gulp": "^3.9.1"
   },
   "scripts": {
