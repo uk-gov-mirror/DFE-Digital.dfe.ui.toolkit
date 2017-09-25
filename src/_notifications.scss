@@ -8,14 +8,25 @@ $error:   red;
   margin: 15px 0;
   padding: 15px;
   &:focus {
-
+    outline: 3px solid
   }
   h2 {
     font-weight:bold;
     font-size: 110%;
   }
+  p {
+    margin-bottom: 3px;
+  }
 }
 
-.notification--success {
+.notification-success {
   border-color: $success;
+}
+
+.notification-warning {
+  border-color: $warning;
+}
+
+.notification-error {
+  border-color: $error;
 }
