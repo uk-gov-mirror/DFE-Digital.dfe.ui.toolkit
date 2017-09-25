@@ -1,14 +1,18 @@
 $success: $turquoise;
-$warning: orange;
-$error:   red;
+$warning: $orange;
 
 .notification {
   background: #eee;
   border-left: 5px solid $border-colour;
   margin: 15px 0;
   padding: 15px;
+  @include simple-animation;
   &:focus {
-    outline: 3px solid
+    outline: 3px solid $focus-colour;
+  }
+  &:hover {
+    border-left-width: 7px;
+    padding-left: 13px;
   }
   h2 {
     font-weight:bold;
@@ -21,12 +25,15 @@ $error:   red;
 
 .notification-success {
   border-color: $success;
+  background: mix($success, #fff, 15%);
 }
 
 .notification-warning {
   border-color: $warning;
+  background: mix($warning, #fff, 15%);
 }
 
 .notification-error {
-  border-color: $error;
+  border-color: $error-colour;
+  background: mix($error-colour, #fff, 15%);
 }

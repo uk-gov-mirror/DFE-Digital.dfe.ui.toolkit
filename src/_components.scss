@@ -1,7 +1,27 @@
 .card {
   padding: 15px;
   border: 1px solid $border-colour;
+  border-right: none;
   border-left: 5px solid $department-for-education-websafe;
+  p {
+    margin-bottom: 3px;
+  }
+  @include media(tablet) {
+    border-right:1px solid $border-colour;
+  }
+}
+
+a.card {
+  display: block;
+  text-decoration: none;
+  color: $text-colour;
+  background: #eee;
+  @include simple-animation;
+  &:hover {
+    border-left-width: 7px;
+    padding-left: 13px;
+    background: #f5f5f5;
+  }
 }
 
 nav.subnav {

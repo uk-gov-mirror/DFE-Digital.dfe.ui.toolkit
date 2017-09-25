@@ -22,12 +22,10 @@
   }
 }
 
-.services--list {
+.services-list {
   @extend %grid-row;
   li {
-
     margin-bottom: -1px;
-
     h2 {
       font-weight: bold;
     }
@@ -37,8 +35,10 @@
   }
 }
 
+
+
 @include media(tablet) {
-  .services--list {
+  .services-list {
     li {
       @include grid-column(6 / 12);
       padding: 15px;
