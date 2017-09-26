@@ -1,12 +1,12 @@
 @import "govuk-elements";
-@import "variables";
-@import "mixins";
-@import "layout";
-@import "components";
-@import "forms";
-@import "tables";
-@import "notifications";
-@import "footer";
+@import "sass/variables";
+@import "sass/mixins";
+@import "sass/layout";
+@import "sass/components";
+@import "sass/forms";
+@import "sass/tables";
+@import "sass/notifications";
+@import "sass/footer";
 
 $font-stack:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 

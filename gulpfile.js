@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 
-var input = './src/*.scss';
+var input = './src/sass/*.scss';
 var output = './dist/css/';
 
 var sassOptions;
