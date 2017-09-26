@@ -11,8 +11,9 @@ $warning: $orange;
     outline: 3px solid $focus-colour;
   }
   &:hover {
-    border-left-width: 7px;
-    padding-left: 13px;
+    border-left-width: 10px;
+    padding-left: 10px;
+    background: #f5f5f5;
   }
   h2 {
     font-weight:bold;
@@ -25,15 +26,15 @@ $warning: $orange;
 
 .notification-success {
   border-color: $success;
-  background: mix($success, #fff, 15%);
+  //background: mix($success, #fff, 15%);
 }
 
 .notification-warning {
   border-color: $warning;
-  background: mix($warning, #fff, 15%);
+  //background: mix($warning, #fff, 15%);
 }
 
 .notification-error {
   border-color: $error-colour;
-  background: mix($error-colour, #fff, 15%);
+  //background: mix($error-colour, #fff, 15%);
 }

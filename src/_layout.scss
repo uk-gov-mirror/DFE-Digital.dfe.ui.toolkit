@@ -53,3 +53,21 @@ aside {
     margin-top: .5em;
   }
 }
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include media(tablet) {
+    margin: 0 -15px;
+  }
+  a.card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    @include media(tablet) {
+      flex-basis: calc(50% - 30px);
+      margin: 0 15px 30px;
+    }
+  }
+}
