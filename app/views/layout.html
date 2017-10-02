@@ -2,6 +2,7 @@
 <head>
   <title>DfE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/css/govuk/fonts.css">
   <link rel="stylesheet" href="/static/css/govuk/govuk-template.css">
   <link rel="stylesheet" href="/static/css/screen.css">
 </head>
@@ -29,7 +30,15 @@
 
   <div id="global-header-bar"></div>
 
+
   <main class="elements-index" id="content" role="main" tabindex="-1">
+
+    <div class="gds-status-bar">
+      <p>
+        <strong class="phase-tag">Beta</strong>
+        <span>This is a beta service</span>
+      </p>
+    </div>
 
     {% block content %}
 

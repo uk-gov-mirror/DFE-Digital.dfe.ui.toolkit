@@ -1,5 +1,21 @@
 // Grid layout
 
+.gds-status-bar {
+  padding: 10px 0;
+  border-bottom: 1px solid $border-colour;
+  p {
+    display: table;
+    margin: 0;
+    strong.phase-tag {
+      display: inline-block;
+      background: $department-for-education-websafe;
+    }
+    span {
+      display: table-cell;
+    }
+  }
+}
+
 .row {
   @extend %grid-row;
 }
@@ -34,8 +50,6 @@
     }
   }
 }
-
-
 
 @include media(tablet) {
   .services-list {

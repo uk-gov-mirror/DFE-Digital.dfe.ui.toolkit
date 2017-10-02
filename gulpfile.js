@@ -16,7 +16,10 @@ sassOptions = {
 };
 
 gulp.task('copy-minify', function() {
-  gulp.src("node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css")
+  gulp.src([
+      "node_modules/govuk_template_jinja/assets/stylesheets/fonts.css",
+      "node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css"
+  ])
       .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(gulp.dest(output + 'govuk/'));
 });
