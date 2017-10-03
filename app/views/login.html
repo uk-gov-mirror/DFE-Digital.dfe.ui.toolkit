@@ -14,24 +14,26 @@
         <div class="row">
             <div class="col-6">
                 <h2 class="heading-medium">Existing user</h2>
-                <fieldset class="highlight">
-                    <legend class="vh">Sign in form</legend>
-                    <div class="form-group">
-                        <label class="form-label-bold" for="first-name-2">Email address</label>
-                        <input class="form-control" id="first-name-2" name="first-name-2" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label-bold" for="last-name-2">Password</label>
-                        <input class="form-control" id="last-name-2" name="last-name-2" type="password">
-                    </div>
-                    <div class="panel">
-                        <p>By continuing you accept the <a href="#">terms and conditions</a>.</p>
-                    </div>
+                <form method="post" action="login.html?">
+                  <fieldset class="highlight">
+                      <legend class="vh">Sign in form</legend>
+                      <div class="form-group">
+                          <label class="form-label-bold" for="first-name-2">Email address</label>
+                          <input class="form-control" id="first-name-2" name="first-name-2" type="text" required="required">
+                      </div>
+                      <div class="form-group">
+                          <label class="form-label-bold" for="last-name-2">Password</label>
+                          <input class="form-control" id="last-name-2" name="last-name-2" type="password" required="required">
+                      </div>
+                      <div class="panel">
+                          <p>By continuing you accept the <a href="#">terms and conditions</a>.</p>
+                      </div>
 
-                    <div class="form-submit">
-                        <button type="submit" class="button">Sign in</button>
-                    </div>
-                </fieldset>
+                      <div class="form-submit">
+                          <button type="submit" class="button">Sign in</button>
+                      </div>
+                  </fieldset>
+                </form>
             </div>
             <div class="col-6">
                 <h2 class="heading-medium">New user</h2>

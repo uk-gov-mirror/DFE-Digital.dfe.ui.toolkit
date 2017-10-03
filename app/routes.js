@@ -9,5 +9,14 @@ module.exports = {
     app.get('/user-profile-access-request', function (req, res) {
       res.render('user-profile-access-request')
     })
+    app.get('/change-password-current', function (req, res) {
+      res.render('change-password-current')
+    })
+    app.get('/change-password-new', function (req, res) {
+      res.render('change-password-new')
+    })
+    app.post('/change-password-new', function (req, res) {
+      res.render('change-password-new')
+    })
   }
 }
