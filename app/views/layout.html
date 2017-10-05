@@ -1,7 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title>DfE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="/static/css/govuk/fonts.css">
   <link rel="stylesheet" href="/static/css/govuk/govuk-template.css">
   <link rel="stylesheet" href="/static/css/screen.css">
@@ -12,7 +16,7 @@
 
 <div id="skiplink-container">
   <div>
-    <a href="#content" class="skiplink"></a>
+    <a href="#content" class="skiplink">Skip to content</a>
   </div>
 </div>
 
@@ -22,7 +26,7 @@
 
 <div class="wrapper">
 
-  <header role="banner" id="global-header" class="with-proposition">
+  <header id="global-header" class="with-proposition">
     <div class="header-wrapper">
       <div class="identity">Department for Education</div>
     </div>
@@ -30,15 +34,14 @@
 
   <div id="global-header-bar"></div>
 
+  <div class="gds-status-bar">
+    <p>
+      <strong class="phase-tag">Beta</strong>
+      <span>This is a beta service</span>
+    </p>
+  </div>
 
-  <main class="elements-index" id="content" role="main" tabindex="-1">
-
-    <div class="gds-status-bar">
-      <p>
-        <strong class="phase-tag">Beta</strong>
-        <span>This is a beta service</span>
-      </p>
-    </div>
+  <main class="elements-index" id="content" tabindex="-1">
 
     {% block content %}
 
@@ -48,7 +51,7 @@
 
 </div>
 
-<footer id="footer" role="contentinfo">
+<footer id="footer">
   <div class="footer-wrapper">
     <nav>
       <ul>
@@ -67,6 +70,7 @@
     <li><a href="/">Grid</a></li>
     <li><a href="login">Login</a></li>
     <li><a href="user-profile-access-request">User Access</a></li>
+    <li><a href="change-password-current">Password</a></li>
   </ul>
 </nav>
 

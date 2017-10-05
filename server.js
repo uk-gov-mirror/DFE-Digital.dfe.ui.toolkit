@@ -15,6 +15,6 @@ app.use('/static', express.static('dist'));
 
 routes.bind(app);
 
-app.listen(3000, function () {
-  console.log('View the app at http://localhost:3000/')
+app.listen(3001, function () {
+  console.log('View the app at http://localhost:3001/')
 });

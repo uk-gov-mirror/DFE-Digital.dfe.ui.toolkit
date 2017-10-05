@@ -2,6 +2,18 @@ label {
   margin-bottom: 5px;
 }
 
+.form-hint {
+  p {
+
+  }
+  p + ul {
+    margin-top: -.7em;
+  }
+  ul {
+    margin-bottom: .7em;
+  }
+}
+
 fieldset.highlight {
   background: lighten($grey-3, 5%);
   padding: 15px;
@@ -14,8 +26,8 @@ fieldset.highlight {
   }
 }
 
-.button {
-  padding-bottom: .5em;
+.button-full {
+  width:100%;
 }
 
 fieldset {

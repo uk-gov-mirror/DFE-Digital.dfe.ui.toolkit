@@ -24,6 +24,13 @@ gulp.task('copy-minify', function() {
       .pipe(gulp.dest(output + 'govuk/'));
 });
 
+gulp.task('copy-js', function () {
+  gulp.src([
+    "node_modules/jquery/dist/jquery.js"
+  ])
+    .pipe(gulp.dest('./dist/javascript/vendors/'))
+});
+
 gulp.task('watch', function() {
   gulp.watch(input, ['sass'])
     .on('change', function(event) {
@@ -39,4 +46,4 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('default', [ 'sass', 'watch' , 'copy-minify' ]);
+gulp.task('default', [ 'sass', 'watch' , 'copy-minify', 'copy-js' ]);
