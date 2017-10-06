@@ -26,6 +26,20 @@ fieldset.highlight {
   }
 }
 
+.form-group {
+  .error-message {
+    display: none;
+  }
+  &.form-group-error .error-message {
+    display: block;
+  }
+}
+
+.error-message {
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
 .button-full {
   width:100%;
 }

@@ -9,7 +9,7 @@ DfE.validator = {
     var form = document.getElementById('form-current-password');
 
     form.onsubmit = function (e) {
-      console.log(e);
+      console.log(this.checkValidity());
       return false;
     }
   }
@@ -18,10 +18,18 @@ DfE.validator = {
 window.onload = function () {
 
   input = document.getElementById('current-password');
-  input.setCustomValidity(this.value ? '' : 'My message');
 
-  input.onchange = function () {
-    console.log(this.validity.valid);
+  input.onblur = function () {
+    if (!this.validity.valid) {
+      // Error
+      var $parent = $(this).parent('.form-group'),
+      $errorHolder = $parent.find('.error-message');
+
+      $errorHolder.html($(this).data('validation'));
+      $parent.addClass('form-group-error');
+    } else {
+      $(this).parent('.form-group').removeClass('form-group-error');
+    }
   }
 
   DfE.validator.init();
