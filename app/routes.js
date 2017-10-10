@@ -18,5 +18,8 @@ module.exports = {
     app.post('/change-password-new', function (req, res) {
       res.render('change-password-new')
     })
+    app.post('/user-profile', function (req, res) {
+      res.render('user-profile')
+    })
   }
 }

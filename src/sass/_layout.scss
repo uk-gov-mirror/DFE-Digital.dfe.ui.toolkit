@@ -73,8 +73,9 @@
 aside {
   border-top: 5px solid $department-for-education-websafe;
   padding-top: 15px;
-  h2.heading-medium {
-    margin-top: .5em;
+  margin-top: 15px;
+  > h2.heading-medium {
+    margin-top: 0;
   }
 }
 
