@@ -6,9 +6,8 @@
 @import "forms";
 @import "tables";
 @import "notifications";
+@import "header";
 @import "footer";
-
-$font-stack:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 body {
   background: $grey-3;
@@ -25,10 +24,6 @@ body {
   @include media(tablet) {
     font-size: 24px;
   }
-}
-
-#global-header-bar {
-  background: $department-for-education-websafe;
 }
 
 h1.heading-xlarge {

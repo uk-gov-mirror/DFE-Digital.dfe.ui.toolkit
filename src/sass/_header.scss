@@ -1,0 +1,52 @@
+#global-header {
+  border-bottom: 10px solid $department-for-education-websafe;
+}
+
+.header-user {
+  border-bottom:1px solid $border-colour;
+  background: $grey-4;
+  .header-inner {
+    margin: 0 15px;
+    font-size: 14px;
+    line-height: 1.2em;
+    @include media(tablet) {
+      margin: 0 30px;
+      max-width: 960px;
+    }
+    @include media($desktop) {
+      margin: 0 auto;
+    }
+  }
+  p {
+    margin: 0;
+  }
+  .account-information {
+    @extend %contain-floats;
+  }
+}
+
+#user-nav {
+  @include media(tablet) {
+    font-size: 16px;
+    margin: 5px 0;
+    float: right;
+  }
+  & > ul {
+    margin-left: -15px;
+    margin-right: -15px;
+    list-style: none;
+    li {
+      @include media(tablet) {
+        float: left;
+      }
+    }
+  }
+  a {
+    display: block;
+    padding: 12px 15px 10px;
+    color: $black;
+    &:focus {
+      outline: 0;
+    }
+  }
+}

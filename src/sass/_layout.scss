@@ -1,31 +1,5 @@
 // Grid layout
 
-.gds-status-bar {
-  padding: 10px 0;
-  border-bottom: 1px solid $border-colour;
-  margin: 0 15px;
-  @include media(tablet) {
-    margin: 0 30px;
-    max-width: 960px;
-  }
-  @include media($desktop) {
-    margin: 0 auto;
-
-  }
-
-  p {
-    display: table;
-    margin: 0;
-    strong.phase-tag {
-      display: inline-block;
-      background: $department-for-education-websafe;
-    }
-    span {
-      display: table-cell;
-    }
-  }
-}
-
 .row {
   @extend %grid-row;
 }
