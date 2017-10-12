@@ -17,8 +17,13 @@
       margin: 0 auto;
     }
   }
-  p {
+  p.signed-in-as {
     margin: 0;
+    padding: 12px 0 10px;
+    @include bold-19;
+    @include media(tablet) {
+      float: left;
+    }
   }
   .account-information {
     @extend %contain-floats;
