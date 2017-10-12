@@ -50,6 +50,10 @@ aside {
   margin-top: 15px;
   > h2.heading-medium {
     margin-top: 0;
+    margin-bottom: 15px;
+  }
+  @include media(tablet) {
+    margin-top: 0;
   }
 }
 
@@ -68,5 +72,20 @@ aside {
       flex-basis: calc(50% - 30px);
       margin: 0 15px 30px;
     }
+  }
+}
+
+dl.inline {
+  dt, dd {
+    display: inline;
+  }
+  dt {
+    &:before {
+      content: "";
+      display: block;
+    }
+  }
+  dd {
+    font-weight: bold;
   }
 }
