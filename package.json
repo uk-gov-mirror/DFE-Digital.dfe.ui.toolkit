@@ -4,9 +4,9 @@
   "description": "DfE front-end toolkit",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.1",
-    "govuk-elements-sass": "^3.1.1",
-    "govuk_frontend_toolkit": "^7.0.1",
+    "express": "^4.16.2",
+    "govuk-elements-sass": "^3.1.2",
+    "govuk_frontend_toolkit": "^7.1.0",
     "govuk_template_jinja": "^0.22.3",
     "gulp-sass": "^3.1.0",
     "jquery": "^3.2.1",
@@ -14,7 +14,8 @@
   },
   "devDependencies": {
     "gulp-clean-css": "^3.9.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "eslint": "2.9.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

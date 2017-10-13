@@ -1,3 +1,3 @@
-"use strict";
+var NSA = NSA || {};
 
-console.log("Loaded");
+
