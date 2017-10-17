@@ -66,9 +66,14 @@ fieldset {
     margin-bottom: 5px;
     @include media(tablet) {
       margin-bottom: 0;
-      margin-right: 10px;
       float: left;
     }
   }
-
+  .multiple-choice {
+    @include media(tablet) {
+      clear: none;
+      width: 40%;
+      margin-left: 10px;
+    }
+  }
 }
