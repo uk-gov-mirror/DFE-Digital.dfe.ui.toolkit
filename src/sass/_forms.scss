@@ -62,7 +62,13 @@ fieldset {
 }
 
 .show-password {
-  > input {
+  input.form-control {
     margin-bottom: 5px;
+    @include media(tablet) {
+      margin-bottom: 0;
+      margin-right: 10px;
+      float: left;
+    }
   }
+
 }
