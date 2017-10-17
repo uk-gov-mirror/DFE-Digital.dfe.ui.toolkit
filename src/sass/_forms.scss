@@ -60,3 +60,9 @@ fieldset {
     width: #{$i}em;
   }
 }
+
+.show-password {
+  > input {
+    margin-bottom: 5px;
+  }
+}
