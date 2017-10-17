@@ -54,3 +54,9 @@ fieldset {
     }
   }
 }
+
+@for $i from 4 through 12 {
+  .char-width-#{$i} {
+    width: ($i)em;
+  }
+}
