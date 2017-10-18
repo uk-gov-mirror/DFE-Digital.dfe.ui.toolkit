@@ -72,8 +72,9 @@ fieldset {
   .multiple-choice {
     @include media(tablet) {
       clear: none;
-      width: 40%;
-      margin-left: 10px;
+      width: 48%;
+      margin-left: 2%;
+      box-sizing: border-box;
     }
   }
 }
