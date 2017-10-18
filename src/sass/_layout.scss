@@ -16,6 +16,10 @@
   }
 }
 
+.row-intro {
+  margin-top: 20px;
+}
+
 @for $i from 1 through 12 {
   .col-#{$i} {
     @include grid-column($i / 12);
