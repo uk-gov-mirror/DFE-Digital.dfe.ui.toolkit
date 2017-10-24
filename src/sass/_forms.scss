@@ -61,7 +61,7 @@ fieldset {
   }
 }
 
-.show-password {
+.show-password-OLD {
   input.form-control {
     margin-bottom: 5px;
     @include media(tablet) {
@@ -75,6 +75,51 @@ fieldset {
       width: 48%;
       margin-left: 2%;
       box-sizing: border-box;
+    }
+  }
+}
+
+div.show-password {
+  position: relative;
+  background: #eee;
+  .show-password-control {
+    position: absolute;
+    top: 0;
+    right:0;
+    bottom: 0;
+    border: 2px solid #0b0c0c;
+    background: $grey-4;
+    label {
+      width: 4em;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.25;
+      padding: 5px 4px 4px;
+      display: block;
+      user-select: none;
+      cursor: pointer;
+    }
+    input {
+      display: none;
+    }
+  }
+}
+
+@include media(tablet) {
+  div.show-password {
+    display: inline-block;
+    width: 50%;
+    .form-control {
+      width: 100%;
+    }
+    .show-password-control {
+      right: auto;
+      left:100%;
+      border-left:none;
+      label {
+        font-size: 19px;
+        line-height: 1.31579;
+      }
     }
   }
 }
