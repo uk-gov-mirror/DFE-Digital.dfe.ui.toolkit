@@ -93,3 +93,8 @@ dl.inline {
     font-weight: bold;
   }
 }
+
+.js-enabled .js-visible {
+  display: block;
+  visibility: visible;
+}
