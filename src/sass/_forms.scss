@@ -27,6 +27,9 @@ fieldset.highlight {
 }
 
 .form-group {
+  p.form-hint {
+    margin-bottom: 5px;
+  }
   .error-message {
     display: none;
   }
