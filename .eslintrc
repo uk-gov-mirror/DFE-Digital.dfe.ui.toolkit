@@ -5,6 +5,6 @@
     "no-console": 1,
     "prefer-rest-params": "off",
     "prefer-spread": "off",
-    "strict": "on"
+    "strict": 1
   }
 }

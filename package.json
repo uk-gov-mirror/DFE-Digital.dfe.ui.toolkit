@@ -13,9 +13,11 @@
     "nunjucks": "^3.0.1"
   },
   "devDependencies": {
-    "gulp-clean-css": "^3.9.0",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.1",
-    "eslint": "2.9.0"
+    "gulp-clean-css": "^3.9.0"
   },
   "scripts": {
     "start": "node server.js"
