@@ -17,6 +17,9 @@
     "gulp": "^3.9.1",
     "eslint": "2.9.0"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DFE-Digital/frontend-toolkit.git"

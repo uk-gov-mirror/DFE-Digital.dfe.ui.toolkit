@@ -20,6 +20,11 @@
 
   <meta property="og:image" content="/static/images/opengraph-image.png">
 
+  {% block styles %}
+
+  {% endblock %}
+
+
 </head>
 <body class="">
 
@@ -103,6 +108,10 @@
 
 <script src="/static/javascript/vendors/jquery.js"></script>
 <script src="/static/javascript/app.js"></script>
+
+{% block js %}
+
+{% endblock %}
 
 </body>
 </html>

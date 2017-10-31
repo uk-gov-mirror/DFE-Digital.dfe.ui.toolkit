@@ -21,5 +21,11 @@ module.exports = {
     app.get('/user-profile', function (req, res) {
       res.render('user-profile')
     })
+    app.get('/concepts/password/strength', function (req, res) {
+      res.render('concepts/password/strength')
+    })
+    app.get('/concepts/portal/services', function (req, res) {
+      res.render('concepts/portal/services')
+    })
   }
 }
