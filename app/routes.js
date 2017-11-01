@@ -27,5 +27,8 @@ module.exports = {
     app.get('/concepts/portal/services', function (req, res) {
       res.render('concepts/portal/services')
     })
+    app.get('/concepts/portal/services-v2', function (req, res) {
+      res.render('concepts/portal/services-v2')
+    })
   }
 }
