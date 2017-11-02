@@ -100,14 +100,17 @@ dl.inline {
 }
 
 .heading-group {
+  margin-bottom: 15px;
   @extend %contain-floats;
   h2, h3 {
-    @include media(tablet) {
+    margin: 0;
+    @include media(desktop) {
       float: left;
+      margin: 0;
     }
   }
   a {
-    @include media(tablet) {
+    @include media(desktop) {
       float: right;
     }
   }
