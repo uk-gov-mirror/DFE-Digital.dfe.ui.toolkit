@@ -8,9 +8,25 @@
     </h1>
     <div class="heading-group">
     <h2 class="heading-medium">
-      Your DfE services <span class=""> <a href="viewall">View available DfE services</a></span>
-    </h2>
+      Your DfE services
+    </h2><a href="viewall">View available DfE services</a>
   </div>
+    <ul class="service-list">
+
+      <li>
+        <a href="#" class="under-construction">
+          <h3><span class="service-title">K2S</span> <span class="role-name">End user</span></h3>
+          <span></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="under-construction">
+          <h3><span class="service-title">K2S</span> <span class="role-name">End user</span></h3>
+          <span></span>
+        </a>
+      </li>
+
+    </ul>
     <ul class="service-list-blocks">
       <li>
         <a href="dd" class="service service-k2s">
@@ -58,132 +74,5 @@
    </ul>
   </div>
 </div>
-
-{% endblock %}
-
-
-{% block styles %}
-
-<style>
-
-  h2 span {
-    display: inline-block;
-    font-size: 80%;
-    float: right;
-    font-weight:normal;
-  }
-
-  a.card {
-    border-left: 5px solid #347ca9;
-  }
-
-  a.service-k2s {
-    border-left-color: #24651D !important;
-  }
-  a.service-gias {
-    border-left-color: #005ea5 !important;
-  }
-
-  .card p {
-    margin-bottom: 0;
-    font-size: 17px;
-    color: #555;
-  }
-
-  ul.service-list li {
-    background: #eee;
-    padding: 10px;
-    border-left: 5px solid #005ea5;
-    margin-bottom: 5px;
-  }
-
-  ul.service-list li p {
-    font-weight:bold;
-    margin: 0;
-  }
-
-  ul.service-list li span {
-    font-size: 17px;
-    color: #555;
-  }
-
-  ul.service-list li.service-eb {
-    border-left-color: #224c69;
-  }
-
-  ul.service-list-table {
-
-   }
-
-  ul.service-list-table li {
-    padding: 10px 0;
-    border-top: 1px solid #ddd;
-  }
-
-  ul.service-list-table li p {
-     font-weight: bold;
-      margin:0;
-   }
-
-  ul.service-list-table li span {
-    font-size: 17px;
-    color: #555;
-  }
-
-  ul.service-list-blocks {
-
-  }
-
-  ul.service-list-blocks li {
-    margin-bottom: 15px;
-  }
-
-  ul.service-list-blocks li a.service {
-    background: #f8f8f8;
-    padding: 10px;
-    border-left: 5px solid #005ea5;
-    display: block;
-    text-decoration: none;
-  }
-
-  ul.service-list-blocks li a.service h2 {
-    text-decoration: none;
-    font-weight:bold;
-    color: #0b0c0c;
-  }
-
-  ul.service-list-blocks li a.service p {
-    margin: 0;
-    text-decoration: none;
-    font-size: 17px;
-    color: #555;
-  }
-
-  ul.service-list-blocks li a.manage {
-    background: #f8f8f8;
-    padding: 5px 15px;
-    display: block;
-    margin-top: 2px;
-    font-size: 17px;
-    border-left: 5px solid #24651D;
-  }
-
-  ul.service-list-blocks li a:hover {
-    background: #eee;
-  }
-
-  .school {
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 0;
-    margin-top: 20px;
-  }
-
-  h3.details-heading {
-    border-bottom: 5px solid #347ca9;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-  }
-
-</style>
 
 {% endblock %}

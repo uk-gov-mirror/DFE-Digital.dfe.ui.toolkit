@@ -23,3 +23,9 @@ NSA = {
 if ($('.show-password').length > 0) {
   NSA.showPassword();
 }
+
+
+$('.under-construction').on('click', function (e) {
+  alert('This functionality is not available yet');
+  e.preventDefault();
+});
