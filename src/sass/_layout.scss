@@ -98,3 +98,17 @@ dl.inline {
   display: block;
   visibility: visible;
 }
+
+.heading-group {
+  @extend %contain-floats;
+  h2, h3 {
+    @include media(tablet) {
+      float: left;
+    }
+  }
+  a {
+    @include media(tablet) {
+      float: right;
+    }
+  }
+}
