@@ -147,3 +147,19 @@ dl.inline {
     }
   }
 }
+
+ul.list-table {
+  margin-bottom: 15px;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid $border-colour;
+    p {
+      font-weight:bold;
+      margin: 0;
+    }
+    .meta {
+      font-size: 17px;
+      color: $grey-2;
+    }
+  }
+}
