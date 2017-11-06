@@ -1,3 +1,15 @@
 ul.list-bullet {
   margin-bottom: 30px;
 }
+
+dl.rows {
+  &.condensed {
+    font-size: 90%;
+  }
+  dt {
+    font-weight:bold;
+  }
+  dd {
+    margin-bottom: 15px;
+  }
+}
