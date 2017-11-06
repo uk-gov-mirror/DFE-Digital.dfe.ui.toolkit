@@ -158,8 +158,8 @@ ul.list-table {
       margin: 0;
     }
     .meta {
-      font-size: 17px;
-      color: $grey-2;
+      @include core-16;
+      color: $grey-4;
     }
   }
 }
