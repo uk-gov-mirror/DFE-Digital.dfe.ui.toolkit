@@ -17,3 +17,15 @@ table {
     margin: 0;
   }
 }
+
+@for $i from 1 through 30 {
+  .cw-#{$i * 10} {
+    width: #{$i * 10}px;
+  }
+}
+
+@for $i from 1 through 20 {
+  .cwp-#{$i * 5} {
+    width: #{$i * 5%};
+  }
+}
