@@ -48,9 +48,10 @@ nav.prototype {
     li {
       display: inline-block;
       color: $grey-3;
+      margin: 0 5px;
       a {
-        display: block;
-        padding: 5px 10px 10px;
+        display: inline-block;
+        padding: 5px 0 10px;
         color: #fff;
       }
     }
