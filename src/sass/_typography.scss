@@ -19,4 +19,7 @@ dl.rows {
   margin-bottom: 0;
   padding-bottom: 5px;
   border-bottom: 2px solid $border-colour;
+  &.no-border {
+    border:none;
+  }
 }
