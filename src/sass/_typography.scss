@@ -3,16 +3,27 @@ ul.list-bullet {
 }
 
 dl.rows {
+  margin-bottom: 15px;
   &.condensed {
     font-size: 90%;
   }
   dt {
     font-weight:bold;
+    @include media(tablet) {
+      float: left;
+      clear: left;
+      width: 200px;
+      text-align: right;
+    }
   }
   dd {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    @include media(tablet) {
+      margin-left: 210px
+    }
   }
 }
+
 
 .spacer-heading {
   margin-top: 30px;
