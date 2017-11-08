@@ -64,24 +64,6 @@ fieldset {
   }
 }
 
-.show-password-OLD {
-  input.form-control {
-    margin-bottom: 5px;
-    @include media(tablet) {
-      margin-bottom: 0;
-      float: left;
-    }
-  }
-  .multiple-choice {
-    @include media(tablet) {
-      clear: none;
-      width: 48%;
-      margin-left: 2%;
-      box-sizing: border-box;
-    }
-  }
-}
-
 div.show-password {
   position: relative;
   background: #eee;
@@ -118,7 +100,7 @@ div.show-password {
     .show-password-control {
       right: auto;
       left:100%;
-      border-left:none;
+      margin-left: 5px;
       label {
         font-size: 19px;
         line-height: 1.31579;
