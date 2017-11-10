@@ -33,5 +33,10 @@ module.exports = {
     app.get('/concepts/portal/services-v3', function (req, res) {
       res.render('concepts/portal/services-v3')
     })
+    app.get('/journeys/migration/:stepId', function (req, res) {
+      var stepId = req.params.stepId;
+      res.render('journeys/migration/' + stepId)
+    })
+
   }
 }
