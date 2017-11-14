@@ -50,6 +50,10 @@ gulp.task('watch', () => {
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
+  gulp.watch(jsFiles, ['scripts'])
+    .on('change', (event) => {
+      console.log(`File ${event.path} was ${event.type}, running tasks...`);
+    });
 });
 
 gulp.task('sass', () => gulp
@@ -58,4 +62,4 @@ gulp.task('sass', () => gulp
   .pipe(gulp.dest(output)));
 
 
-gulp.task('default', ['sass', 'watch', 'copy-minify', 'copy-js']);
+gulp.task('default', ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js']);
