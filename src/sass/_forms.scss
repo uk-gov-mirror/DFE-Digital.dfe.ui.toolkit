@@ -113,7 +113,6 @@ div.show-password {
 // Start now buttons
 .button-start,
 .button-get-started {
-  @include bold-24;
   background-image: url("../images/icon-pointer.png");
   @include device-pixel-ratio {
     background-image: url("../images/icon-pointer-2x.png");

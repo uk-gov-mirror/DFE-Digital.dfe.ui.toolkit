@@ -1,5 +1,7 @@
-{% extends "layout.html" %}
+{% set hideHeader = true %}
+{% set hideFooter = true %}
 
+{% extends "layout.html" %}
 
 {% block content %}
 
@@ -9,134 +11,16 @@
               Department for Education
             </h1>
             <p class="lede">
-              Front-end toolkit for DfE based on the GDS projects
+              Front-end toolkit and prototypes
             </p>
+
+            <h2 class="heading-medium">Journeys</h2>
+            <ul class="list-bullet">
+              <li><a href="/journeys/migration/step1">Whitelisted migration journey</a> </li>
+            </ul>
+
           </div>
         </div>
-
-        <h2 class="heading-medium">Grid</h2>
-
-        <div class="row">
-          <div class="col-1">
-            <span>1</span>
-          </div>
-          <div class="col-1">
-            <span>1</span>
-          </div>
-          <div class="col-1">
-            <span>1</span>
-          </div>
-          <div class="col-2">
-            <span>2</span>
-          </div>
-          <div class="col-3">
-            <span>3</span>
-          </div>
-          <div class="col-4">
-            <span>4</span>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-1">
-            <span>1</span>
-          </div>
-          <div class="col-5">
-            <span>5</span>
-          </div>
-          <div class="col-6">
-            <span>6</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <span>4</span>
-          </div>
-          <div class="col-8">
-            <span>8</span>
-          </div>
-        </div>
-
-        <h2 class="heading-medium">Tables</h2>
-
-        <div class="row">
-          <div class="col-3">
-            Menu
-          </div>
-          <div class="col-9">
-              <table>
-              	<caption></caption>
-              	<thead>
-              		<tr>
-              			<th>Column</th>
-              			<th>Column</th>
-              			<th>Column</th>
-              		</tr>
-              	</thead>
-              	<tfoot>
-              		<tr>
-              			<td>Total</td>
-              			<td>Total</td>
-              			<td>Total</td>
-              		</tr>
-              	</tfoot>
-              	<tbody>
-              		<tr>
-              			<td>Data</td>
-              			<td>Data</td>
-              			<td>Data</td>
-              		</tr>
-              	</tbody>
-              </table>
-          </div>
-        </div>
-
-        <h2 class="heading-medium">Notifications</h2>
-
-        <div class="notification notification-success" tabindex="0">
-          <h2>Success</h2>
-          <p>Your password has been reset</p>
-        </div>
-
-        <div class="notification notification-warning" tabindex="0">
-          <h2>You need to activate your account</h2>
-          <p>You will have limited access to your account until its activated. Follow the instructions that have been emailed to you </p>
-        </div>
-
-        <div class="notification notification-error" tabindex="0">
-          <h2>Error saving your account</h2>
-          <p>The passwords you entered did not match</p>
-        </div>
-
-        <h2 class="heading-medium">Loader</h2>
-
-        <div class="spinner">
-          <div class="spinner-circle1 spinner-child"></div>
-          <div class="spinner-circle2 spinner-child"></div>
-          <div class="spinner-circle3 spinner-child"></div>
-          <div class="spinner-circle4 spinner-child"></div>
-          <div class="spinner-circle5 spinner-child"></div>
-          <div class="spinner-circle6 spinner-child"></div>
-          <div class="spinner-circle7 spinner-child"></div>
-          <div class="spinner-circle8 spinner-child"></div>
-          <div class="spinner-circle9 spinner-child"></div>
-          <div class="spinner-circle10 spinner-child"></div>
-          <div class="spinner-circle11 spinner-child"></div>
-          <div class="spinner-circle12 spinner-child"></div>
-        </div>
-
-        <h2 class="heading-medium">Lists</h2>
-
-        <h3 class="heading-small">Definition lists</h3>
-
-        <dl class="rows">
-          <dt>Name</dt>
-          <dd>James King</dd>
-          <dt>Organisation</dt>
-          <dd>Department for Education</dd>
-          <dt>Address</dt>
-          <dd>53-55 Butts Road, Earlsdon, Coventry, CV1 3HB</dd>
-        </dl>
 
 
 

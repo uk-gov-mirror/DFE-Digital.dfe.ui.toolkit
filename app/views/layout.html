@@ -42,6 +42,8 @@
 
 <div class="wrapper">
 
+  {% if hideHeader != true %}
+
   <header id="global-header" class="with-proposition">
     <div class="header-wrapper">
       <div class="identity">Department for Education</div>
@@ -71,6 +73,8 @@
     </div>
   </div>
 
+  {% endif %}
+
   <main class="elements-index" id="content" tabindex="-1">
 
     {% block content %}
@@ -80,6 +84,8 @@
   </main>
 
 </div>
+
+{% if hideFooter != true %}
 
 <footer id="footer">
   <div class="footer-wrapper">
@@ -94,6 +100,7 @@
   </div>
 </footer>
 
+{% endif %}
 
 <nav class="prototype">
   <ul>
