@@ -2,39 +2,35 @@ $success: $turquoise;
 $warning: $orange;
 
 .notification {
-  background: #eee;
-  border-left: 5px solid $border-colour;
+  background: #fff;
   margin: 15px 0;
   padding: 15px;
-  @include simple-animation;
-  &:focus {
-    outline: 3px solid $focus-colour;
-  }
-  &:hover {
-    border-left-width: 10px;
-    padding-left: 10px;
-    background: #f5f5f5;
+  border:3px solid $border-colour;
+  @include media(tablet) {
+    border-width: 5px;
   }
   h2 {
     font-weight:bold;
-    font-size: 110%;
+    font-size: 120%;
   }
   p {
-    margin-bottom: 3px;
+    margin-bottom: 0;
+  }
+  &:focus {
+    outline: 3px solid $focus-colour;
   }
 }
 
 .notification-success {
   border-color: $success;
-  //background: mix($success, #fff, 15%);
+  background: $turquoise;
+  color: #fff;
 }
 
 .notification-warning {
   border-color: $warning;
-  //background: mix($warning, #fff, 15%);
 }
 
 .notification-error {
   border-color: $error-colour;
-  //background: mix($error-colour, #fff, 15%);
 }
