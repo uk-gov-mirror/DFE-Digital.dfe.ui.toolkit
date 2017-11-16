@@ -1,0 +1,57 @@
+{% set hideHeader = true %}
+{% set hideFooter = true %}
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<span class="tooltip-container">
+  <button type="button" aria-label="more info" title="This clarifies whatever needs clarifying">i</button>
+  <span role="status"></span>
+</span>
+
+{% endblock %}
+
+
+{% block js %}
+
+<script>
+
+  (function() {
+    // Get all the toggletip buttons
+    var toggletips = document.querySelectorAll('[title]');
+
+    // Iterate over them
+    Array.prototype.forEach.call(toggletips, function (toggletip) {
+      // Get the message from the data-content element
+      var message = toggletip.getAttribute('title');
+
+      // Get the live region element
+      var liveRegion = toggletip.nextElementSibling;
+
+      // Toggle the message
+      toggletip.addEventListener('click', function () {
+        liveRegion.innerHTML = '';
+        window.setTimeout(function() {
+          liveRegion.innerHTML = '<span class="toggletip-bubble">'+ message +'</span>';
+        }, 100);
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function (e) {
+        if (toggletip !== e.target) {
+          liveRegion.innerHTML = '';
+        }
+      });
+
+      // Remove toggletip on ESC
+      toggletip.addEventListener('keydown', function(e) {
+        if ((e.keyCode || e.which) === 27)
+          liveRegion.innerHTML = '';
+      });
+    });
+  }());
+
+</script>
+
+{% endblock %}

@@ -31,3 +31,11 @@ $('.under-construction').on('click', function (e) {
   e.preventDefault();
 });
 
+if ($('.notification span.icon').length > 0) {
+  $('.notification span.icon').on('click', function () {
+    $(this).parent().hide();
+  });
+}
+
+
+$('main form').attr('novalidate', 'novalidate');
