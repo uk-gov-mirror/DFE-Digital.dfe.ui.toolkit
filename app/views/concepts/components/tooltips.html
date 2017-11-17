@@ -5,17 +5,18 @@
 
 {% block content %}
 
-<span class="tooltip">
-  <button type="button" aria-label="more info" title="Tooltip">?</button>
-  <span role="status"></span>
-</span>
+
+<p class="toggle-help">
+  This is a helpful tooltip
+</p>
 
 <hr>
 
-<span class="tooltip">
-  <button type="button" aria-label="more info" title="Another tooltip">?</button>
-  <span role="status"></span>
-</span>
+<p></p>
+<p class="toggle-help">
+  This is another tooltip
+</p>
+
 
 
 {% endblock %}
@@ -26,75 +27,58 @@
 <script>
 
 
-  (function () {
+  (function() {
 
-    var toggleTips = $('.tooltip button');
-    console.log(toggleTips);
+    var toggleTips = $('.toggle-help');
 
     toggleTips.each(function () {
-      var message = $(this).prop('title');
-      var liveRegion = $(this).next();
-      var $that = $(this);
-      $that.removeAttr('title');
 
-      $(this).on('click touch', function () {
-        liveRegion.html('');
-        window.setTimeout(function() {
-          liveRegion.html('<span class="tip">'+ message +'</span>');
-        }, 100);
-      });
+      var $that,
+          liveRegion,
+          container,
+          toggleTip;
 
-      // Close on outside click
+      $that = $(this);
+
+      container = $('<span />').attr('class', 'toggletip');
+
+      toggleTip = $('<button />')
+        .attr('type', 'button')
+        .attr('aria-label', 'Help')
+        .attr('data-toggletip-content', $that.html())
+        .text('?')
+        .on('click', function () {
+          var message = $(this).data('toggletip-content');
+          var liveRegion = $(this).next();
+          window.setTimeout(function () {
+            liveRegion.html(function () {
+              return $('<span />')
+                .attr('class', 'bubble')
+                .text(message)
+            })
+
+          }, 100);
+        })
+        .on('keydown', function (e) {
+          if ((e.keyCode || e.which) === 27)
+            liveRegion.html('');
+        });
+
+      liveRegion = $('<span />')
+        .attr('role', 'status');
+
+      container.append(toggleTip, liveRegion);
+
+      $that.before(container).remove();
+
       document.addEventListener('click', function (e) {
         if ($that[0] !== $(e.target)) {
           liveRegion.html('');
         }
       });
 
-      // Remove toggletip on ESC
-      $(this).on('keydown', function(e) {
-        if ((e.keyCode || e.which) === 27)
-          liveRegion.html('');
-      });
-
     });
 
-  }());
-
-
-  (function() {
-    // Get all the toggletip buttons
-    var toggletips = document.querySelectorAll('[xtitle]');
-
-    // Iterate over them
-    Array.prototype.forEach.call(toggletips, function (toggletip) {
-      // Get the message from the data-content element
-      var message = toggletip.getAttribute('title');
-
-      // Get the live region element
-      var liveRegion = toggletip.nextElementSibling;
-
-      // Toggle the message
-      toggletip.addEventListener('click', function () {
-        liveRegion.innerHTML = '';
-        window.setTimeout(function() {
-          liveRegion.innerHTML = '<span class="toggletip-bubble">'+ message +'</span>';
-        }, 100);
-      });
-
-      // Close on outside click
-      document.addEventListener('click', function (e) {
-        if (toggletip !== e.target) {
-          liveRegion.innerHTML = '';
-        }
-      });
-
-      // Remove toggletip on ESC
-      toggletip.addEventListener('keydown', function(e) {
-        if ((e.keyCode || e.which) === 27)
-          liveRegion.innerHTML = '';
-      });
-    });
   }());
 
 </script>
