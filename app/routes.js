@@ -36,6 +36,10 @@ module.exports = {
     app.get('/concepts/portal/services-v3', function (req, res) {
       res.render('concepts/portal/services-v3')
     })
+    app.get('/concepts/components/:comp', function (req, res) {
+      var comp = req.params.comp;
+      res.render('concepts/components/' + comp)
+    })
     app.get('/journeys/migration/:stepId', function (req, res) {
       var stepId = req.params.stepId;
       res.render('journeys/migration/' + stepId)

@@ -5,10 +5,18 @@
 
 {% block content %}
 
-<span class="tooltip-container">
-  <button type="button" aria-label="more info" title="This clarifies whatever needs clarifying">i</button>
+<span class="tooltip">
+  <button type="button" aria-label="more info" title="Tooltip">?</button>
   <span role="status"></span>
 </span>
+
+<hr>
+
+<span class="tooltip">
+  <button type="button" aria-label="more info" title="Another tooltip">?</button>
+  <span role="status"></span>
+</span>
+
 
 {% endblock %}
 
@@ -17,9 +25,46 @@
 
 <script>
 
+
+  (function () {
+
+    var toggleTips = $('.tooltip button');
+    console.log(toggleTips);
+
+    toggleTips.each(function () {
+      var message = $(this).prop('title');
+      var liveRegion = $(this).next();
+      var $that = $(this);
+      $that.removeAttr('title');
+
+      $(this).on('click touch', function () {
+        liveRegion.html('');
+        window.setTimeout(function() {
+          liveRegion.html('<span class="tip">'+ message +'</span>');
+        }, 100);
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function (e) {
+        if ($that[0] !== $(e.target)) {
+          liveRegion.html('');
+        }
+      });
+
+      // Remove toggletip on ESC
+      $(this).on('keydown', function(e) {
+        if ((e.keyCode || e.which) === 27)
+          liveRegion.html('');
+      });
+
+    });
+
+  }());
+
+
   (function() {
     // Get all the toggletip buttons
-    var toggletips = document.querySelectorAll('[title]');
+    var toggletips = document.querySelectorAll('[xtitle]');
 
     // Iterate over them
     Array.prototype.forEach.call(toggletips, function (toggletip) {
