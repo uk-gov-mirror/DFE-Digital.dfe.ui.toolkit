@@ -28,7 +28,7 @@ var showValidationMessage = function (field) {
   var field = field,
     $field = $(field);
 
-  if (!$field.parents('form-group').hasClass('form-group-error')) {
+  if (!$field.parent().hasClass('form-group-error')) {
 
     var labelText = $("label[for='" + $field.attr('id') + "']").text(),
       errorMessageText = 'Enter a valid ' + labelText,
@@ -38,7 +38,7 @@ var showValidationMessage = function (field) {
         .prop('id', 'validation-' + slugify(labelText));
 
     $field.before(errorMessage);
-    $field.parents('form-group').addClass('form-group-error');
+    $field.parent().addClass('form-group-error');
     $field.attr({
       'aria-describedby' : 'validation-' + slugify(labelText),
       'aria-invalid': 'true'
@@ -50,8 +50,10 @@ var hideValidationMessage = function (field) {
   var field = field,
     $field = $(field);
 
-  $field.parents('form-group').removeClass('form-group-error').find('p.error-message').remove();
-  $field.removeAttr('aria-describedby').removeAttr('aria-invalid');
+  $field.parent().removeClass('form-group-error');
+  $field.parent().find('p.error-message').remove();
+  $field.removeAttr('aria-describedby');
+  $field.removeAttr('aria-invalid');
 }
 
 var slugify = function (text) {
