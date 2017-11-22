@@ -38,4 +38,3 @@ if ($('.notification span.icon').length > 0) {
 }
 
 
-$('main form').attr('novalidate', 'novalidate');

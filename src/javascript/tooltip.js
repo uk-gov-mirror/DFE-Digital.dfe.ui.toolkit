@@ -25,7 +25,6 @@ toggleTips.each(function () {
             .attr('class', 'bubble')
             .text(message)
         })
-
       }, 100);
     })
     .on('keydown', function (e) {
@@ -45,5 +44,5 @@ toggleTips.each(function () {
       liveRegion.html('');
     }
   });
-  
+
 });
