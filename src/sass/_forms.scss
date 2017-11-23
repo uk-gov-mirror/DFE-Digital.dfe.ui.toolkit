@@ -119,3 +119,7 @@ div.show-password {
     background-size: 30px 19px;
   }
 }
+
+.button-secondary {
+  @include button($grey-3);
+}

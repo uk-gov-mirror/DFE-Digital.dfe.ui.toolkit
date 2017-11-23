@@ -104,21 +104,17 @@ dl.inline {
 }
 
 .heading-group {
-  margin-bottom: 15px;
+  margin: 15px 0;
   @extend %contain-floats;
   h2, h3 {
     margin: 0;
-    @include media(desktop) {
-      float: left;
-      margin: 0;
-    }
+    float: left;
   }
   a {
-    @include media(desktop) {
-      float: right;
-      margin-top: 4px;
-    }
+    float: right;
+    margin-top: -3px;
   }
+  padding-top: 10px;
 }
 
 .service-list {
@@ -166,4 +162,9 @@ ul.list-table {
       color: $grey-1;
     }
   }
+}
+
+section {
+  padding: 5px 0;
+  margin: 5px 0;
 }

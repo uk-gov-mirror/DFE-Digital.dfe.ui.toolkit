@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="step2" class="link-back">Back</a>
+<div class="grid-row">
+  <div class="col-8">
+    <h1 class="heading-xlarge">
+      Add services
+    </h1>
+    <p class="lede">Select the services the new user will be able to access and their permission levels.</p>
+  </div>
+</div>
+<div class="grid-row">
+  <div class="col-12">
+    <form method="get" action="step4">
+      <input type="submit" class="button" class="button" value="Continue">
+      <a href="/" class="button button-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

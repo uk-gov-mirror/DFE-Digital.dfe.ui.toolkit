@@ -40,9 +40,10 @@ module.exports = {
       var comp = req.params.comp;
       res.render('concepts/components/' + comp)
     })
-    app.get('/journeys/migration/:stepId', function (req, res) {
+    app.get('/journeys/:journey/:stepId', function (req, res) {
       var stepId = req.params.stepId;
-      res.render('journeys/migration/' + stepId)
+      var journey = req.params.journey;
+      res.render('journeys/' + journey + '/' + stepId)
     })
 
   }
