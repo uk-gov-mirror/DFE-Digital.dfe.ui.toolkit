@@ -123,3 +123,13 @@ div.show-password {
 .button-secondary {
   @include button($grey-3);
 }
+
+.submit-buttons {
+  .button {
+    margin-bottom: 10px;
+    @include media(tablet) {
+      margin-right: 5px;
+      ma
+    }
+  }
+}

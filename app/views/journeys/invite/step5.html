@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<a href="step3" class="link-back">Back</a>
+<a href="step4" class="link-back">Back</a>
 <div class="grid-row">
   <div class="col-8">
     <h1 class="heading-xlarge">
@@ -13,7 +13,6 @@
 <div class="grid-row">
   <div class="col-12">
     <form method="get" action="/">
-
       <section>
         <div class="heading-group">
           <h2 class="heading-medium">Personal details</h2>
@@ -31,7 +30,7 @@
       <section>
         <div class="heading-group">
           <h2 class="heading-medium">Services</h2>
-          <a href="step2-2" class="button-secondary">Edit <span class="vh">the user's services</span> </a>
+          <a href="step3-2" class="button-secondary">Edit <span class="vh">the user's services</span> </a>
         </div>
         <table class="sortable">
           <thead>
@@ -59,7 +58,7 @@
       <section>
         <div class="heading-group">
           <h2 class="heading-medium">Welcome message</h2>
-          <a href="step2-2" class="button-secondary">Edit <span class="vh">the welcome message</span> </a>
+          <a href="step4-2" class="button-secondary">Edit <span class="vh">the welcome message</span> </a>
         </div>
         <blockquote>
           <pre>Catherine,
@@ -71,10 +70,10 @@ Let me know if you have any questions,
 Keith</pre>
         </blockquote>
       </section>
-
-      <input type="submit" class="button" class="button" value="Submit">
-      <a href="/" class="button button-secondary">Cancel</a>
-
+      <div class="submit-buttons">
+        <input type="submit" class="button" value="Submit">
+        <a href="/" class="button button-secondary">Cancel</a>
+      </div>
     </form>
   </div>
 </div>
