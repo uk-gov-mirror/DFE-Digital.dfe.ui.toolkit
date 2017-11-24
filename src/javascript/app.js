@@ -37,4 +37,6 @@ if ($('.notification span.icon').length > 0) {
   });
 }
 
+var showHideContent = new GOVUK.ShowHideContent()
+showHideContent.init()
 

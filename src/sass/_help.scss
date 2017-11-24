@@ -10,7 +10,7 @@
   button {
     font-weight:700;
     font-size: 16px;
-    background: $black;
+    background: $govuk-blue;
     text-align: center;
     border-radius: 50%;
     color: #fff;
@@ -26,20 +26,20 @@
     border-radius: 3px;
     padding:5px 10px;
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 0;
-    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 16px;
     min-width: 150px;
     &:before {
       content: "";
       left:10px;
-      top:0;
+      bottom:0;
       display: block;
       position: absolute;
       border: 5px solid transparent;
-      border-bottom-color: $black;
-      margin-top: -10px;
+      border-top-color: $black;
+      margin-bottom: -10px;
     }
   }
 }

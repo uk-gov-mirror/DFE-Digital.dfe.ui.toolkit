@@ -5,7 +5,7 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 
-const input = './src/sass/*.scss';
+const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
 const output = './dist/css/';
 
 let sassOptions;
