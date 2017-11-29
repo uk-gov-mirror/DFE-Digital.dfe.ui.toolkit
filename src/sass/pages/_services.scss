@@ -77,7 +77,9 @@
       font-size: 80%;
       border-top: 1px solid #fff;
       a {
-
+        &:visited {
+          color: $link-colour;
+        }
       }
     }
   }
@@ -85,4 +87,36 @@
 
 .js-enabled .service-list .modal {
   display: none;
+}
+
+.js-enabled .service-list .modal {
+  position: fixed;
+  background: #fff;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+  @include media(tablet) {
+    width: 600px;
+    top: 100px;
+    left: 50%;
+    margin-left: -300px;
+  }
+}
+
+.modal-bg {
+  position: fixed;
+  background: rgba(0,0,0,.3);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9998;
+}
+
+html.modal-open,
+html.modal-open body {
+  overflow: hidden;
 }
