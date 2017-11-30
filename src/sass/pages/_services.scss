@@ -22,7 +22,7 @@
 
 .service-list {
 
-  li {
+  > li {
 
     margin-bottom: 10px;
     border-left: 5px solid $grey-2;
@@ -103,6 +103,11 @@
     top: 100px;
     left: 50%;
     margin-left: -300px;
+    padding: 30px;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
   }
   .close {
     position: absolute;
