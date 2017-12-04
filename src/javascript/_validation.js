@@ -25,12 +25,19 @@ inputs.on('blur', function () {
 });
 
 var showValidationMessage = function (field) {
-  var field = field,
-    $field = $(field);
 
-  if (!$field.parent().hasClass('form-group-error')) {
+  var field = field,
+    $field = $(field),
+    $parent = $field.parent();
+
+  if ($parent.hasClass('show-password')) {
+    $parent = $parent.parent();
+  }
+
+  if (!$parent.hasClass('form-group-error')) {
 
     var labelText = $("label[for='" + $field.attr('id') + "']").text(),
+      customValidation = $(field).data
       errorMessageText = 'Enter a valid ' + labelText,
       errorMessage = $('<p>')
         .html(errorMessageText)
@@ -38,7 +45,7 @@ var showValidationMessage = function (field) {
         .prop('id', 'validation-' + slugify(labelText));
 
     $field.before(errorMessage);
-    $field.parent().addClass('form-group-error');
+    $parent.addClass('form-group-error');
     $field.attr({
       'aria-describedby' : 'validation-' + slugify(labelText),
       'aria-invalid': 'true'
@@ -48,10 +55,15 @@ var showValidationMessage = function (field) {
 
 var hideValidationMessage = function (field) {
   var field = field,
-    $field = $(field);
+    $field = $(field),
+    $parent = $field.parent();
 
-  $field.parent().removeClass('form-group-error');
-  $field.parent().find('p.error-message').remove();
+  if ($parent.hasClass('show-password')) {
+    $parent = $parent.parent();
+  }
+
+  $parent.removeClass('form-group-error');
+  $parent.find('p.error-message').remove();
   $field.removeAttr('aria-describedby');
   $field.removeAttr('aria-invalid');
 }
