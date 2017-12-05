@@ -18,6 +18,7 @@ fieldset.highlight {
   background: lighten($grey-3, 5%);
   padding: 15px;
   box-sizing: border-box;
+  margin-bottom: 20px;
   @include media(tablet) {
     padding: 30px;
   }
