@@ -1,6 +1,11 @@
 footer#footer {
   margin-bottom: 80px;
   nav {
+    margin-bottom: 20px;
+    @include media(tablet) {
+      margin-bottom: 0;
+    }
+    }
     ul {
       list-style: none;
       li {
