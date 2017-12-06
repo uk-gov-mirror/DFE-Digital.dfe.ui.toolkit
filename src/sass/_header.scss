@@ -6,6 +6,13 @@
   background-image: url('../images/gov.uk_logotype_crown.png');
 }
 
+@include media(tablet) {
+  #proposition-name {
+    margin-top: 5px;
+    display: block;
+  }
+}
+
 .header-user {
   border-bottom:1px solid $border-colour;
   background: $grey-4;
