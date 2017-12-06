@@ -2,6 +2,10 @@
   border-bottom: 10px solid $department-for-education-websafe;
 }
 
+#global-header #logo {
+  background-image: url('../images/gov.uk_logotype_crown.png');
+}
+
 .header-user {
   border-bottom:1px solid $border-colour;
   background: $grey-4;
