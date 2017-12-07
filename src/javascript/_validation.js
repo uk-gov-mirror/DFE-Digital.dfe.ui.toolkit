@@ -36,8 +36,8 @@ var showValidationMessage = function (field) {
 
   if (!$parent.hasClass('form-group-error')) {
 
-    var labelText = $("label[for='" + $field.attr('id') + "']").text(),
-      errorMessageText = 'Enter a valid ' + labelText,
+    var labelText = $field.data('label') || $("label[for='" + $field.attr('id') + "']").text(),
+      errorMessageText = 'Enter a valid ' + labelText.toLowerCase(),
       errorMessage = $('<p>')
         .html(errorMessageText)
         .prop('class', 'error-message')
