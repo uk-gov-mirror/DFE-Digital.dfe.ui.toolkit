@@ -73,21 +73,31 @@ fieldset {
 
 div.show-password {
   position: relative;
+  input.form-control {
+    padding-right: 35px;
+  }
   .show-password-control {
     position: absolute;
     right:0;
     bottom: 0;
-    border: 2px solid $black;
-    background: $grey-4;
+    top: 0;
     label {
-      width: 4em;
-      text-align: center;
-      font-size: 16px;
-      line-height: 1.25;
-      padding: 4px 4px 0px;
+      background-image: url("../images/icon-view-password.png");
+      @include device-pixel-ratio {
+        background-image: url("../images/icon-view-password-2x.png");
+        background-size: 27px 27px;
+      }
       display: block;
       user-select: none;
       cursor: pointer;
+      overflow: hidden;
+      text-indent: -9999px;
+      width: 27px;
+      height: 27px;
+      margin: 2px 5px;
+      @include media(tablet) {
+        margin: 5px 7px;
+      }
     }
     input {
       display: none;
