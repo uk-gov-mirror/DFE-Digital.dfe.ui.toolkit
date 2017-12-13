@@ -44,9 +44,20 @@
 
   {% if hideHeader != true %}
 
-  <header id="global-header" class="with-proposition">
+  <header role="banner" id="global-header" class="with-proposition">
     <div class="header-wrapper">
-      <div class="identity">Department for Education</div>
+      <div class="header-global">
+        <div class="header-logo">
+          <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+            <img src="https://rawgit.com/DFE-Digital/dfe.ui.toolkit/master/dist/images/gov.uk_logotype_crown_invert_trans.png" width="36" height="32" alt=""> GOV.UK
+          </a>
+        </div>
+      </div>
+      <div class="header-proposition">
+        <div class="content">
+          <span id="proposition-name">DfE sign in</span>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -55,20 +66,10 @@
       <div class="service-info">
         <div class="phase-banner-beta">
           <p>
-            <strong class="phase-tag">BETA</strong>
+            <strong class="phase-tag">ALPHA</strong>
             <span>This is a new service – your <a href="#" target="_blank">feedback</a> will help us to improve it. </span>
           </p>
         </div>
-      </div>
-      <div class="account-information" role="navigation">
-        <p class="signed-in-as"><span class="vh">You are signed in as</span> James King</p>
-        <nav id="user-nav">
-          <ul role="menubar">
-            <li><a href="/help">Help</a></li>
-            <li><a href="/user-profile" role="menuitem">Profile</a></li>
-            <li><a href="/signout" role="menuitem">Sign out</a></li>
-          </ul>
-        </nav>
       </div>
     </div>
   </div>

@@ -48,6 +48,12 @@ fieldset.highlight {
   width:100%;
 }
 
+@include media(tablet) {
+  .full-width {
+    width:100%;
+  }
+}
+
 fieldset {
   .panel {
     padding-top: 0;
@@ -93,13 +99,14 @@ div.show-password {
   div.show-password {
     display: inline-block;
     width: 50%;
+    &.full-width {
+      width: 100%;
+    }
     .form-control {
       width: 100%;
     }
     .show-password-control {
-      right: auto;
-      left:100%;
-      margin-left: 5px;
+      right:0;
       label {
         font-size: 19px;
         line-height: 1.31579;
@@ -131,3 +138,4 @@ div.show-password {
     }
   }
 }
+
