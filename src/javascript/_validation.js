@@ -1,8 +1,9 @@
 var forms = $('#content form');
-var inputs = forms.find('.form-group input');
+//var inputs = forms.find('.form-group input');
 
 forms.attr('novalidate', 'novalidate');
 
+/*
 forms.on('submit', function () {
   inputs.each(function () {
     var result = this.checkValidity();
@@ -75,3 +76,5 @@ var slugify = function (text) {
     .replace(/^-+/, '')
     .replace(/-+$/, '');
 }
+
+*/
