@@ -27,15 +27,25 @@
           <div class="show-password">
           <input class="form-control" id="new-password" name="new-password" type="password" required="required"></div>
         </div>
-        <div class="form-group">
-          <label class="form-label-bold" for="confirm-password">Confirm your new password</label>
-          <input class="form-control" id="confirm-password" name="confirm-password" type="password" required="required">
-        </div>
+
         <div class="form-submit">
           <button type="submit" class="button">Continue</button>
         </div>
       </fieldset>
     </form>
+
+
+    <h2 class="heading-medium">Output </h2>
+    <ul>
+      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
+      <li><span class="form-hint">score (0-4): </span>  <span id="score"></span></li>
+      <li><span class="form-hint">warning: </span>  <span id="warning"></span></li>
+      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
+      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
+      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
+
+    </ul>
+
   </div>
 </div>
 
@@ -62,7 +72,7 @@
   $(function () {
 
     var pwdField = $('#new-password'),
-      pwdStr = $('<p />').html('Password strength: ').attr('class', 'password-strength'),
+      pwdStr = $('<p />').attr('class', 'password-strength'),
       pwdSpn = $('<span />').attr({ 'id': 'pwd-score', 'aria-live': 'polite' }).appendTo(pwdStr);
 
 
@@ -76,6 +86,10 @@
           helperText = '';
 
         console.log(pwdTest);
+
+        $('#password').text(pwdTest.password);
+        $('#score').text(pwdTest.score);
+        $('#warning').text(pwdTest.feedback.warning);
 
         if (pwdTest.score === 0) {
           helperText = 'Very weak';
@@ -93,10 +107,20 @@
           helperText = 'Very strong';
         }
 
-        $('#pwd-score').text(helperText).parent().attr('class', 'score score-' + pwdTest.score);
+        //$('#pwd-score').text(helperText).parent().attr('class', 'score score-' + pwdTest.score);
+
+        if (pwd.length < 12) {
+          $('#pwd-score').html('<span class="icon icon-error"></span> Your password needs to be at least 12 characters');
+        } else {
+          if (pwdTest.score < 3) {
+            $('#pwd-score').html('<span class="icon icon-warning"></span> ' + pwdTest.feedback.warning);
+          } else {
+            $('#pwd-score').html('<span class="icon icon-success"></span> Good password');
+          }
+        }
 
       } else {
-        $('#pwd-score').empty().parent().attr('class', 'password-strength');
+        //$('#pwd-score').empty().parent().attr('class', 'password-strength');
       }
 
     }, 500);
@@ -110,6 +134,34 @@
 {% block styles %}
 
 <style>
+
+  .icon {
+    background: url("/static/wireframes/images/icons.png");
+  }
+
+  .icon-error {
+    background-position: bottom;
+  }
+
+  .icon-warning {
+    background-position: center;
+  }
+
+  #pwd-score {
+    position: relative;
+    padding-left: 30px;
+    padding-top: 10px;
+    display: block;
+  }
+
+  #pwd-score span {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
 
   .tooltip {
     background: #eee;
