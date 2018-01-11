@@ -156,3 +156,21 @@ div.show-password {
   @extend .form-group
 }
 
+.search-form {
+  position: relative;
+  padding-left: 35px;
+  button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ccc;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid $black;
+  }
+}
