@@ -9,6 +9,35 @@ table {
   }
 }
 
+th.sorted {
+  position: relative;
+  padding-left: 15px;
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13px;
+    border: 7px solid transparent;
+    border-top-color: $black;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    @include media(tablet) {
+      top: 16px;
+    }
+  }
+  &.dir-a {
+    &:before {
+      border-top-color: transparent;
+      border-bottom-color: $black;
+      top: 7px;
+      @include media(tablet) {
+        top: 10px;
+      }
+    }
+  }
+}
+
 .empty-state {
   background: $grey-4;
   padding: 15px;
