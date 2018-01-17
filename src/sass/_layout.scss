@@ -150,4 +150,7 @@ img.responsive {
   @include media(tablet) {
     margin: 0 25px 25px;
   }
+  & > h3 {
+    margin-top: 0;
+  }
 }
