@@ -22,9 +22,8 @@ toggleTips.each(function () {
       window.setTimeout(function () {
         liveRegion.html(function () {
           return $('<span />')
-            .attr('class', 'bubble')
             .attr('class', function () {
-              return $that.html().length > 50 ? 'long' : 'short'
+              return $that.html().length > 50 ? 'bubble long' : 'bubble'
             })
             .text(message)
         })
