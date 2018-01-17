@@ -142,3 +142,12 @@ section {
 img.responsive {
   max-width: 100%;
 }
+
+.highlight {
+  margin: 25px 0;
+  padding: 25px;
+  border: 1px solid $border-colour;
+  @include media(tablet) {
+    margin: 0 25px 25px;
+  }
+}
