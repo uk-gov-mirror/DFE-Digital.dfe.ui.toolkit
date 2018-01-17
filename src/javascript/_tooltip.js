@@ -23,6 +23,9 @@ toggleTips.each(function () {
         liveRegion.html(function () {
           return $('<span />')
             .attr('class', 'bubble')
+            .attr('class', function () {
+              return $that.html().length > 50 ? 'long' : 'short'
+            })
             .text(message)
         })
       }, 100);
