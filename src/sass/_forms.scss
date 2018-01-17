@@ -57,10 +57,10 @@ fieldset.highlight {
   }
 }
 
-fieldset {
+form {
   .panel {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 7px;
+    padding-bottom: 5px;
     margin-bottom: 15px;
     @include media(tablet) {
       margin-bottom: 30px;
