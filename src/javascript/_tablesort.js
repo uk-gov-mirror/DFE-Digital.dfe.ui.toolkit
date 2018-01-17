@@ -50,8 +50,8 @@ function sortTable(n) {
   return direction;
 }
 
-
 $(function () {
+
   $('table.sortable thead th').on('click', function () {
 
     var headingCells = $('table.sortable thead tr th');
@@ -65,4 +65,5 @@ $(function () {
     $(this).addClass('sorted dir-' + direction);
 
   });
+
 });
