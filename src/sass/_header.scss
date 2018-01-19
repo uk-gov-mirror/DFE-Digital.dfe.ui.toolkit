@@ -1,5 +1,5 @@
 #global-header {
-  border-bottom: 10px solid $department-for-education-websafe;
+
 }
 
 #global-header #logo {
@@ -13,10 +13,31 @@
   }
 }
 
+#global-header .header-wrapper .header-global .header-logo {
+  width: auto;
+}
+
+.header-title {
+  float: left;
+  color: #fff;
+  margin: 5px 15px 0;
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.2;
+  @include media("379px") {
+    margin: 14px 0 0 0;
+  }
+  @include media(tablet) {
+    font-size: 24px;
+    line-height: 1.25;
+    margin-top: 8px;
+  }
+}
+
 .header-user {
   border-bottom:1px solid $border-colour;
-  background: $grey-4;
   .header-inner {
+    border-top: 10px solid $govuk-blue;
     margin: 0 15px;
     font-size: 14px;
     line-height: 1.2em;
@@ -77,3 +98,4 @@ button.link-back {
   border-right: none;
   padding-right: 0;
 }
+
