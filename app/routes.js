@@ -27,6 +27,9 @@ module.exports = {
     app.get('/concepts/password/strength', function (req, res) {
       res.render('concepts/password/strength')
     })
+    app.get('/concepts/password/content', function (req, res) {
+      res.render('concepts/password/content')
+    })
     app.get('/concepts/portal/services', function (req, res) {
       res.render('concepts/portal/services')
     })
