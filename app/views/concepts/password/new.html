@@ -11,12 +11,13 @@
 </div>
 
 <div class="row">
-  <div class="col-9">
+  <div class="col-12">
     <form method="post" action="/change-password-new">
       <fieldset>
         <legend class="vh">Enter your current password</legend>
         <div class="form-group">
-          <label for="new-password" class="form-label">Create a secure password - <a href="#modal-password" class="modal-link">what is this?</a> </label>
+          <label for="new-password" class="form-label">Create a secure password <span class="toggletip"><a href="#modal-password" class="modal-link">?</a></span> </label>
+          <p class="form-hint">Your password needs to be a minimum of 12 characters</p>
           <div class="show-password">
             <input class="form-control" id="new-password" name="new-password" type="password" required="required">
           </div>
@@ -32,6 +33,7 @@
 <div class="service-list">
   <div class="modal" id="modal-password" style="display: none;">
     <a href="#" class="close">Close</a>
+
     <h3 class="heading-large">Secure passwords</h3>
     <h4 class="heading-medium">A secure password is:</h4>
     <ul class="list-bullet">
@@ -114,12 +116,12 @@
           if (pwdTest.score < 3) {
             $('#pwd-score').html('<span class="icon icon-warning"></span> ' + pwdTest.feedback.warning);
           } else {
-            $('#pwd-score').html('<span class="icon icon-success"></span> Good password');
+            $('#pwd-score').html('<span class="icon icon-success"></span> That's a secure password');
           }
         }
 
       } else {
-        //$('#pwd-score').empty().parent().attr('class', 'password-strength');
+        $('#pwd-score').empty();
       }
 
     }, 500);
@@ -134,26 +136,48 @@
 
 <style>
 
+  .password-strength {
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 0;
+    position: relative;
+  }
+
   .icon {
+    width: 8px;
+    height: 1.2em;
+    background: #006435;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  #pwd-score {
+    padding-left: 15px;
+  }
+
+  .icona {
     background: url("/static/wireframes/images/icons.png");
   }
 
   .icon-error {
     background-position: bottom;
+    background-color: #DF3034;
   }
 
   .icon-warning {
     background-position: center;
+    background-color: #28A197;
   }
 
-  #pwd-score {
+  #pwd-scores {
     position: relative;
-    padding-left: 30px;
+    padding-left: 15px;
     padding-top: 10px;
     display: block;
   }
 
-  #pwd-score span {
+  #pwd-scores span {
     width: 24px;
     height: 24px;
     display: block;

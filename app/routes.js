@@ -30,6 +30,9 @@ module.exports = {
     app.get('/concepts/password/content', function (req, res) {
       res.render('concepts/password/content')
     })
+    app.get('/concepts/password/new', function (req, res) {
+      res.render('concepts/password/new')
+    })
     app.get('/concepts/portal/services', function (req, res) {
       res.render('concepts/portal/services')
     })
