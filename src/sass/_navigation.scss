@@ -1,0 +1,42 @@
+.main-nav {
+  border-bottom: 1px solid $border-colour;
+  ul {
+    @extend %contain-floats;
+    list-style: none;
+    position: relative;
+    bottom: -1px;
+  }
+  li {
+    border-bottom: 1px solid $border-colour;
+    position: relative;
+    @include media(tablet) {
+      float: left;
+    }
+  }
+  a {
+    display: block;
+    padding: 7px 15px 5px;
+    text-decoration: none;
+    color: $black;
+    &.current {
+      font-weight: bold;
+      &:after {
+        display: block;
+        background: $govuk-blue;
+        content: "";
+        width:5px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        @include media(tablet) {
+          top: auto;
+          left: 15px;
+          right: 15px;
+          width: auto;
+          height: 5px;
+        }
+      }
+    }
+  }
+}

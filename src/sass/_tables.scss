@@ -9,6 +9,10 @@ table {
   }
 }
 
+table.condensed {
+  @extend .table-font-xsmall;
+}
+
 th.sorted {
   position: relative;
   padding-left: 15px;
