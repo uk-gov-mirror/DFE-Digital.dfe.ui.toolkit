@@ -10,10 +10,13 @@ table {
 }
 
 table.condensed {
-  @extend .table-font-xsmall;
+  th, td {
+    font-size: 14px;
+    line-height: 1.1em;
+  }
 }
 
-th.sorted {
+th.sorted, th a.sorted {
   position: relative;
   padding-left: 15px;
   &:before {
@@ -23,7 +26,7 @@ th.sorted {
     left: 0;
     top: 13px;
     border: 7px solid transparent;
-    border-top-color: $black;
+    border-top-color: $link-colour;
     border-left-width: 5px;
     border-right-width: 5px;
     @include media(tablet) {
@@ -33,7 +36,7 @@ th.sorted {
   &.dir-a {
     &:before {
       border-top-color: transparent;
-      border-bottom-color: $black;
+      border-bottom-color: $link-colour;
       top: 7px;
       @include media(tablet) {
         top: 10px;
@@ -42,10 +45,49 @@ th.sorted {
   }
 }
 
+th a {
+  color:$link-colour;
+  text-decoration: none;
+  &:visited {
+    color: $link-colour;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+th a.sorted {
+  font-weight: bold;
+  &:before {
+    top: 5px;
+  }
+  &.dir-a {
+    &:before {
+      top: 0;
+    }
+  }
+}
+
+table.data {
+  th, td {
+    font-size: 14px;
+    line-height: 1.1em;
+    padding: 1em 1em .8em 0;
+  }
+  tr.sortable {
+    th {
+      font-weight: normal;
+    }
+  }
+}
+
+
+
 .empty-state {
   background: $grey-4;
   padding: 15px;
   text-align: center;
+  display: inline-block;
   p {
     margin: 0;
   }
@@ -60,5 +102,35 @@ th.sorted {
 @for $i from 1 through 20 {
   .cwp-#{$i * 5} {
     width: #{$i * 5%};
+  }
+}
+
+
+.pagination {
+  @extend %contain-floats;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  li {
+    float: left;
+    text-align: center;
+    margin-right: 10px;
+    a, span.current {
+      display: block;
+      min-width: 1em;
+    }
+    span.current {
+      font-weight: bold;
+    }
+  }
+}
+@include media(tablet) {
+  .pagination {
+    float: right;
+    margin-top: .26316em;
+    margin-bottom: 1.05263em;
+    li {
+      margin-left: 10px;
+      margin-right: 0;
+    }
   }
 }

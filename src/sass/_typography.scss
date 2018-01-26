@@ -62,3 +62,10 @@ blockquote {
   word-break: break-all;
   word-break: break-word;
 }
+
+.meta {
+  font-size: 14px;
+  @include media(tablet) {
+    font-size: 16px;
+  }
+}

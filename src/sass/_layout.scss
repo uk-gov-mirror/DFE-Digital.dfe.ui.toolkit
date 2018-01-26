@@ -2,6 +2,9 @@
 
 .row {
   @extend %grid-row;
+  &.row-spacer {
+    margin-bottom: 20px;
+  }
 }
 
 .row > div > span {
