@@ -37,6 +37,22 @@ dl.rows {
   }
 }
 
+dl.inline {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: $grey-1;
+  &.condensed {
+    font-size: 90%;
+  }
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    font-weight: normal;
+    margin-bottom: 7px;
+  }
+}
+
 .spacer-heading {
   margin-top: 30px;
   margin-bottom: 0;

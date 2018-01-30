@@ -52,3 +52,37 @@
     }
   }
 }
+
+
+ul.tabs {
+  list-style: none;
+  border: 1px solid $border-colour;
+  margin:20px 0;
+  @extend %contain-floats;
+  @include media(tablet) {
+    border: none;
+    border-bottom: 1px solid $border-colour;
+  }
+  li {
+    border: 1px solid transparent;
+    border-bottom: 1px solid $border-colour;
+    position: relative;
+    margin-bottom: -1px;
+    @include media(tablet) {
+      float: left;
+    }
+  }
+  li > a, li.active {
+    padding: 15px 15px 10px;
+    display: block;
+    @include media(tablet) {
+      padding: 15px 30px 10px;
+    }
+  }
+  li.active {
+    @include media(tablet) {
+      border-color: $border-colour;
+      border-bottom-color: #fff;
+    }
+  }
+}
