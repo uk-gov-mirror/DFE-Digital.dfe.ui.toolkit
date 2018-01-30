@@ -2,6 +2,13 @@ b, strong {
   font-weight: 700;
 }
 
+h1 {
+  small {
+    display: block;
+    font-size: 50%;
+  }
+}
+
 ul.list-bullet {
   margin-bottom: 30px;
 }
@@ -57,10 +64,6 @@ dl.inline {
   margin-top: 30px;
   margin-bottom: 0;
   padding-bottom: 5px;
-  border-bottom: 2px solid $border-colour;
-  &.no-border {
-    border:none;
-  }
 }
 
 blockquote {
@@ -85,3 +88,4 @@ blockquote {
     font-size: 16px;
   }
 }
+

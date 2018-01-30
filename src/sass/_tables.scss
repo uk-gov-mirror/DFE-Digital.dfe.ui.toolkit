@@ -9,6 +9,10 @@ table {
   }
 }
 
+table.no-borders {
+  border: none;
+}
+
 table.condensed {
   th, td {
     font-size: 14px;
@@ -102,35 +106,5 @@ table.data {
 @for $i from 1 through 20 {
   .cwp-#{$i * 5} {
     width: #{$i * 5%};
-  }
-}
-
-
-.pagination {
-  @extend %contain-floats;
-  margin-top: -10px;
-  margin-bottom: 20px;
-  li {
-    float: left;
-    text-align: center;
-    margin-right: 10px;
-    a, span.current {
-      display: block;
-      min-width: 1em;
-    }
-    span.current {
-      font-weight: bold;
-    }
-  }
-}
-@include media(tablet) {
-  .pagination {
-    float: right;
-    margin-top: .26316em;
-    margin-bottom: 1.05263em;
-    li {
-      margin-left: 10px;
-      margin-right: 0;
-    }
   }
 }
