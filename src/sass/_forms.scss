@@ -141,6 +141,9 @@ div.show-password {
 
 .button-secondary {
   @include button($grey-3);
+  &[disabled="disabled"] {
+    background-color: $grey-3;
+  }
 }
 
 .submit-buttons {
