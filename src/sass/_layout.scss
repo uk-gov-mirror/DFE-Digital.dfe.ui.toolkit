@@ -161,3 +161,10 @@ img.responsive {
     margin-bottom: 0;
   }
 }
+
+img.spacing {
+  margin: 20px 0;
+  @include media(tablet) {
+    margin: 20px;
+  }
+}
