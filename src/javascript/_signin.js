@@ -59,7 +59,7 @@ NSA.signin = {
   showValidationMessage: function (messages) {
 
     var $div = $('<div />').attr('class', 'error-summary').attr('role', 'alert').attr('tabindex', '-1');
-    var $h2 = $('<h2 />').attr('class', 'heading-medium error-summary-heading').attr('id', 'error-summary').text('There are errors to fix');
+    var $h2 = $('<h2 />').attr('class', 'heading-medium error-summary-heading').attr('id', 'error-summary').text('Information missing or incorrect');
     var $ul = $('<ul />').attr('class', 'error-summary-list');
 
     $.each(messages, function( index, value ) {
