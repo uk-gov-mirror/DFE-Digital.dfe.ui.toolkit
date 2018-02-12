@@ -2,8 +2,8 @@
 
 var NSA = NSA || {};
 
-NSA.signin = {
-  form: $('#form-signin'),
+NSA.signin = {s
+  form: $('.form-signin'),
   init: function () {
     this.setupEvents();
   },
@@ -28,7 +28,6 @@ NSA.signin = {
       context: e.data,
       dataType: 'json',
       success: function (data) {
-        console.log(data);
         if (data.isFailedLogin) {
           this.resetValidation($form);
           this.showValidationMessage(data.validationMessages);
@@ -38,6 +37,11 @@ NSA.signin = {
           this.buildFormAndSubmit(data);
         }
       },
+      statusCode: {
+        500: function() {
+          $submitButtons.removeAttr('disabled');
+        }
+      }
     });
     e.preventDefault();
   },
