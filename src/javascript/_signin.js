@@ -2,7 +2,7 @@
 
 var NSA = NSA || {};
 
-NSA.signin = {s
+NSA.signin = {
   form: $('.form-signin'),
   init: function () {
     this.setupEvents();
@@ -38,7 +38,7 @@ NSA.signin = {s
         }
       },
       statusCode: {
-        500: function() {
+        500: function () {
           $submitButtons.removeAttr('disabled');
         }
       }
@@ -127,6 +127,6 @@ NSA.signin = {s
   }
 };
 
-if ($('#form-signin').length > 0) {
+if ($('.form-signin').length > 0) {
   NSA.signin.init();
 }
