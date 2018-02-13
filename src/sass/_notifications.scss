@@ -16,6 +16,10 @@ $warning: $orange;
   }
   p {
     margin-bottom: 0;
+    padding-right: 30px;
+    a {
+      color:#fff;
+    }
   }
   &:focus {
     outline: 3px solid $focus-colour;
