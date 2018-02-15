@@ -13,9 +13,14 @@ NSA.signin = {
   handleSubmit: function (e) {
 
     var $form = $(this);
-    var $inputs = $form.find('input').not(':checkbox'), postData = {}, $submitButtons = $(this).find('button:submit');
+    var $inputs = $form.find('input').not(':checkbox'), postData = {}, $submitButtons = $(this).find('button:submit'), $submitButton = $submitButtons.eq(0);
 
     $submitButtons.attr('disabled', 'disabled');
+
+    $submitButton.css('min-width', $submitButton.outerWidth() + 'px')
+
+    $submitButton.find('.text').addClass('vh');
+    $submitButton.find('.loader').removeClass('vh');
 
     $inputs.each(function() {
       postData[this.name] = $(this).val();
@@ -33,6 +38,8 @@ NSA.signin = {
           this.showValidationMessage(data.validationMessages);
           this.showInlineValidation(data.validationMessages);
           $submitButtons.removeAttr('disabled');
+          $submitButton.find('.text').removeClass('vh');
+          $submitButton.find('.loader').addClass('vh');
         } else {
           this.buildFormAndSubmit(data);
         }
@@ -40,6 +47,8 @@ NSA.signin = {
       statusCode: {
         500: function () {
           $submitButtons.removeAttr('disabled');
+          $submitButton.find('.text').removeClass('vh');
+          $submitButton.find('.loader').addClass('vh');
         }
       }
     });
