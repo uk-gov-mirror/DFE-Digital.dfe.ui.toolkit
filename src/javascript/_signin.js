@@ -84,6 +84,10 @@ NSA.signin = {
     $div.append($h2).append($ul);
     $('main').prepend($div);
 
+    $('html, body').animate({
+      scrollTop: $div.offset().top - 15
+    }, 300);
+
   },
   showInlineValidation: function(messages) {
 
