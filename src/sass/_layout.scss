@@ -65,7 +65,9 @@ aside {
 }
 
 .pull-right {
-  float: right;
+  @include media(tablet) {
+    float: right;
+  }
 }
 
 .cards {
