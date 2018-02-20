@@ -1,3 +1,4 @@
+"use strict";
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
@@ -29,7 +30,8 @@ gulp.task('copy-minify', () => {
 
 gulp.task('copy-js', () => {
   gulp.src([
-    'node_modules/jquery/dist/jquery.js',
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/select2/dist/js/select2.min.js',
   ])
     .pipe(gulp.dest('./dist/javascript/vendors/'));
 });
