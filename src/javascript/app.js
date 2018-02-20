@@ -22,8 +22,8 @@ NSA = {
   },
 };
 
-if ($('.select2').length > 0) {
-  $('.select2').select2();
+if ($('select.select2').length > 0) {
+  $('select.select2').select2();
 }
 
 if ($('.show-password').length > 0) {
