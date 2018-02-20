@@ -248,3 +248,12 @@ div.show-password {
     display: block;
   }
 }
+
+.select2-container--default .select2-selection--single {
+  border: 2px solid $black;
+}
+
+.select2-container--focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 0;
+}
