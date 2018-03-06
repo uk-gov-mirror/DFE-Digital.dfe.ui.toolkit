@@ -15,6 +15,10 @@ NSA = {
         $checkLbl.html(function () {
           return $that.prop('checked') ? 'Hide' : 'Show';
         });
+        $that.parent().removeClass('type-password');
+        if ($that.prop('checked')) {
+          $that.parent().addClass('type-password');
+        }
       });
       var $cbWrap = $('<div />').prop('class', 'show-password-control').append($checkBox, $checkLbl);
       $pwdFld.after($cbWrap);

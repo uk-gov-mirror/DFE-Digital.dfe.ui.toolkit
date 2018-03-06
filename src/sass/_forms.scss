@@ -49,6 +49,9 @@ fieldset.highlight {
 
 .form-group-error {
   margin-right: 0;
+  @include media(tablet) {
+    margin-right: 15px;
+  }
 }
 
 .button-full {
@@ -113,6 +116,11 @@ div.show-password {
     }
     input {
       display: none;
+    }
+    &.type-password {
+      label {
+        opacity: .5;
+      }
     }
   }
 }
