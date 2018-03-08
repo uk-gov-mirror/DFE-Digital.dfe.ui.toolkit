@@ -2,7 +2,7 @@ $success: $turquoise;
 $warning: $orange;
 
 .notification {
-  background: #fff;
+  background: $grey-3;
   margin: 15px 0;
   padding: 15px;
   border:3px solid $border-colour;
@@ -18,11 +18,18 @@ $warning: $orange;
     margin-bottom: 0;
     padding-right: 30px;
     a {
-      color:#fff;
       &:hover {
-        color: #fff;
         text-decoration: none;
       }
+    }
+  }
+  a.action {
+    display: block;
+    @include media(tablet) {
+      display: inline-block;
+      text-align: right;
+      float: right;
+      margin-right: -20px;
     }
   }
   &:focus {
@@ -64,6 +71,9 @@ $warning: $orange;
   color: #fff;
   .icon:before, .icon:after {
     background: #fff;
+  }
+  p a {
+    color: #fff;
   }
 }
 
