@@ -26,6 +26,8 @@ NSA.signin = {
       postData[this.name] = $(this).val();
     });
 
+    $('#password').prop('type', 'password').next().removeClass('type-password');
+
     $.ajax({
       type: 'POST',
       data: postData,
