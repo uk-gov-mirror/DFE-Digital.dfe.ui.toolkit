@@ -49,9 +49,6 @@ fieldset.highlight {
 
 .form-group-error {
   margin-right: 0;
-  @include media(tablet) {
-    margin-right: 15px;
-  }
 }
 
 .button-full {
@@ -61,6 +58,9 @@ fieldset.highlight {
 @include media(tablet) {
   .full-width {
     width:100%;
+    &.form-group-error {
+      margin-right: 15px;
+    }
   }
 }
 

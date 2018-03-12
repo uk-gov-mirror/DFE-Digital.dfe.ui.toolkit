@@ -23,6 +23,9 @@
     position: relative;
     @include media(tablet) {
       float: left;
+      &.pull-right {
+        float: right;
+      }
     }
   }
   a {
