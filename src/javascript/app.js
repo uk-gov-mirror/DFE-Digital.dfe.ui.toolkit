@@ -24,7 +24,15 @@ NSA = {
       $pwdFld.after($cbWrap);
     });
   },
+  backLink: function () {
+    var backLink = $('<a>')
+      .attr({ 'href': '#', 'class': 'link-back' })
+      .text('Back')
+      .on('click', function (e) { window.history.back(); e.preventDefault(); });
+    $('.js-back-link').html(backLink);
+  },
 };
+
 
 if ($('select.select2').length > 0) {
   $('select.select2').select2();
@@ -32,6 +40,10 @@ if ($('select.select2').length > 0) {
 
 if ($('.show-password').length > 0) {
   NSA.showPassword();
+}
+
+if ($('.js-back-link')) {
+  NSA.backLink();
 }
 
 $('.under-construction').on('click', function (e) {

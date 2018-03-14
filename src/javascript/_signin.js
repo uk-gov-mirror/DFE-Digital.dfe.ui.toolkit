@@ -15,11 +15,10 @@ NSA.signin = {
     var $form = $(this);
     var $inputs = $form.find('input').not(':checkbox'), postData = {}, $submitButtons = $(this).find('button:submit'), $submitButton = $submitButtons.eq(0);
 
-    $submitButtons.attr('disabled', 'disabled');
+    //$submitButtons.attr('disabled', 'disabled');
 
     $submitButton.css('min-width', $submitButton.outerWidth() + 'px')
 
-    $submitButton.find('.text').addClass('vh');
     $submitButton.find('.loader').removeClass('vh');
 
     $inputs.each(function() {
@@ -39,8 +38,7 @@ NSA.signin = {
           this.resetValidation($form);
           this.showValidationMessage(data.validationMessages);
           this.showInlineValidation(data.validationMessages);
-          $submitButtons.removeAttr('disabled');
-          $submitButton.find('.text').removeClass('vh');
+          //$submitButtons.removeAttr('disabled');
           $submitButton.find('.loader').addClass('vh');
         } else {
           this.buildFormAndSubmit(data);
@@ -48,13 +46,11 @@ NSA.signin = {
       },
       statusCode: {
         403: function () {
-          $submitButtons.removeAttr('disabled');
-          $submitButton.find('.text').removeClass('vh');
+          //$submitButtons.removeAttr('disabled');
           $submitButton.find('.loader').addClass('vh');
         },
         500: function () {
-          $submitButtons.removeAttr('disabled');
-          $submitButton.find('.text').removeClass('vh');
+          //$submitButtons.removeAttr('disabled');
           $submitButton.find('.loader').addClass('vh');
         }
       }
