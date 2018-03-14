@@ -82,12 +82,16 @@ nav.subnav {
   $animationDuration: 1s;
   $delayRange: 0.25s;
   $spinner-margin: 30px;
-  $size: 25px;
+  $size: 26px;
 
   text-align: center;
-  position: relative;
-  top: -1px;
-  height: 1.25em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 2.2em;
+  background: $green;
 
   .ball {
     width: $size / 2;
