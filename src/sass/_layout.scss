@@ -171,6 +171,12 @@ img.spacing {
   }
 }
 
+.col-6 img.spacing {
+  @include media(tablet) {
+    margin: 30px 50px;
+  }
+}
+
 .govuk-box-highlight {
   padding: 1.5em;
   h1.heading-xlarge {
