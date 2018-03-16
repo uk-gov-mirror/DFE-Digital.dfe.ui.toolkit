@@ -81,7 +81,7 @@ NSA.signin = {
     var $h2 = $('<h2 />').attr('class', 'heading-medium error-summary-heading').attr('id', 'error-summary');
     var $ul = $('<ul />').attr('class', 'error-summary-list');
 
-    if (messages.length > 0) {
+    if (messages) {
       $h2.text('Information missing or incorrect');
       $.each(messages, function (index, value) {
         var $a = $('<a />').attr('href', '#' + index).text(value);
@@ -90,7 +90,7 @@ NSA.signin = {
       });
     } else {
       $h2.text('There has been an error');
-      var $li = $('<li />').text('Please try again later. If the problem continues, follow the link to <a href="https://help.signin.education.gov.uk/contact">submit a support request</a>');
+      var $li = $('<li />').html('Please try again later. If the problem continues, follow the link to <a href="https://help.signin.education.gov.uk/contact">submit a support request</a>');
       $ul.append($li);
     }
 
