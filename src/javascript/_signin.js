@@ -44,17 +44,10 @@ NSA.signin = {
           this.buildFormAndSubmit(data);
         }
       },
-      statusCode: {
-        403: function () {
-          //$submitButtons.removeAttr('disabled');
-          $submitButton.find('.loader').addClass('vh');
-        },
-        500: function () {
-          //$submitButtons.removeAttr('disabled');
-          this.resetValidation($form);
-          this.showValidationMessage();
-          $submitButton.find('.loader').addClass('vh');
-        }
+      error: function() {
+        this.resetValidation($form);
+        this.showValidationMessage();
+        $submitButton.find('.loader').addClass('vh');
       }
     });
     e.preventDefault();
