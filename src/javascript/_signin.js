@@ -52,7 +52,7 @@ NSA.signin = {
         500: function () {
           //$submitButtons.removeAttr('disabled');
           this.resetValidation($form);
-          this.showValidationMessage(data.validationMessages);
+          this.showValidationMessage();
           $submitButton.find('.loader').addClass('vh');
         }
       }
