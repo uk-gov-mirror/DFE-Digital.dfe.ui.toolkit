@@ -81,6 +81,11 @@ $warning: $orange;
   border-color: $warning;
 }
 
+.notification-information {
+  border-color: $govuk-blue;
+  background: #fff;
+}
+
 .notification-error {
   border-color: $error-colour;
 }
