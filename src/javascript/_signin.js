@@ -15,7 +15,7 @@ NSA.signin = {
     var $form = $(this);
     var $inputs = $form.find('input').not(':checkbox'), postData = {}, $submitButtons = $(this).find('button:submit'), $submitButton = $submitButtons.eq(0);
 
-    //$submitButtons.attr('disabled', 'disabled');
+    $submitButtons.attr('disabled', 'disabled');
 
     $submitButton.css('min-width', $submitButton.outerWidth() + 'px')
 
@@ -38,7 +38,7 @@ NSA.signin = {
           this.resetValidation($form);
           this.showValidationMessage(data.validationMessages);
           this.showInlineValidation(data.validationMessages);
-          //$submitButtons.removeAttr('disabled');
+          $submitButtons.removeAttr('disabled');
           $submitButton.find('.loader').addClass('vh');
         } else {
           this.buildFormAndSubmit(data);
@@ -47,6 +47,7 @@ NSA.signin = {
       error: function() {
         this.resetValidation($form);
         this.showValidationMessage();
+        $submitButtons.removeAttr('disabled');
         $submitButton.find('.loader').addClass('vh');
       }
     });
@@ -129,7 +130,8 @@ NSA.signin = {
 
     var $form = $('<form />').attr({
       method: 'post',
-      action: data.destination
+      action: data.destination,
+      id: 'dfesigninform'
     });
 
     $.each(data.postbackData, function( index, value ) {
@@ -141,6 +143,7 @@ NSA.signin = {
       $form.append($field);
     });
 
+    $('#dfesigninform').remove();
     $('body').append($form);
     $form.submit();
   }
