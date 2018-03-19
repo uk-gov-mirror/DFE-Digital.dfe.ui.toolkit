@@ -119,7 +119,11 @@ div.show-password {
     }
     &.type-password {
       label {
-        opacity: .5;
+        background-image: url("../images/icon-hide-password.png");
+        @include device-pixel-ratio {
+          background-image: url("../images/icon-hide-password-2x.png");
+          background-size: 27px 27px;
+        }
       }
     }
   }
