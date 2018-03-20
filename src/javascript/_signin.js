@@ -41,6 +41,10 @@ NSA.signin = {
           $submitButtons.removeAttr('disabled');
           $submitButton.find('.loader').addClass('vh');
         } else {
+          gtag('event', 'Successful login', {
+            event_category: 'Login',
+            event_label: 'User logged in',
+          });
           this.buildFormAndSubmit(data);
         }
       },
