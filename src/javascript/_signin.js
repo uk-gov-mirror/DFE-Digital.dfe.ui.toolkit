@@ -78,14 +78,26 @@ NSA.signin = {
     if (messages) {
       $h2.text('Information missing or incorrect');
       $.each(messages, function (index, value) {
+        if (index === 'loginError') {
+          index = 'username';
+          gtag('event', 'Failed login', {
+            event_category: 'Login',
+            event_label: 'Users login credentials were wrong',
+          });
+        }
         var $a = $('<a />').attr('href', '#' + index).text(value);
         var $li = $('<li />').append($a);
         $ul.append($li);
       });
+
     } else {
       $h2.text('There has been an error');
       var $li = $('<li />').html('Please try again later. If the problem continues, follow the link to <a href="https://help.signin.education.gov.uk/contact">submit a support request</a>');
       $ul.append($li);
+      gtag('event', 'Error occurred', {
+        event_category: 'Login',
+        event_label: 'A server error occurred during login',
+      });
     }
 
     $div.append($h2).append($ul);
