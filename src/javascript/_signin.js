@@ -34,18 +34,22 @@ NSA.signin = {
       context: e.data,
       dataType: 'json',
       success: function (data) {
-        if (data.isFailedLogin) {
-          this.resetValidation($form);
-          this.showValidationMessage(data.validationMessages);
-          this.showInlineValidation(data.validationMessages);
-          $submitButtons.removeAttr('disabled');
-          $submitButton.find('.loader').addClass('vh');
+        if (data.redirect) {
+          window.location.href = data.uri;
         } else {
-          gtag('event', 'Successful login', {
-            event_category: 'Login',
-            event_label: 'User logged in',
-          });
-          this.buildFormAndSubmit(data);
+          if (data.isFailedLogin) {
+            this.resetValidation($form);
+            this.showValidationMessage(data.validationMessages);
+            this.showInlineValidation(data.validationMessages);
+            $submitButtons.removeAttr('disabled');
+            $submitButton.find('.loader').addClass('vh');
+          } else {
+            gtag('event', 'Successful login', {
+              event_category: 'Login',
+              event_label: 'User logged in',
+            });
+            this.buildFormAndSubmit(data);
+          }
         }
       },
       error: function() {
