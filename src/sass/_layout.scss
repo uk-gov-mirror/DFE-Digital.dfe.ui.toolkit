@@ -183,3 +183,9 @@ img.spacing {
     margin: 0.5em 0;
   }
 }
+
+.inline-wrap {
+  form, p {
+    display: inline-block;
+  }
+}
