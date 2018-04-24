@@ -1,0 +1,18 @@
+ol.search-results {
+  li {
+    padding: 15px 0;
+    margin: 0;
+    border-bottom: 1px solid $border-color;
+    h2 {
+      margin: 0;
+      .button-link {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+    }
+    dl {
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+}
