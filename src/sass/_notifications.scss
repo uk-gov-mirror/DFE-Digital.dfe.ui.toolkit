@@ -4,7 +4,10 @@ $warning: $orange;
 .notification {
   background: $grey-3;
   margin: 15px 0;
-  padding: 15px;
+  padding: 10px;
+  @include media(tablet) {
+    padding: 15px;
+  }
   border:3px solid $border-colour;
   position: relative;
   @include media(tablet) {
@@ -60,6 +63,23 @@ $warning: $orange;
     }
     &:hover {
       opacity:1;
+    }
+  }
+  &.with-icon {
+    padding-left: 50px;
+    img {
+      width: 30px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    @include media(tablet) {
+      padding-left: 70px;
+      img {
+        width: 40px;
+        top: 15px;
+        left: 15px;
+      }
     }
   }
 }
