@@ -103,6 +103,16 @@ $warning: $orange;
 .notification-information {
   border-color: $govuk-blue;
   background: #fff;
+  &.with-icon {
+    background-image: url('../images/icon-info.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 30px 30px;
+    @include media(tablet) {
+      background-position: 15px 15px;
+      background-size: 40px 40px;
+    }
+  }
 }
 
 .notification-error {
