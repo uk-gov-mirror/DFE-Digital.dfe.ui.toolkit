@@ -97,9 +97,10 @@ ul.tabs {
     float: left;
     text-align: center;
     margin-right: 10px;
-    a, span.current {
+    a, span.current, button {
       display: block;
       min-width: 1em;
+      text-align: center;
     }
     span.current {
       font-weight: bold;

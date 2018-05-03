@@ -288,6 +288,8 @@ div.show-password {
   margin: 0;
   display: inline-block;
   text-align: left;
+  cursor: pointer;
+  font-size: inherit;
   &:hover {
     color: $link-hover-colour;
   }
