@@ -84,9 +84,8 @@ if (searchFields.length > 0) {
   searchFields.each(function () {
     var form = $(this).parent();
     var button = form.find('button');
-    form.on('submit', function (e) {
+    form.on('submit', function () {
       button.after(loader).hide();
-      e.preventDefault();
     });
   });
 }
