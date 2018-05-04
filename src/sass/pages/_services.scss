@@ -1,85 +1,104 @@
-.select-service-list {
-  .service-description {
-    clear: both;
-    color: $grey-1;
-    font-size: .9em;
-    padding: 0 30px 0 12px;
-    margin:0;
-    position: relative;
-    top:-10px;
+.organisation-services {
+  margin-bottom: 30px;
+}
+.organisation {
+  header {
+    h2 {
+      font-weight: bold;
+    }
   }
-  .panel-permissions {
-    position: relative;
-    top:-15px;
+  .user {
+    @extend %contain-floats;
+    font-size: 15px;
+    line-height: 18px;
+    .role {
+      float: right;
+      padding-left: 25px;
+      background: url("../images/icon-user.svg") top left no-repeat;
+      &.approver {
+        background-image: url("../images/icon-user-approver.svg");
+      }
+    }
+    a.info-link {
+      float: left;
+    }
   }
-  & > .form-group {
-    margin-bottom: 15px;
-    & > .multiple-choice {
-      margin-bottom: 5px;
+  .meta {
+    background: $grey-4;
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
+    border-top: 3px solid darken($grey-4, 5%);
+    border-bottom: 1px solid darken($grey-4, 5%);
+    visibility: visible;
+    &:before {
+      content: '';
+      position: absolute;
+      border: 10px solid transparent;
+      border-bottom-color: $grey-4;
+      top: -19px;
+      z-index: 10;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      border: 10px solid transparent;
+      border-bottom-color: darken($grey-4, 5%);
+      top: -23px;
+      z-index: 3;
+    }
+    dl {
+      margin-top: 0;
     }
   }
 }
 
+
 .service-list {
-
   > li {
-
     margin-bottom: 10px;
-    border-left: 5px solid $grey-2;
-    background: $grey-4;
-
-    &.status-live {
-      border-left-color: $turquoise;
-    }
-
-    .service-name {
-      padding: 10px;
-      @include media(tablet) {
-        padding: 10px 15px 5px;
-      }
+    .links {
+      border: 1px solid $grey-3;
       @extend %contain-floats;
-      h3 {
-        font-weight: bold;
-        @include media(tablet) {
-          float: left;
-        }
-      }
+      background: $grey-4;
+      margin-left: 5px;
+      position: relative;
     }
-
-    .heading-secondary {
-      color:$grey-1;
-      font-size: 90%;
-      font-weight: normal;
-      padding-left: 5px;
-    }
-
-    .service-link {
+    a.service-link {
       display: block;
-      text-decoration: underline;
-      &:visited {
-        color: $link-colour;
+      border-left: 5px solid $govuk-blue;
+      padding: 15px;
+      font-weight: bold;
+      line-height: 1;
+      position: relative;
+      margin: -1px;
+      background: none;
+      &:hover {
+        color: $link-hover-colour;
+        border-left-color: $link-hover-colour;
       }
     }
-
-    .role-name {
-      color:$grey-1;
-      font-size: 90%;
-      @include media(tablet) {
-        float: right;
-        padding-left: 15px;
-      }
+    a.information {
+      float: right;
+      padding: 5px 15px;
+      border-left: 1px solid $grey-3;
+      font-size: 15px;
+      margin-top: 10px;
+      background: $grey-4;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
-    .more-information {
-      padding: 10px;
-      @include media(tablet) {
-        padding: 7px 15px 10px;
-      }
-      font-size: 80%;
-      border-top: 1px solid #fff;
-      a {
-        &:visited {
-          color: $link-colour;
-        }
+    .service-description {
+      font-size: 15px;
+      padding: 15px;
+      background: $grey-4;
+      border-top: 3px solid darken($grey-4, 5%);
+      margin-left: 10px;
+      visibility: visible;
+      p {
+        margin: 0;
+        padding: 0;
       }
     }
   }
@@ -153,3 +172,4 @@ html.modal-open,
 html.modal-open body {
   overflow: hidden;
 }
+

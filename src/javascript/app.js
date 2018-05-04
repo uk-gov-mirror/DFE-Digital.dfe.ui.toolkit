@@ -57,6 +57,21 @@ if ($('.notification span.icon').length > 0) {
   });
 }
 
+if ($('article.organisation-services').length > 0) {
+
+  $('.information').on('click', function (e) {
+    var info = $(this).parent().parent().find('.service-description');
+    e.preventDefault();
+    info.toggle();
+  });
+
+  $('.info-link').on('click', function (e) {
+    var meta = $(this).parent().next();
+    e.preventDefault();
+    meta.toggle();
+  });
+}
+
 var showHideContent = new GOVUK.ShowHideContent()
 showHideContent.init()
 
