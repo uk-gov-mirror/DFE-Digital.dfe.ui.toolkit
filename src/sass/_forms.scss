@@ -234,7 +234,6 @@ div.show-password {
       display: block;
       height: 40px;
       border-color: $black;
-      border-right: none;
       line-height: 38px;
     }
   }
@@ -267,6 +266,9 @@ div.show-password {
   }
   label {
     display: block;
+  }
+  .spinner-inline {
+    opacity: .7;
   }
 }
 

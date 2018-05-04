@@ -72,6 +72,26 @@ if ($('article.organisation-services').length > 0) {
   });
 }
 
+var searchFields = $('form .search-field');
+
+if (searchFields.length > 0) {
+
+  var loader = $('<span />').addClass('loader spinner-inline');
+  var b1 = $('<span />').addClass('ball b-1');
+  var b2 = $('<span />').addClass('ball b-2');
+  loader.append(b1).append(b2);
+
+  searchFields.each(function () {
+    var form = $(this).parent();
+    var button = form.find('button');
+    form.on('submit', function (e) {
+      button.after(loader).hide();
+      e.preventDefault();
+    });
+  });
+}
+
+
 var showHideContent = new GOVUK.ShowHideContent()
 showHideContent.init()
 
