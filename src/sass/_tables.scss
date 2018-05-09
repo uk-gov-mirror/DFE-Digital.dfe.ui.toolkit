@@ -95,6 +95,11 @@ table.data {
   }
 }
 
+td span.empty-state {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
 @for $i from 1 through 30 {
   .cw-#{$i * 10} {
     width: #{$i * 10}px;
