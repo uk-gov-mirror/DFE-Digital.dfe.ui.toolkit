@@ -64,6 +64,12 @@ aside {
   }
 }
 
+.pull-left {
+  @include media(tablet) {
+    float: left;
+  }
+}
+
 .pull-right {
   @include media(tablet) {
     float: right;
