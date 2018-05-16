@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="{% if hideHeader == true %} white-bg {% endif %}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,7 +26,7 @@
 
 
 </head>
-<body class="">
+<body class="{% if hideHeader == true %} white-bg {% endif %}">
 
 <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
@@ -99,20 +99,13 @@
 
 {% endif %}
 
-<nav class="prototype">
-  <ul>
-    <li><a href="/">BACK TO THE START</a></li>
-  </ul>
-</nav>
 
 <script src="/static/javascript/vendors/jquery.js"></script>
+<script src="/static/javascript/vendors/select2.min.js"></script>
 <script src="/static/javascript/app.min.js"></script>
-<script>
 
-  var showHideContent = new GOVUK.ShowHideContent();
-  showHideContent.init();
 
-</script>
+
 {% block js %}
 
 {% endblock %}

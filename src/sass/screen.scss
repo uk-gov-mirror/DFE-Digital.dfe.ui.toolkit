@@ -16,9 +16,13 @@
 
 @import "pages/services";
 @import "pages/search-results";
+@import "pages/splash";
 
-body {
+html, body {
   background: $grey-3;
+  &.white-bg {
+    background: #fff;
+  }
 }
 
 .wrapper {
