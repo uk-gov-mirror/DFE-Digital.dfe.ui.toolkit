@@ -11,7 +11,8 @@
     var selectors = {
       namespace: 'ShowHideContent',
       radio: '[data-target] > input[type="radio"]',
-      checkbox: '[data-target] > input[type="checkbox"]'
+      checkbox: '[data-target] > input[type="checkbox"]',
+      link: 'a.js-toggle-content'
     }
 
     // Escape name attribute for use in DOM selector
@@ -104,14 +105,24 @@
       }
     }
 
+    // Handle checkbox show/hide
+    function handleLinkContent ($control, $content, $event) {
+      if ($content.hasClass('js-hidden')) {
+        showToggledContent($control, $content)
+      } else {
+        hideToggledContent($control, $content)
+      }
+      $event.preventDefault()
+    }
+
     // Set up event handlers etc
     function init ($container, elementSelector, eventSelectors, handler) {
       $container = $container || $(document.body)
 
       // Handle control clicks
-      function deferred () {
+      function deferred (event) {
         var $control = $(this)
-        handler($control, getToggledContent($control))
+        handler($control, getToggledContent($control), event)
       }
 
       // Prepare ARIA attributes
@@ -155,6 +166,11 @@
       init($container, selectors.checkbox, [selectors.checkbox], handleCheckboxContent)
     }
 
+    // Set up links show/hide content for container
+    self.showHideLinkToggledContent = function ($container) {
+      init($container, selectors.link, [selectors.link], handleLinkContent)
+    }
+
     // Remove event handlers
     self.destroy = function ($container) {
       $container = $container || $(document.body)
@@ -165,6 +181,7 @@
   ShowHideContent.prototype.init = function ($container) {
     this.showHideRadioToggledContent($container)
     this.showHideCheckboxToggledContent($container)
+    this.showHideLinkToggledContent($container)
   }
 
   GOVUK.ShowHideContent = ShowHideContent
