@@ -85,6 +85,10 @@ form.inline {
   }
 }
 
+.multiple-choice [type=radio]+label::before {
+  background: #fff;
+}
+
 div.show-password {
   position: relative;
   input.form-control {
