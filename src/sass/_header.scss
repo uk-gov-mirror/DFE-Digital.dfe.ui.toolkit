@@ -34,6 +34,26 @@
   }
 }
 
+.service-status {
+  border-bottom:1px solid $border-colour;
+  position: relative;
+  margin-bottom: -1px;
+  padding: 0 15px;
+  @include media(tablet) {
+    padding: 0;
+  }
+  .phase-banner {
+    @include media(tablet) {
+      margin: 0 30px;
+      max-width: 960px;
+      border: none;
+    }
+    @include media($desktop) {
+      margin: 0 auto;
+    }
+  }
+}
+
 .header-user {
   border-bottom:1px solid $border-colour;
   .header-inner {

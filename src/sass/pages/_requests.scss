@@ -1,6 +1,5 @@
 .request {
-  padding: 15px;
-  padding-right: 110px;
+  padding: 10px;
   background: $grey-4;
   margin-bottom: 10px;
   position: relative;
@@ -13,6 +12,10 @@
     }
   }
   .button-respond {
+    display: inline-block;
+    margin: 5px 0 0;
+  }
+  .button-respondx {
     padding: 5px 15px;
     border-left: 1px solid #dee0e2;
     margin-top: 10px;
@@ -21,12 +24,13 @@
     top: 0;
     right: 0;
   }
-  .form-group {
-    margin: 0 0 15px;
-    padding-left: 15px;
-  }
   .pnl {
     border: none;
-    padding: 0 0 15px;
+    padding: 0 0 1px;
+  }
+  .respond {
+    .form-submit {
+      margin-bottom: 0;
+    }
   }
 }
