@@ -37,8 +37,10 @@ fieldset.highlight {
   .help-text {
 
   }
-  &.indent {
-    padding-left: 210px;
+  @include media(tablet) {
+    &.indent {
+      padding-left: 210px;
+    }
   }
 }
 
