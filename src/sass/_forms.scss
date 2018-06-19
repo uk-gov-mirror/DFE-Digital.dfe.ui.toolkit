@@ -37,6 +37,9 @@ fieldset.highlight {
   .help-text {
 
   }
+  &.indent {
+    padding-left: 210px;
+  }
 }
 
 .error-message {
@@ -84,6 +87,28 @@ form.inline {
 
 .multiple-choice [type=radio]+label::before {
   background: #fff;
+}
+
+fieldset.with-sub-title {
+  @include media(tablet) {
+    position: relative;
+    margin-left: 210px;
+    width: auto;
+    legend {
+      width: 200px;
+      text-align: right;
+      position: absolute;
+      left: -210px;
+      top: 0;
+      h2 {
+        margin-top: 5px;
+      }
+    }
+    .multiple-choice {
+      margin-left: 5px;
+      margin-right: 15px;
+    }
+  }
 }
 
 div.show-password {
