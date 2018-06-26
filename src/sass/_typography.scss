@@ -9,8 +9,22 @@ h1 {
   }
 }
 
+.heading-secondary {
+  font-weight: normal;
+  color: $grey-1;
+}
+
 ul.list-bullet {
   margin-bottom: 30px;
+}
+
+dl.simple {
+  dt {
+    font-weight:bold;
+  }
+  dd {
+    margin-bottom: 15px;
+  }
 }
 
 dl.rows {

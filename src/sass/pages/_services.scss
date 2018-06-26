@@ -3,8 +3,24 @@
 }
 .organisation {
   header {
+    display: table;
+    width:100%;
     h2 {
       font-weight: bold;
+      @include media(tablet) {
+        display: table-cell;
+        padding-right: 10px;
+      }
+    }
+    a {
+      padding: 5px 0;
+      font-size: 15px;
+      @include media(tablet) {
+        border-left: 1px solid $grey-3;
+        padding: 5px 15px;
+        float: right;
+        display: table-cell;
+      }
     }
   }
   .user {
