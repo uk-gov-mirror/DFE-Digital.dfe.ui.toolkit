@@ -209,6 +209,22 @@ div.show-password {
   }
 }
 
+.buttons {
+  .button {
+    margin-bottom: 5px;
+    @include media(tablet) {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+  &.pull-right .button {
+    @include media(tablet) {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+  }
+}
+
 .notification-information .button-text {
   color: $link-colour;
 }
@@ -298,6 +314,10 @@ div.show-password {
   .spinner-inline {
     opacity: .7;
   }
+}
+
+form.show-filters {
+  margin-top: -20px;
 }
 
 .select2-container--default .select2-selection--single {
