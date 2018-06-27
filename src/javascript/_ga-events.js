@@ -1,0 +1,14 @@
+var gaEvent = $('#ga-event');
+
+if (gaEvent.length > 0) {
+  var category = gaEvent.data('category'),
+    label = gaEvent.data('label'),
+    event = gaEvent.data('event');
+
+  if (event !== '' && label !== '' && category !== '') {
+    gtag('event', event, {
+      event_category: category,
+      event_label: label,
+    });
+  }
+}
