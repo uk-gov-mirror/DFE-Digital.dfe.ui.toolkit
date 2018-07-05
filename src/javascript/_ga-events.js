@@ -13,9 +13,11 @@ if (gaEvent.length > 0) {
   }
 }
 
-$('.download').on('click', function (e) {
-  gtag('event', 'download', {
-    event_category: 'migration-help-pdf',
-    event_label: $(this).data('clientid'),
-  });
+$('.notification a').on('click', function () {
+  if ($(this).data('clientid')) {
+    gtag('event', 'download', {
+      event_category: 'migration-help-pdf',
+      event_label: $(this).data('clientid'),
+    });
+  }
 });
