@@ -35,7 +35,35 @@ NSA = {
 
 
 if ($('select.select2').length > 0) {
-  $('select.select2').select2();
+  $('select.select2').select2({matcher: select2ModelMatcher});
+}
+
+function select2ModelMatcher (params, data) {
+  data.parentText = data.parentText || "";
+  if ($.trim(params.term) === '') {
+    return data;
+  }
+  if (data.children && data.children.length > 0) {
+    var match = $.extend(true, {}, data);
+    for (var c = data.children.length - 1; c >= 0; c--) {
+      var child = data.children[c];
+      child.parentText += data.parentText + " " + data.text;
+      var matches = modelMatcher(params, child);
+      if (matches == null) {
+        match.children.splice(c, 1);
+      }
+    }
+    if (match.children.length > 0) {
+      return match;
+    }
+    return modelMatcher(params, match);
+  }
+  var original = (data.parentText + ' ' + data.text).toUpperCase();
+  var term = params.term.toUpperCase();
+  if (original.indexOf(term) > -1) {
+    return data;
+  }
+  return null;
 }
 
 if ($('.show-password').length > 0) {
