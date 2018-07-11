@@ -351,3 +351,17 @@ form.show-filters {
     margin: 7px 0 15px 0;
   }
 }
+
+.email-editor {
+  border: 1px solid $border-color;
+  background: $grey-4;
+  padding: 10px;
+  .static-text {
+    padding: 5px;
+  }
+  .code {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
