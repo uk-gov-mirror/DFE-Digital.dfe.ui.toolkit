@@ -100,7 +100,7 @@ NSA.signin = {
 
     } else {
       $h2.text('There has been an error');
-      var $li = $('<li />').html('Please try again later. If the problem continues, follow the link to <a href="https://help.signin.education.gov.uk/contact">submit a support request</a>');
+      var $li = $('<li />').html('Please try again later. If the problem continues, follow the link to <a href="https://help.signin.education.gov.uk/contact/form">submit a support request</a>');
       $ul.append($li);
       gtag('event', 'Error occurred', {
         event_category: 'Login',
