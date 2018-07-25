@@ -189,3 +189,112 @@ html.modal-open body {
   overflow: hidden;
 }
 
+
+.servicesv2 {
+  .header-user,
+  .navigation {
+    background: #fff;
+  }
+  .wrapper {
+    background: lighten($light-blue, 50%);
+    background: #f8f9fb;
+  }
+  h2 {
+    margin-top: 0;
+    span {
+      white-space: nowrap;
+    }
+  }
+  .portal {
+    a {
+      background: #fff;
+      display: block;
+      padding: 15px;
+      padding-right: 40px;
+      min-height: 2.8em;
+      color: $link-colour;
+      font-weight: bold;
+      border: 3px solid $link-colour;
+      border-radius: 5px;
+      font-size: 100%;
+      box-shadow: 0px 2px 5px 0px darken(#f8f9fb, 30%);
+      text-decoration: none;
+      margin-bottom: 30px;
+      position: relative;
+      svg {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        fill: $link-colour;
+        fill: $grey-2;
+      }
+      &:visited {
+        color: $black;
+        color: $link-colour;
+      }
+      &:hover {
+        box-shadow: 0px 2px 9px 2px darken(#f8f9fb, 30%);
+        svg {
+          fill: $link-colour
+        }
+      }
+
+    }
+  }
+  .school {
+    border-bottom: 1px solid lighten($light-blue, 40%);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    p {
+      margin: 0;
+      &.role {
+        padding-left: 25px;
+        background: url("../images/icon-user.svg") top left no-repeat;
+      }
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.services-header {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  h1.heading-xlarge {
+    margin-top: 0;
+  }
+  form {
+    float: right;
+    position: relative;
+  }
+  svg {
+    fill: $light-blue;
+    position: absolute;
+    margin-right: 5px;
+    top: 3px;
+    right: 0;
+  }
+  form {
+    margin-top: 10px;
+    label, input, select, .search {
+      display: inline-block;
+      color:$grey-1;
+    }
+  }
+  .search input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid $grey-2;
+    &::placeholder {
+      color: $grey-1;
+    }
+  }
+  select {
+    border: 1px solid $grey-2;
+    min-width: 160px;
+
+  }
+}
