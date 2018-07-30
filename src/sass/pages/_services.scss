@@ -196,8 +196,10 @@ html.modal-open body {
     background: #fff;
   }
   .my-orgs {
-    margin-top: 4.0em;
     margin-bottom: 0.625em;
+    @include media(tablet) {
+      margin-top: 4.0em;
+    }
   }
   .wrapper {
     background: lighten($light-blue, 50%);
