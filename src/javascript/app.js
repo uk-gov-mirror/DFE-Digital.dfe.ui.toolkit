@@ -48,7 +48,7 @@ function select2ModelMatcher (params, data) {
     for (var c = data.children.length - 1; c >= 0; c--) {
       var child = data.children[c];
       child.parentText += data.parentText + " " + data.text;
-      var matches = modelMatcher(params, child);
+      var matches = select2ModelMatcher(params, child);
       if (matches == null) {
         match.children.splice(c, 1);
       }
@@ -56,7 +56,7 @@ function select2ModelMatcher (params, data) {
     if (match.children.length > 0) {
       return match;
     }
-    return modelMatcher(params, match);
+    return select2ModelMatcher(params, match);
   }
   var original = (data.parentText + ' ' + data.text).toUpperCase();
   var term = params.term.toUpperCase();
