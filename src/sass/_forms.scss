@@ -225,6 +225,11 @@ div.show-password {
   }
 }
 
+.delete-org .button-text {
+  color: $link-colour;
+  text-align: left;
+}
+
 .notification-information .button-text {
   color: $link-colour;
 }
