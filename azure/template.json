@@ -2,12 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "storageAccountName": {
-            "type": "string",
-            "metadata": {
-                "description": "Name of the storage account"
-            }
-        },
         "cdnProfileName": {
             "type": "string",
             "metadata": {
@@ -21,7 +15,7 @@
             "defaultValue": "",
             "type": "string"
         },
-        "cdnProfileResourceGroup": {
+        "originHostName": {
             "type": "string"
         },
         "originPath": {
@@ -33,27 +27,8 @@
     "resources": [
         {
             "apiVersion": "2017-05-10",
-            "name": "storage-account",
-            "type": "Microsoft.Resources/deployments",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/DFE-Digital/login.dfe.infrastructure/master/Shared/storage-account.json",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "storageAccountName": {
-                        "value": "[parameters('storageAccountName')]"
-                    }
-                }
-            },
-            "dependsOn": []
-        },
-        {
-            "apiVersion": "2017-05-10",
             "name": "cdn-endpoint",
             "type": "Microsoft.Resources/deployments",
-            "resourceGroup": "[parameters('cdnProfileResourceGroup')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
@@ -68,7 +43,7 @@
                         "value": "[parameters('cdnProfileName')]"
                     },
                     "originHostName": {
-                        "value": "[replace(replace(reference('storage-account').outputs.PrimaryEndpoints.value.blob, 'https://', ''), '/', '')]"
+                        "value": "[parameters('originHostName')]"
                     },
                     "customDomainName": {
                         "value": "[parameters('customDomainName')]"
@@ -77,10 +52,7 @@
                         "value": "[parameters('originPath')]"
                     }
                 }
-            },
-            "dependsOn": [
-                "storage-account"
-            ]
+            }
         }
     ]
 }
