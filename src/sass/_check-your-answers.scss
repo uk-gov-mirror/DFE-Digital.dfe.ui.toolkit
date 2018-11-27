@@ -10,7 +10,8 @@
   @include media(tablet) {
     width: 100%;
     // recommended for mostly short questions
-    .app-check-your-answers__question {
+    .app-check-your-answers__question,
+    .app-check-your-answers__group__title {
       width: 30%;
     }
   }
@@ -19,7 +20,8 @@
 .app-check-your-answers--long {
   @include media(tablet) {
     width: 100%;
-    .app-check-your-answers__question {
+    .app-check-your-answers__question,
+    .app-check-your-answers__group__title {
       width: 50%;
     }
   }
@@ -35,7 +37,17 @@
   }
 }
 
+.app-check-your-answers__contents__group {
+  position: relative;
+  @include media(tablet) {
+    display: table-row;
+    border-bottom-width: 0;
+  }
+}
+
 .app-check-your-answers__contents:first-child .app-check-your-answers__question,
+.app-check-your-answers__contents__group:first-child .app-check-your-answers__group__title,
+.app-check-your-answers__contents__group:first-child .app-check-your-answers__group,
 .app-check-your-answers__contents:first-child .app-check-your-answers__answer,
 .app-check-your-answers__contents:first-child .app-check-your-answers__change {
   @include media(tablet) {
@@ -60,6 +72,20 @@
 }
 
 .app-check-your-answers__question {
+  margin: em(12, 19) 4em em(4,19) 0;
+}
+
+.app-check-your-answers__group__title, .app-check-your-answers__group {
+  display: block;
+  margin: 0;
+  @include media(tablet) {
+    display: table-cell;
+    padding: em(12, 19) em(20, 19) em(9, 19) 0;
+    margin: em(12, 19) 4em em(4, 19) 0;
+  }
+}
+
+.app-check-your-answers__group__title {
   margin: em(12, 19) 4em em(4,19) 0;
 }
 
