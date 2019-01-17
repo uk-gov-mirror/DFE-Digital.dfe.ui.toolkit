@@ -138,3 +138,9 @@ li.list-item {
 p.contents-header {
   margin-bottom: 2px;
 }
+
+form#form-service-config {
+  input, textarea{
+    width: 75%
+  }
+}
