@@ -121,14 +121,14 @@ if (searchFields.length > 0) {
 var redirect = $('#redirect-url');
 
 $('#add-redirect').on('click', function() {
-  $('<p><label for="redirect-url"><input class="form-control" name="redirect_uris"></label></p>').appendTo(redirect);
+  $('<p><label for="redirect-url"><input class="form-control inputConfig" name="redirect_uris"></label></p>').appendTo(redirect);
   return false;
 });
 
 var logout = $('#logout-url');
 
 $('#add-logout').on('click', function() {
-  $('<p><label for="logout-url"><input class="form-control" name="post_logout_redirect_uris"></label></p>').appendTo(logout);
+  $('<p><label for="logout-url"><input class="form-control inputConfig" name="post_logout_redirect_uris"></label></p>').appendTo(logout);
   return false;
 });
 
