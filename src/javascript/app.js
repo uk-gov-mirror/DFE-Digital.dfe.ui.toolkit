@@ -133,6 +133,21 @@ $('#add-logout').on('click', function() {
 });
 
 
+$('#generate-client-secret').on('click', function() {
+  var secretArray = window.niceware.generatePassphrase(8);
+  var secret = secretArray.join('-');
+  $('input#clientSecret').attr('value', secret);
+  return false;
+});
+
+$('#generate-api-secret').on('click', function() {
+  var secretArray = window.niceware.generatePassphrase(8);
+  var secret = secretArray.join('-');
+  $('input#apiSecret').attr('value', secret);
+  return false;
+});
+
+
 var showHideContent = new GOVUK.ShowHideContent()
 showHideContent.init()
 
