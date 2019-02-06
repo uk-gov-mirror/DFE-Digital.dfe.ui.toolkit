@@ -371,8 +371,8 @@ form.show-filters {
   }
 }
 
-form#form-service-config {
-  .inputConfig {
+form#form-service-config, form#form-new-banner {
+  .inputConfig, .banner-input {
     width: 75%
   }
 }
