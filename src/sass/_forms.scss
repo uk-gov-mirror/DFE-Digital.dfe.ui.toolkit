@@ -372,8 +372,18 @@ form.show-filters {
 }
 
 form#form-service-config {
-  .inputConfig {
-    width: 75%
+  @include media(tablet) {
+    .inputConfig, #secret-input {
+      width: 75%
+    }
+  }
+}
+
+form#form-new-banner {
+  @include media(tablet) {
+    .banner-input {
+      width: 65%
+    }
   }
 }
 
