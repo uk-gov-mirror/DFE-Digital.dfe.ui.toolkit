@@ -94,6 +94,45 @@ aside {
   }
 }
 
+.manage-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include media(tablet) {
+    margin: 0 -15px;
+  }
+  div.manage-card, div.manage-card-disabled {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    position: relative;
+    @include media(tablet) {
+      flex-basis: calc(50% - 30px);
+      margin: 0 15px 30px;
+      height: 220px;
+    }
+  }
+  div.manage-card > a {
+    position: absolute;
+    display: inline;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  div.manage-card > a:hover, a:visited, a:active, a:focus {
+    background: none;
+    color: inherit;
+    text-decoration: none;
+  }
+  .manage-card, .manage-card-disabled a {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
 dl.inline {
   dt, dd {
     display: inline;
