@@ -136,14 +136,20 @@ $('#add-logout').on('click', function() {
 $('#generate-client-secret').on('click', function() {
   var secretArray = window.niceware.generatePassphrase(8);
   var secret = secretArray.join('-');
-  $('input#clientSecret').attr('value', secret);
+  var isConfirm = confirm('Are you sure you want to regenerate the client secret?');
+  if (isConfirm) {
+    $('input#clientSecret').attr('value', secret);
+  }
   return false;
 });
 
 $('#generate-api-secret').on('click', function() {
   var secretArray = window.niceware.generatePassphrase(8);
   var secret = secretArray.join('-');
-  $('input#apiSecret').attr('value', secret);
+  var isConfirm = confirm('Are you sure you want to regenerate the api secret?');
+  if (isConfirm) {
+    $('input#apiSecret').attr('value', secret);
+  }
   return false;
 });
 
