@@ -109,7 +109,9 @@ aside {
     @include media(tablet) {
       flex-basis: calc(50% - 30px);
       margin: 0 15px 30px;
-      height: 220px;
+    }
+    p.manage-link{
+      color: #005ea5;
     }
   }
   div.manage-card > a {
