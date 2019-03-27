@@ -42,6 +42,12 @@
 
 <div class="wrapper">
 
+  {% if showBanner == true %}
+  <div class="environment-banner">
+    <div>This is an example of environment-banner</div>
+  </div>
+  {% endif %}
+
   {% if hideHeader != true %}
 
   <header role="banner" id="global-header" class="">
