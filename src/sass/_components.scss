@@ -179,3 +179,15 @@ li.list-item {
 p.contents-header {
   margin-bottom: 2px;
 }
+
+.environment-banner {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #0b0c0c;
+  background-color: #FFA500;
+
+  > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
