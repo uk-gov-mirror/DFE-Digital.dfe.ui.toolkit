@@ -191,3 +191,13 @@ p.contents-header {
     max-width: 960px;
   }
 }
+
+.icon-important {
+  width: 35px;
+  height: 35px;
+  background-image: url("../images/icon-important.png");
+  @include device-pixel-ratio {
+    background-image: url("../images/icon-important-2x.png");
+    background-size: 27px 27px;
+  }
+}
