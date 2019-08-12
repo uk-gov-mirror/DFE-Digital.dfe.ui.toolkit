@@ -143,7 +143,18 @@ div.show-password {
       }
     }
     input {
-      display: none;
+      border: 1px solid transparent;
+      background-color: transparent;
+      outline: none;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      margin-top: 4px;
+
+      :focus + label {
+        background-color: #ffbf47
+      }
     }
     &.type-password {
       label {
