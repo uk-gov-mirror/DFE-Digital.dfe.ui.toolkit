@@ -143,7 +143,8 @@ div.show-password {
       }
     }
     input {
-      display: none;
+      opacity: 0;
+      position: absolute;
     }
     &.type-password {
       label {
