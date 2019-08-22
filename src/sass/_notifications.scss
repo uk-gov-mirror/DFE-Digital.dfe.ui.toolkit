@@ -95,6 +95,12 @@ $warning: $orange;
   }
 }
 
+.alert-default {
+  margin: 15px 0;
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
+}
+
 .notification-warning {
   border-color: $warning;
 }
