@@ -153,6 +153,21 @@ $('#generate-api-secret').on('click', function() {
   return false;
 });
 
+var formRegister = $('#form-register-new-password');
+
+if (formRegister.length > 0) {
+  formRegister.each(function () {
+    var $submitButtons = $(formRegister).find('button:submit'), $submitButton = $submitButtons.eq(0);
+    formRegister.on('submit', function () {
+      $submitButtons.attr('disabled', 'disabled');
+
+      $submitButton.css('min-width', $submitButton.outerWidth() + 'px');
+
+      $submitButton.append("<span class='loader spinner-inline'> <span class='ball b-1'></span> <span class='ball b-2'></span> <span class='ball b-3'></span> </span>");
+
+    });
+  });
+}
 
 var showHideContent = new GOVUK.ShowHideContent()
 showHideContent.init()
