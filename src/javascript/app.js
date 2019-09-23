@@ -153,7 +153,7 @@ $('#generate-api-secret').on('click', function() {
   return false;
 });
 
-var formRegister = $('#form-register-new-password');
+var formRegister = $('.prevent-form-double-submission');
 
 if (formRegister.length > 0) {
   formRegister.each(function () {
