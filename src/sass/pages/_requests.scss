@@ -42,7 +42,6 @@
   position: relative;
   border: 1px solid $grey-3;
   border-left: 5px solid $grey-3;
-
   p {
     @include media(tablet) {
       margin: 0;
@@ -87,4 +86,12 @@
   text-align: center;
   white-space: nowrap;
   border-radius: 10px;
+}
+
+.overdue {
+  border-left: 5px solid $error-colour;
+}
+
+.overdue-text {
+  color: $error-colour;
 }
