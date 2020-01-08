@@ -80,7 +80,7 @@
       margin-left: 5px;
       position: relative;
     }
-    div.service-link {
+    div.service-link, div.service-link-disabled {
       display: block;
       border-left: 5px solid $govuk-blue;
       padding: 15px;
@@ -92,6 +92,23 @@
       &:hover {
         color: $link-hover-colour;
         border-left-color: $link-hover-colour;
+      }
+    }
+    div.service-link-disabled {
+      &:hover {
+        color: $grey-1;
+        border-left-color: $govuk-blue;
+      }
+      color: $grey-1;
+      h3 {
+        margin-top: 0;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      span.date {
+        font-size: 15px;
+        float: right;
       }
     }
     a.information {
@@ -117,8 +134,17 @@
         padding: 0;
       }
     }
+    .service-descriptionv2 {
+      font-size: 15px;
+      background: $grey-4;
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 }
+
 
 .js-enabled .service-list .modal {
   display: none;
