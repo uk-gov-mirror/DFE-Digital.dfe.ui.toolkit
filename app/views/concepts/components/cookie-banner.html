@@ -1,0 +1,37 @@
+{% set hideHeader = true %}
+{% set hideFooter = true %}
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="global-cookie-message-dfe-sign-in" style="display: block">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h2 class="heading-medium heading-medium--govuk">
+                Tell us whether you accept cookies
+            </h2>
+            <p class="dfe-sign-in__cookie-message-container govuk-body">
+                We use cookies to
+                <a href="#">collect information</a>
+                about how you use DfE Sign in.
+                We use this information to improve our services
+                and to make this website work as efficently as possible.
+            </p>
+            <div class="grid-row">
+                <div class="column-one-half">
+                    <button class="button button--govuk" type="submit">
+                        Accept all cookies
+                    </button>
+                </div>
+                <div class="column-one-half">
+                    <button class="button button--govuk" type="submit">
+                        Set cookie preferences
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
