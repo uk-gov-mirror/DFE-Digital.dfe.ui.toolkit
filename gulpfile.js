@@ -9,6 +9,7 @@ const cleanCSS = require('gulp-clean-css');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
+const path = require('path');
 
 const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
 const output = './dist/css/';
@@ -33,10 +34,15 @@ gulp.task('copy-minify', () => {
 });
 
 gulp.task('browserify', () => {
-  return browserify()
-    .require('js-cookie')
+  const entries = path.join(
+    __dirname,
+    'src',
+    'javascript',
+    'vendors.js',
+  );
+  return browserify(entries)
     .bundle()
-    .pipe(source('js-cookie.min.js'))
+    .pipe(source('vendors.min.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('./dist/javascript/vendors/'));
@@ -51,7 +57,7 @@ gulp.task('copy-js', ['browserify'], () => {
 });
 
 // script paths
-let jsFiles = 'src/javascript/*.js',
+let jsFiles = 'src/javascript/!(vendors)*.js',
   jsDest = 'dist/javascript';
 
 gulp.task('scripts', function() {
