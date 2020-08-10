@@ -31,12 +31,6 @@
     $cookieBanner.slideDown(function () {
       $cookieAcceptButton.click(function () {
         var acceptedPolicy = $.extend(DEFAULT_POLICY, {}); // deep copy
-        
-        Cookies.set(
-          COOKIE_NAMES.PREFERENCES_SET,
-          true,
-          GOVUK_COOKIE_OPTIONS
-        );
   
         $.each(acceptedPolicy, function (key) {
           acceptedPolicy[key] = true;
@@ -45,6 +39,12 @@
         Cookies.set(
           COOKIE_NAMES.POLICY,
           acceptedPolicy,
+          GOVUK_COOKIE_OPTIONS
+        );
+  
+        Cookies.set(
+          COOKIE_NAMES.PREFERENCES_SET,
+          true,
           GOVUK_COOKIE_OPTIONS
         );
   
