@@ -6,6 +6,10 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+
 const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
 const output = './dist/css/';
 
@@ -28,7 +32,17 @@ gulp.task('copy-minify', () => {
     .pipe(gulp.dest(`${output}govuk/`));
 });
 
-gulp.task('copy-js', () => {
+gulp.task('browserify', () => {
+  return browserify()
+    .require('js-cookie')
+    .bundle()
+    .pipe(source('js-cookie.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/javascript/vendors/'));
+});
+
+gulp.task('copy-js', ['browserify'], () => {
   gulp.src([
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/select2/dist/js/select2.min.js',
