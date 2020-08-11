@@ -1,30 +1,43 @@
 .global-cookie-message-dfe-sign-in {
     display: none;
     background-color: #FFFFFF;
-    margin: 0 auto;
+    padding: 20px 0;
     &__cookie-message-container {
-        &.govuk-body,.govuk-body-m {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-weight: 400;
-            font-size: 16px;
-            font-size: 1rem;
-            line-height: 1.25;
+        margin: 0 auto;
+        max-width: 960px;
+        @media (min-width: 641px) {
+            margin: 0 30px;
+        }
+        @media (min-width: 1020px) {
+            margin: 0 auto;
+        }
+        p.govuk-body {
+            &--shim {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.25;
+                margin-top: 0;
+                margin-bottom: 15px;
+                @media print {
+                    color: #000;
+                    font-family: sans-serif;
+                    font-size: 14pt;
+                    line-height: 1.15;
+                }
+                
+                @media (min-width: 640px) {
+                    font-size: 19px;
+                    line-height: 1.3157894737;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .heading-medium {
+        &--govuk {
             margin-top: 0;
-            margin-bottom: 15px;
-            @media print {
-                color: #000;
-                font-family: sans-serif;
-                font-size: 14pt;
-                line-height: 1.15;
-            }
-            
-            @media (min-width: 40.0625em) {
-                font-size:19px;
-                font-size: 1.1875rem;
-                line-height: 1.3157894737;
-                margin-bottom:20px;
-            }
         }
     }
     .button {
@@ -32,6 +45,7 @@
             margin-bottom: 20px;
             width: 100%;
             text-align: center;
+            font-size: 19px;
         }
     }
 }
