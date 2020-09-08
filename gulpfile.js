@@ -6,6 +6,11 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const path = require('path');
+
 const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
 const output = './dist/css/';
 
@@ -28,7 +33,22 @@ gulp.task('copy-minify', () => {
     .pipe(gulp.dest(`${output}govuk/`));
 });
 
-gulp.task('copy-js', () => {
+gulp.task('browserify', () => {
+  const entries = path.join(
+    __dirname,
+    'src',
+    'javascript',
+    'vendors.js',
+  );
+  return browserify(entries)
+    .bundle()
+    .pipe(source('vendors.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/javascript/vendors/'));
+});
+
+gulp.task('copy-js', ['browserify'], () => {
   gulp.src([
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/select2/dist/js/select2.min.js',
@@ -37,7 +57,7 @@ gulp.task('copy-js', () => {
 });
 
 // script paths
-let jsFiles = 'src/javascript/*.js',
+let jsFiles = 'src/javascript/!(vendors)*.js',
   jsDest = 'dist/javascript';
 
 gulp.task('scripts', function() {
