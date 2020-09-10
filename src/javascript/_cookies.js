@@ -42,7 +42,7 @@
     DEFAULT_POLICY
   );
 
-  var $cookieBanner = $('.global-cookie-message-dfe-sign-in');
+  var $cookieBanner = $('#dsi-cookie-banner.global-cookie-message-dfe-sign-in');
   var $cookieAcceptButton = $cookieBanner.find('button.cookie-accept');
 
   var getAcceptedAllPolicy = function () {
@@ -52,6 +52,15 @@
       acceptedPolicy[key] = true;
     });
   };
+
+  var setGoogleAnalyticsStatus = function (currentPolicy) {
+    if (currentPolicy.usage && window.gtag) {
+      window.gtag('js', new Date());
+      window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
+    } else {
+      window['ga-disable-' + window.gaTrackingId] = true;
+    }
+  }
 
   var onCookieAccept = function (event, newPolicy) {
     var acceptedPolicy = newPolicy || getAcceptedAllPolicy();
@@ -65,6 +74,8 @@
       COOKIE_NAMES.PREFERENCES_SET,
       true
     );
+    console.log(acceptedPolicy, 'HELLO');
+    setGoogleAnalyticsStatus(acceptedPolicy);
 
     if (event.target === $cookieAcceptButton[0]) {
       $cookieBanner.slideUp();
@@ -77,10 +88,9 @@
     });
   }
   
-  var $preferencesForm = $('.cookies-page-dfe-sign-in__preferences-form');
-  var $submitPrefsButton = $('#dsi-set-cookie-preferences');
+  var $preferencesForm = $('#dsi-cookie-form.cookies-page-dfe-sign-in__preferences-form');
 
-  $submitPrefsButton.on('click', function (event) {
+  $preferencesForm.on('submit', function (event) {
     event.preventDefault();
     var newPolicy = {
       settings: !!$preferencesForm.find("input[name='cookie.settings']:checked").val(),
