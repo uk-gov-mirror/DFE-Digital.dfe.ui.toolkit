@@ -54,7 +54,7 @@
   };
 
   var setGoogleAnalyticsStatus = function (currentPolicy) {
-    if (currentPolicy.usage && window.gtag) {
+    if (currentPolicy.usage && window.gtag && window.gaTrackingId) {
       window.gtag('js', new Date());
       window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
     } else {
