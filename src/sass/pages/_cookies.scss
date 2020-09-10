@@ -4,4 +4,21 @@
       padding: 0;
     }
   }
+
+  .cookies-page-dfe-sign-in__preferences-form, #dsi-set-cookie-preferences {
+    display: none;
+  }
+  .js-enabled & {
+    .no-js-message {
+      display: none;
+    }
+    .heading-xlarge {
+      &--reduce-padding {
+        margin-top: 10px;
+      }
+    }
+    .cookies-page-dfe-sign-in__preferences-form, #dsi-set-cookie-preferences {
+      display: block;
+    }
+  }
 }
