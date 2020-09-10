@@ -74,7 +74,7 @@
       COOKIE_NAMES.PREFERENCES_SET,
       true
     );
-    console.log(acceptedPolicy, 'HELLO');
+
     setGoogleAnalyticsStatus(acceptedPolicy);
 
     if (event.target === $cookieAcceptButton[0]) {
