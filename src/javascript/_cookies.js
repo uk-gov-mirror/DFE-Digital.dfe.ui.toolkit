@@ -51,6 +51,8 @@
     $.each(acceptedPolicy, function (key) {
       acceptedPolicy[key] = true;
     });
+
+    return acceptedPolicy;
   };
 
   var setGoogleAnalyticsStatus = function (currentPolicy) {
