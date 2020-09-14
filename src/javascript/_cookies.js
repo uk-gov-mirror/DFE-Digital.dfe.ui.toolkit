@@ -84,13 +84,11 @@
   };
 
   if (!GovUKCookie.get(COOKIE_NAMES.PREFERENCES_SET)) {
+    $cookieAcceptButton.click(onCookieAccept);
     if (window.location.pathname !== '/cookies') {
-      $cookieBanner.slideDown(function () {
-        $cookieAcceptButton.click(onCookieAccept);
-      });
+      $cookieBanner.slideDown();
     } else {
       $cookieBanner.show();
-      $cookieAcceptButton.click(onCookieAccept);
     }
   }
   
