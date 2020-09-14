@@ -5,7 +5,7 @@ const routes = require('./app/routes');
 const app = express();
 const port = (process.env.PORT || 3001);
 
-const https = require('https')
+const https = require('https');
 
 nunjucks.configure('app/views', {
   express: app,
@@ -71,10 +71,10 @@ const httpsOptions = {
   '-----END CERTIFICATE-----\n'
 }
 
-if (process.env.settings === 'dev') {
-  const server = https.createServer(httpsOptions, app).listen(port, () => {
+if (process.env.NODE_ENV === 'development') {
+  https.createServer(httpsOptions, app).listen(port, () => {
     console.log('Website running at https://localhost:' + port);
-  })
+  });
 } else {
   app.listen(port);
   console.log('');
