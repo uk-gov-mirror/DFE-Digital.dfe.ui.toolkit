@@ -78,16 +78,19 @@
     );
 
     setGoogleAnalyticsStatus(acceptedPolicy);
-
     if (event.target === $cookieAcceptButton[0]) {
       $cookieBanner.slideUp();
     }
   };
 
   if (!GovUKCookie.get(COOKIE_NAMES.PREFERENCES_SET)) {
-    $cookieBanner.slideDown(function () {
-      $cookieAcceptButton.click(onCookieAccept);
-    });
+    if (window.location.pathname !== '/cookies') {
+      $cookieBanner.slideDown(function () {
+        $cookieAcceptButton.click(onCookieAccept);
+      });
+    } else {
+      $cookieBanner.show();
+    }
   }
   
   var $preferencesForm = $('#dsi-cookie-form.cookies-page-dfe-sign-in__preferences-form');
