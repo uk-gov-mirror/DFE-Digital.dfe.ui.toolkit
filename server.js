@@ -71,7 +71,7 @@ const httpsOptions = {
   '-----END CERTIFICATE-----\n'
 }
 
-if (process.env.settings === 'dev') {
+if (process.env.NODE_ENV === 'development') {
   https.createServer(httpsOptions, app).listen(port, () => {
     console.log('Website running at https://localhost:' + port);
   });

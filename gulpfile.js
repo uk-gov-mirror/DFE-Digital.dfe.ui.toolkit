@@ -2,7 +2,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 
@@ -10,6 +9,12 @@ const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const path = require('path');
+const sourcemaps = require('gulp-sourcemaps');
+const gulpIf = require('gulp-if');
+const child = require('child_process');
+const fs = require('fs');
+
+const isDevEnv = process.env.NODE_ENV === 'development';
 
 const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
 const output = './dist/css/';
@@ -62,8 +67,14 @@ let jsFiles = 'src/javascript/!(vendors)*.js',
 
 gulp.task('scripts', function() {
   return gulp.src(jsFiles)
+    .pipe(
+      gulpIf(isDevEnv, sourcemaps.init()),
+    )
     .pipe(concat('app.min.js'))
     .pipe(uglify())
+    .pipe(
+      gulpIf(isDevEnv, sourcemaps.write()),
+    )
     .pipe(gulp.dest(jsDest));
 });
 
@@ -83,5 +94,13 @@ gulp.task('sass', () => gulp
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(output)));
 
+const defaultScripts = ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js'];
 
-gulp.task('default', ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js']);
+gulp.task('run-server', defaultScripts, () => {
+  const server = child.spawn('node', ['server.js']);
+  const outputToConsole = data => console.log(data.toString());
+  server.stdout.on('data', outputToConsole);
+  server.stderr.on('data', outputToConsole);
+});
+
+gulp.task('default', defaultScripts);
