@@ -90,6 +90,7 @@
       });
     } else {
       $cookieBanner.show();
+      $cookieAcceptButton.click(onCookieAccept);
     }
   }
   
