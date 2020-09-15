@@ -15,6 +15,7 @@ const child = require('child_process');
 const fs = require('fs');
 
 const isDevEnv = process.env.NODE_ENV === 'development';
+console.log('isDevEnv', isDevEnv)
 
 const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
 const output = './dist/css/';
