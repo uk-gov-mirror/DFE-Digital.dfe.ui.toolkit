@@ -13,8 +13,19 @@
   var DEFAULT_POLICY = {
     essential: true,
     settings: false,
-    usage: false
+    usage: true
   };
+
+  function setGoogleAnalyticsStatus (currentPolicy) {
+    if (currentPolicy.usage && window.gtag && window.gaTrackingId) {
+      window.gtag('js', new Date());
+      window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
+    } else {
+      Cookies.remove('_ga');
+      Cookies.remove('_gid');
+      window['ga-disable-' + window.gaTrackingId] = true;
+    }
+  }
 
   var GovUKCookie = {
     get: function (name) {
@@ -26,9 +37,14 @@
     },
     set: function (name, value) {
       var GOVUK_COOKIE_OPTIONS = {
-        expires: 365 // days
+        expires: 365, // days
+        secure: true
       };
-    
+      
+      if (name === COOKIE_NAMES.POLICY) {
+        setGoogleAnalyticsStatus(value);
+      }
+
       return Cookies.set(
         name,
         value,
@@ -36,11 +52,6 @@
       );
     }
   };
-
-  GovUKCookie.set(
-    COOKIE_NAMES.POLICY,
-    DEFAULT_POLICY
-  );
 
   var $cookieBanner = $('#dsi-cookie-banner.global-cookie-message-dfe-sign-in');
   var $cookieAcceptButton = $cookieBanner.find('button.cookie-accept');
@@ -55,15 +66,6 @@
     return acceptedPolicy;
   };
 
-  var setGoogleAnalyticsStatus = function (currentPolicy) {
-    if (currentPolicy.usage && window.gtag && window.gaTrackingId) {
-      window.gtag('js', new Date());
-      window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
-    } else {
-      window['ga-disable-' + window.gaTrackingId] = true;
-    }
-  }
-
   var onCookieAccept = function (event, newPolicy) {
     var acceptedPolicy = newPolicy || getAcceptedAllPolicy();
 
@@ -77,13 +79,16 @@
       true
     );
 
-    setGoogleAnalyticsStatus(acceptedPolicy);
     if (event.target === $cookieAcceptButton[0]) {
       $cookieBanner.slideUp();
     }
   };
 
   if (!GovUKCookie.get(COOKIE_NAMES.PREFERENCES_SET)) {
+    GovUKCookie.set(
+      COOKIE_NAMES.POLICY,
+      DEFAULT_POLICY
+    );
     $cookieAcceptButton.click(onCookieAccept);
     if (window.location.pathname !== '/cookies') {
       $cookieBanner.slideDown();
@@ -94,7 +99,7 @@
   
   var $preferencesForm = $('#dsi-cookie-form.cookies-page-dfe-sign-in__preferences-form');
 
-  $preferencesForm.on('submit', function (event) {
+  $preferencesForm.length && $preferencesForm.on('submit', function (event) {
     event.preventDefault();
     var newPolicy = {
       settings: !!$preferencesForm.find("input[name='cookie.settings']:checked").val(),
