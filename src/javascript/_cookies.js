@@ -37,7 +37,8 @@
     },
     set: function (name, value) {
       var GOVUK_COOKIE_OPTIONS = {
-        expires: 365 // days
+        expires: 365, // days
+        secure: true
       };
       
       if (name === COOKIE_NAMES.POLICY) {
