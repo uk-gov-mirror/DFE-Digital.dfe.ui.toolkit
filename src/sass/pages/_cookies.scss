@@ -19,6 +19,16 @@
     }
     .cookies-page-dfe-sign-in__preferences-form, #dsi-set-cookie-preferences {
       display: block;
+      &__ga-info {
+        p {
+          margin-bottom: 0;
+        }
+        .list-bullet {
+          &--indent {
+            padding-left: 40px;
+          }
+        }
+      }
     }
   }
 }
