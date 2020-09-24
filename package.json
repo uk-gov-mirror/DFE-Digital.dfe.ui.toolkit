@@ -31,7 +31,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "scripts": {
-    "dev": "NODE_ENV='development' DEBUG=gulp gulp run-server",
+    "dev": "NODE_ENV='development' gulp run-server",
     "start": "node server.js"
   },
   "repository": {
