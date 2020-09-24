@@ -34,10 +34,16 @@
     } else {
       window['ga-disable-' + window.gaTrackingId] = true;
       for (var i = 0; i < COOKIE_NAMES.GTM.length; i++) {
-        Cookies.remove(COOKIE_NAMES.GTM[i]);
+        GovUKCookie.remove(COOKIE_NAMES.GTM[i]);
       }
     }
   }
+
+  var GOVUK_COOKIE_OPTIONS = {
+    expires: 365, // days
+    secure: true,
+    domain: '.education.gov.uk'
+  };
 
   var GovUKCookie = {
     get: function (name) {
@@ -48,19 +54,18 @@
       return value;
     },
     set: function (name, value) {
-      var GOVUK_COOKIE_OPTIONS = {
-        expires: 365, // days
-        secure: true,
-        domain: '.education.gov.uk'
-      };
-      
       if (name === COOKIE_NAMES.POLICY) {
         setGoogleAnalyticsStatus(value);
       }
-
       return Cookies.set(
         name,
         value,
+        GOVUK_COOKIE_OPTIONS
+      );
+    },
+    remove: function (name) {
+      return Cookies.remove(
+        name,
         GOVUK_COOKIE_OPTIONS
       );
     }
