@@ -7,7 +7,15 @@
 
   var COOKIE_NAMES = {
     PREFERENCES_SET: 'cookies_preferences_set',
-    POLICY: 'cookies_policy'
+    POLICY: 'cookies_policy',
+    GTM: [
+      '_ga',
+      '_gid',
+      (function () {
+        var propertyId = ('' + window.gaTrackingId).replace(/-/g, '_');
+        return '_gat_gtag_' + propertyId; 
+      })()
+    ]
   };
   
   var DEFAULT_POLICY = {
@@ -17,13 +25,17 @@
   };
 
   function setGoogleAnalyticsStatus (currentPolicy) {
-    if (currentPolicy.usage && window.gtag && window.gaTrackingId) {
+    if (!window.gtag || !window.gaTrackingId) {
+      return
+    }
+    if (currentPolicy.usage) {
       window.gtag('js', new Date());
       window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
     } else {
-      Cookies.remove('_ga');
-      Cookies.remove('_gid');
       window['ga-disable-' + window.gaTrackingId] = true;
+      for (var i = 0; i < COOKIE_NAMES.GTM.length; i++) {
+        Cookies.remove(COOKIE_NAMES.GTM[i]);
+      }
     }
   }
 
