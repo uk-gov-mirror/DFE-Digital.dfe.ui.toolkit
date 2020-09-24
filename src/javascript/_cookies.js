@@ -122,8 +122,8 @@
     var acceptedPolicy = $.extend(DEFAULT_POLICY, newPolicy);
     onCookieAccept(event, acceptedPolicy);
 
-    if (window.history) {
-      window.history.back();
+    if (document.referrer) {
+      window.location = document.referrer;
     } else {
       window.location.pathname = '/';
     }
