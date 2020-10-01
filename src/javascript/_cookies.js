@@ -19,7 +19,8 @@
   var GOVUK_COOKIE_OPTIONS = {
     expires: 365, // days
     secure: true,
-    domain: '.education.gov.uk'
+    // domain: '.education.gov.uk' 
+    //temp removal of domain to test GA functionality. Will be uncommented, prior to going into test env.
   };
 
   var GovUKCookie = {
@@ -106,7 +107,7 @@
     event.preventDefault();
     var newPolicy = {
       settings: !!$preferencesForm.find("input[name='cookie.settings']:checked").val()
-    }
+    };
 
     var acceptedPolicy = $.extend(DEFAULT_POLICY, newPolicy);
     onCookieAccept(event, acceptedPolicy);
