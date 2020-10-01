@@ -7,15 +7,7 @@
 
   var COOKIE_NAMES = {
     PREFERENCES_SET: 'cookies_preferences_set',
-    POLICY: 'cookies_policy',
-    GTM: [
-      '_ga',
-      '_gid',
-      (function () {
-        var propertyId = ('' + window.gaTrackingId).replace(/-/g, '_');
-        return '_gat_gtag_' + propertyId; 
-      })()
-    ]
+    POLICY: 'cookies_policy'
   };
   
   var DEFAULT_POLICY = {
@@ -53,20 +45,17 @@
     }
   };
 
-  function setGoogleAnalyticsStatus (currentPolicy) {
+  (function initGA () {
     if (!window.gtag || !window.gaTrackingId) {
+      console.error(
+        'Google Analytics (GA) has not initialised. GA will not track this session.',
+        window.gtag,
+        window.gaTrackingId);
       return
     }
-    if (currentPolicy.usage) {
-      window.gtag('js', new Date());
-      window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
-    } else {
-      window['ga-disable-' + window.gaTrackingId] = true;
-      for (var i = 0; i < COOKIE_NAMES.GTM.length; i++) {
-        GovUKCookie.remove(COOKIE_NAMES.GTM[i]);
-      }
-    }
-  }
+    window.gtag('js', new Date());
+    window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
+  })();
 
   var $cookieBanner = $('#dsi-cookie-banner.global-cookie-message-dfe-sign-in');
   var $cookieAcceptButton = $cookieBanner.find('button.cookie-accept');
@@ -88,7 +77,6 @@
       COOKIE_NAMES.POLICY,
       acceptedPolicy
     );
-    setGoogleAnalyticsStatus(acceptedPolicy);
     GovUKCookie.set(
       COOKIE_NAMES.PREFERENCES_SET,
       true
@@ -104,7 +92,6 @@
       COOKIE_NAMES.POLICY,
       DEFAULT_POLICY
     );
-    setGoogleAnalyticsStatus(DEFAULT_POLICY);
     $cookieAcceptButton.click(onCookieAccept);
     if (window.location.pathname !== '/cookies') {
       $cookieBanner.slideDown();
@@ -118,8 +105,7 @@
   $preferencesForm.length && $preferencesForm.on('submit', function (event) {
     event.preventDefault();
     var newPolicy = {
-      settings: !!$preferencesForm.find("input[name='cookie.settings']:checked").val(),
-      usage: !!$preferencesForm.find("input[name='cookie.usage']:checked").val()
+      settings: !!$preferencesForm.find("input[name='cookie.settings']:checked").val()
     }
 
     var acceptedPolicy = $.extend(DEFAULT_POLICY, newPolicy);
