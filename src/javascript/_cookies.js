@@ -5,11 +5,13 @@
     return;
   }
 
+  console.log('this is the new version of the cookie js code');
+
   var COOKIE_NAMES = {
     PREFERENCES_SET: 'cookies_preferences_set',
     POLICY: 'cookies_policy'
   };
-  
+
   var DEFAULT_POLICY = {
     essential: true,
     settings: false,
@@ -46,7 +48,7 @@
     }
   };
 
-  (function initGA () {
+  (function initGA() {
     if (!window.gtag || !window.gaTrackingId) {
       console.error(
         'Google Analytics (GA) has not initialised. GA will not track this session.',
@@ -55,7 +57,7 @@
       return
     }
     window.gtag('js', new Date());
-    window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
+    window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure' });
   })();
 
   var $cookieBanner = $('#dsi-cookie-banner.global-cookie-message-dfe-sign-in');
@@ -100,7 +102,7 @@
       $cookieBanner.show();
     }
   }
-  
+
   var $preferencesForm = $('#dsi-cookie-form.cookies-page-dfe-sign-in__preferences-form');
 
   $preferencesForm.length && $preferencesForm.on('submit', function (event) {
