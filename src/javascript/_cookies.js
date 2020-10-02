@@ -54,6 +54,7 @@
         window.gaTrackingId);
       return
     }
+    window.gtag('set', 'dimension1', 'SESSION ACTIVE');
     window.gtag('js', new Date());
     window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
   })();
