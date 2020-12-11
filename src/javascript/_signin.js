@@ -44,10 +44,8 @@ NSA.signin = {
             $submitButtons.removeAttr('disabled');
             $submitButton.find('.loader').addClass('vh');
           } else {
-            gtag('event', 'Successful login', {
-              event_category: 'Login',
-              event_label: getParameterByName('clientid'),
-            });
+            ga('send', 'event', 'Login', 'Successful login', getParameterByName('clientid'));
+
             this.buildFormAndSubmit(data);
           }
         }
@@ -88,10 +86,7 @@ NSA.signin = {
       $.each(messages, function (index, value) {
         if (index === 'loginError') {
           index = 'username';
-          gtag('event', 'Failed login', {
-            event_category: 'Login',
-            event_label: 'Users login credentials were wrong',
-          });
+          ga('send', 'event', 'Login', 'Failed login', 'Users login credentials were wrong');
         }
         var $a = $('<a />').attr('href', '#' + index).text(value);
         var $li = $('<li />').append($a);
@@ -102,10 +97,7 @@ NSA.signin = {
       $h2.text('There has been an error');
       var $li = $('<li />').html('Please try again later. If the problem continues, follow the link to <a href="https://help.signin.education.gov.uk/contact/form">submit a support request</a>');
       $ul.append($li);
-      gtag('event', 'Error occurred', {
-        event_category: 'Login',
-        event_label: 'A server error occurred during login',
-      });
+      ga('send', 'event', 'Login', 'Error occurred', 'A server error occurred during login');
     }
 
     $div.append($h2).append($ul);

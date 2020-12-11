@@ -6,18 +6,12 @@ if (gaEvent.length > 0) {
     event = gaEvent.data('event');
 
   if (event !== '' && label !== '' && category !== '') {
-    gtag('event', event, {
-      event_category: category,
-      event_label: label,
-    });
+    ga('send', 'event', category, event, label);
   }
 }
 
 $('.notification a').on('click', function () {
   if ($(this).data('clientid')) {
-    gtag('event', 'download', {
-      event_category: 'migration-help-pdf',
-      event_label: $(this).data('clientid'),
-    });
+    ga('send', 'event', 'migration-help-pdf', 'download', $(this).data('clientid'));
   }
 });
