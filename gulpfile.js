@@ -12,6 +12,7 @@ const path = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpIf = require('gulp-if');
 const child = require('child_process');
+const fs = require('fs');
 
 const isDevEnv = process.env.NODE_ENV === 'development';
 
@@ -69,7 +70,7 @@ gulp.task('scripts', function() {
     .pipe(
       gulpIf(isDevEnv, sourcemaps.init()),
     )
-    .pipe(concat('app-2.0.min.js'))
+    .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(
       gulpIf(isDevEnv, sourcemaps.write()),
