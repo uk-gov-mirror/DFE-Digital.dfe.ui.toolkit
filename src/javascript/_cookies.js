@@ -142,7 +142,10 @@ var GovUKCookie = {
 
 function checkConditionForUsersBanner() {
   // Check user's consent for the cookie
-  if (!!GovUKCookie.getRaw('cookies_preferences_set')) {
+  var cookiePreferencesSet = GovUKCookie.getRaw('cookies_preferences_set');
+  var cookiePolicy = GovUKCookie.get('cookies_policy');
+
+  if (!!cookiePreferencesSet && !!cookiePolicy && cookiePolicy.settings) {
     var lastSeen = GovUKCookie.getRaw('user_banner_last_seen');
     if (!!lastSeen) {
       var numberOfDays = (new Date().getTime() - lastSeen) / (1000 * 3600 * 24);
