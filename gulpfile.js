@@ -1,6 +1,6 @@
 "use strict";
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
@@ -12,15 +12,13 @@ const path = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpIf = require('gulp-if');
 const child = require('child_process');
-const fs = require('fs');
 
 const isDevEnv = process.env.NODE_ENV === 'development';
 
 const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
 const output = './dist/css/';
 
-let sassOptions;
-sassOptions = {
+const sassOptions = {
   errLogToConsole: true,
   outputStyle: 'compressed',
   includePaths: [
@@ -61,9 +59,16 @@ gulp.task('copy-js', ['browserify'], () => {
     .pipe(gulp.dest('./dist/javascript/vendors/'));
 });
 
+gulp.task('copy-assets', () => {
+  gulp.src([
+    'node_modules/govuk-frontend/govuk/assets/**/*',
+  ])
+    .pipe(gulp.dest('./dist/'));
+});
+
 // script paths
-let jsFiles = 'src/javascript/!(vendors)*.js',
-  jsDest = 'dist/javascript';
+const jsFiles = 'src/javascript/!(vendors)*.js';
+const jsDest = 'dist/javascript';
 
 gulp.task('scripts', function() {
   return gulp.src(jsFiles)
@@ -94,7 +99,7 @@ gulp.task('sass', () => gulp
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(output)));
 
-const defaultScripts = ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js'];
+const defaultScripts = ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js', 'copy-assets'];
 
 gulp.task('run-server', defaultScripts, () => {
   const server = child.spawn('node', ['server.js']);

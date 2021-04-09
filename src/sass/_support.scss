@@ -1,11 +1,11 @@
 .support {
   #global-header {
-    border-bottom: 10px solid $govuk-blue;
+    border-bottom: 10px solid map.get($_govuk-colour-palette-legacy, "blue");
     .header-wrapper {
       padding-top: 5px;
       padding-bottom: 1px;
       .identity {
-        color: $grey-2;
+        color: map.get($_govuk-colour-palette-legacy, "grey-2");
         b {
           color: #fff
         }

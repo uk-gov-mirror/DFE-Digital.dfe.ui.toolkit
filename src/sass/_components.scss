@@ -1,7 +1,7 @@
 .card {
   padding: 15px;
   border-right: none;
-  border-left: 5px solid $department-for-education-websafe;
+  border-left: 5px solid #347ca9;
   h2 {
     font-weight: bold;
     font-size: 110%;
@@ -14,7 +14,7 @@
 a.card {
   display: block;
   text-decoration: none;
-  color: $text-colour;
+  color: map.get($_govuk-colour-palette-legacy, "black");
   background: #eee;
   @include simple-animation;
   &:hover {
@@ -27,7 +27,7 @@ a.card {
 .manage-card, .manage-card-disabled {
   padding: 15px;
   border-right: none;
-  border-left: 5px solid $department-for-education-websafe;
+  border-left: 5px solid #347ca9;
   h2 {
     font-weight: bold;
     font-size: 110%;
@@ -44,7 +44,7 @@ a.card {
 div.manage-card {
   display: block;
   text-decoration: none;
-  color: $text-colour;
+  color: map.get($_govuk-colour-palette-legacy, "black");
   background: #F8F8F8;
   @include simple-animation;
   &:hover {
@@ -57,11 +57,11 @@ div.manage-card {
 div.manage-card-disabled {
   display: block;
   text-decoration: none;
-  color: $text-colour;
+  color: map.get($_govuk-colour-palette-legacy, "black");
   background: #F8F8F8;
 
   h2 {
-    color: $text-colour;
+    color: map.get($_govuk-colour-palette-legacy, "black");
   }
 }
 
@@ -98,7 +98,7 @@ nav.subnav {
     margin: 0 auto;
     width: 15%;
     height: 15%;
-    background-color: $black;
+    background-color: map.get($_govuk-colour-palette-legacy, "black");
     border-radius: 100%;
     animation: spinner-circleBounceDelay $animationDuration infinite ease-in-out both;
   }
@@ -132,7 +132,7 @@ nav.subnav {
   right: 0;
   bottom: 0;
   line-height: 2.2em;
-  background: $green;
+  background: map.get($_govuk-colour-palette-legacy, "green");
 
   .ball {
     width: $size / 2;
@@ -196,7 +196,7 @@ p.contents-header {
   width: 35px;
   height: 35px;
   background-image: url("../images/icon-important.png");
-  @include device-pixel-ratio {
+  @include govuk-device-pixel-ratio {
     background-image: url("../images/icon-important-2x.png");
     background-size: 27px 27px;
   }

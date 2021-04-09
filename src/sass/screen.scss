@@ -1,5 +1,9 @@
+@use "sass:map";
+
+$govuk-compatibility-govukfrontendtoolkit: true;
+
 @import "../../node_modules/select2/src/scss/core";
-@import "govuk-elements";
+@import '../../node_modules/govuk-frontend/govuk/all';
 @import "variables";
 @import "mixins";
 @import "layout";
@@ -23,7 +27,7 @@
 @import "pages/cookies";
 
 html, body {
-  background: $grey-3;
+  background: map.get($_govuk-colour-palette-legacy, "grey-3");
   &.white-bg {
     background: #fff;
   }
@@ -37,7 +41,7 @@ html, body {
   color: #fff;
   margin: 10px 15px;
   font-size: 16px;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     font-size: 24px;
   }
 }
@@ -47,7 +51,7 @@ h1.heading-xlarge {
 }
 
 .vh {
-  @extend .visuallyhidden;
+  @extend .govuk-visually-hidden;
 }
 
 nav.prototype {
@@ -62,7 +66,7 @@ nav.prototype {
     margin: 0 auto;
     li {
       display: inline-block;
-      color: $grey-3;
+      color: map.get($_govuk-colour-palette-legacy, "grey-3");
       margin: 0 5px;
       a {
         display: inline-block;

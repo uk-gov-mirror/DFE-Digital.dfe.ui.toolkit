@@ -1,27 +1,27 @@
 .global-navigation {
-  border-bottom: 1px solid $border-colour;
+  border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   nav {
-    @include media(1020px) {
+    @include govuk-media-query($until: desktop) {
       margin: 0 auto;
       max-width: 960px
     }
   }
   ul {
-    @extend %contain-floats;
+    @include govuk-clearfix;
     list-style: none;
     position: relative;
     bottom: -1px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin: 0 15px;
     }
-    @include media(1020px) {
+    @include govuk-media-query($until: desktop) {
       margin: 0 -15px;
     }
   }
   li {
-    border-bottom: 1px solid $border-colour;
+    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
     position: relative;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       float: left;
       &.pull-right {
         float: right;
@@ -32,21 +32,21 @@
     display: block;
     padding: 8px 15px 6px;
     text-decoration: none;
-    color: $black;
+    color: map.get($_govuk-colour-palette-legacy, "black");
     text-decoration: underline;
     &.current {
       font-weight: bold;
       text-decoration: none;
       &:after {
         display: block;
-        background: $govuk-blue;
+        background: map.get($_govuk-colour-palette-legacy, "blue");
         content: "";
         width:5px;
         top: 0;
         left: 0;
         bottom: 0;
         position: absolute;
-        @include media(tablet) {
+        @include govuk-media-query($until: tablet) {
           top: auto;
           left: 15px;
           right: 15px;
@@ -61,29 +61,29 @@
 
 
 .main-nav {
-  border-bottom: 1px solid $border-colour;
+  border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   nav {
-    @include media(1020px) {
+    @include govuk-media-query($until: desktop) {
       margin: 0 auto;
       max-width: 960px
     }
   }
   ul {
-    @extend %contain-floats;
+    @include govuk-clearfix;
     list-style: none;
     position: relative;
     bottom: -1px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin: 0 15px;
     }
-    @include media(1020px) {
+    @include govuk-media-query($until: desktop) {
       margin: 0 -15px;
     }
   }
   li {
-    border-bottom: 1px solid $border-colour;
+    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
     position: relative;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       float: left;
       &.pull-right {
         float: right;
@@ -94,19 +94,19 @@
     display: block;
     padding: 7px 15px 5px;
     text-decoration: none;
-    color: $black;
+    color: map.get($_govuk-colour-palette-legacy, "black");
     &.current {
       font-weight: bold;
       &:after {
         display: block;
-        background: $govuk-blue;
+        background: map.get($_govuk-colour-palette-legacy, "blue");
         content: "";
         width:5px;
         top: 0;
         left: 0;
         bottom: 0;
         position: absolute;
-        @include media(tablet) {
+        @include govuk-media-query($until: tablet) {
           top: auto;
           left: 15px;
           right: 15px;
@@ -120,39 +120,39 @@
 
 ul.tabs {
   list-style: none;
-  border: 1px solid $border-colour;
+  border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   margin:20px 0;
-  @extend %contain-floats;
-  @include media(tablet) {
+  @include govuk-clearfix;
+  @include govuk-media-query($until: tablet) {
     border: none;
-    border-bottom: 1px solid $border-colour;
+    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   }
   li {
     border: 1px solid transparent;
-    border-bottom: 1px solid $border-colour;
+    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
     position: relative;
     margin-bottom: -1px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       float: left;
     }
   }
   li > a, li.active {
     padding: 15px 15px 10px;
     display: block;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       padding: 15px 30px 10px;
     }
   }
   li.active {
-    @include media(tablet) {
-      border-color: $border-colour;
+    @include govuk-media-query($until: tablet) {
+      border-color: map.get($_govuk-colour-palette-legacy, "grey-2");
       border-bottom-color: #fff;
     }
   }
 }
 
 .pagination {
-  @extend %contain-floats;
+  @include govuk-clearfix;
   margin-top: -10px;
   margin-bottom: 20px;
   li {
@@ -170,7 +170,7 @@ ul.tabs {
   }
 }
 
-@include media(tablet) {
+@include govuk-media-query($until: tablet) {
   .pagination {
     float: right;
     margin-top: .26316em;

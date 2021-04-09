@@ -7,7 +7,7 @@
     width:100%;
     h2 {
       font-weight: bold;
-      @include media(tablet) {
+      @include govuk-media-query($until: tablet) {
         display: table-cell;
         padding-right: 10px;
       }
@@ -15,8 +15,8 @@
     a {
       padding: 5px 0;
       font-size: 15px;
-      @include media(tablet) {
-        border-left: 1px solid $grey-3;
+      @include govuk-media-query($until: tablet) {
+        border-left: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
         padding: 5px 15px;
         float: right;
         display: table-cell;
@@ -24,7 +24,7 @@
     }
   }
   .user {
-    @extend %contain-floats;
+    @include govuk-clearfix;
     font-size: 15px;
     line-height: 18px;
     .role {
@@ -40,18 +40,18 @@
     }
   }
   .meta {
-    background: $grey-4;
+    background: map.get($_govuk-colour-palette-legacy, "grey-4");
     padding: 10px;
     margin-top: 10px;
     position: relative;
-    border-top: 3px solid darken($grey-4, 5%);
-    border-bottom: 1px solid darken($grey-4, 5%);
+    border-top: 3px solid darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
+    border-bottom: 1px solid darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
     visibility: visible;
     &:before {
       content: '';
       position: absolute;
       border: 10px solid transparent;
-      border-bottom-color: $grey-4;
+      border-bottom-color: map.get($_govuk-colour-palette-legacy, "grey-4");
       top: -19px;
       z-index: 10;
     }
@@ -59,7 +59,7 @@
       content: '';
       position: absolute;
       border: 10px solid transparent;
-      border-bottom-color: darken($grey-4, 5%);
+      border-bottom-color: darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
       top: -23px;
       z-index: 3;
     }
@@ -74,15 +74,15 @@
   > li {
     margin-bottom: 10px;
     .links {
-      border: 1px solid $grey-3;
-      @extend %contain-floats;
-      background: $grey-4;
+      border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+      @include govuk-clearfix;
+      background: map.get($_govuk-colour-palette-legacy, "grey-4");
       margin-left: 5px;
       position: relative;
     }
     div.service-link, div.service-link-disabled {
       display: block;
-      border-left: 5px solid $govuk-blue;
+      border-left: 5px solid map.get($_govuk-colour-palette-legacy, "blue");
       padding: 15px;
       font-weight: bold;
       line-height: 1;
@@ -90,16 +90,16 @@
       margin: -1px;
       background: none;
       &:hover {
-        color: $link-hover-colour;
-        border-left-color: $link-hover-colour;
+        color: map.get($_govuk-colour-palette-legacy, "light-blue");
+        border-left-color: map.get($_govuk-colour-palette-legacy, "light-blue");
       }
     }
     div.service-link-disabled {
       &:hover {
-        color: $grey-1;
-        border-left-color: $govuk-blue;
+        color: map.get($_govuk-colour-palette-legacy, "grey-1");
+        border-left-color: map.get($_govuk-colour-palette-legacy, "blue");
       }
-      color: $grey-1;
+      color: map.get($_govuk-colour-palette-legacy, "grey-1");
       h3 {
         margin-top: 0;
       }
@@ -114,10 +114,10 @@
     a.information {
       float: right;
       padding: 5px 15px;
-      border-left: 1px solid $grey-3;
+      border-left: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
       font-size: 15px;
       margin-top: 10px;
-      background: $grey-4;
+      background: map.get($_govuk-colour-palette-legacy, "grey-4");
       position: absolute;
       top: 0;
       right: 0;
@@ -125,8 +125,8 @@
     .service-description {
       font-size: 15px;
       padding: 15px;
-      background: $grey-4;
-      border-top: 3px solid darken($grey-4, 5%);
+      background: map.get($_govuk-colour-palette-legacy, "grey-4");
+      border-top: 3px solid darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
       margin-left: 10px;
       visibility: visible;
       p {
@@ -136,7 +136,7 @@
     }
     .service-descriptionv2 {
       font-size: 15px;
-      background: $grey-4;
+      background: map.get($_govuk-colour-palette-legacy, "grey-4");
       p {
         margin: 0;
         padding: 0;
@@ -159,7 +159,7 @@
   right: 0;
   z-index: 9999;
   box-sizing: border-box;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     width: 600px;
     top: 100px;
     left: 50%;
@@ -223,12 +223,12 @@ html.modal-open body {
   }
   .my-orgs {
     margin-bottom: 0.625em;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin-top: 4.0em;
     }
   }
   .wrapper {
-    background: lighten($light-blue, 50%);
+    background: lighten(map.get($_govuk-colour-palette-legacy, "light-blue"), 50%);
     background: #f8f9fb;
   }
   h2 {
@@ -244,9 +244,9 @@ html.modal-open body {
       padding: 15px;
       padding-right: 40px;
       min-height: 2.8em;
-      color: $link-colour;
+      color: map.get($_govuk-colour-palette-legacy, "blue");
       font-weight: bold;
-      border: 3px solid $link-colour;
+      border: 3px solid map.get($_govuk-colour-palette-legacy, "blue");
       border-radius: 5px;
       font-size: 100%;
       box-shadow: 0px 2px 5px 0px darken(#f8f9fb, 30%);
@@ -259,24 +259,24 @@ html.modal-open body {
         right: 10px;
         width: 20px;
         height: 20px;
-        fill: $link-colour;
-        fill: $grey-2;
+        fill: map.get($_govuk-colour-palette-legacy, "blue");
+        fill: map.get($_govuk-colour-palette-legacy, "grey-2");
       }
       &:visited {
-        color: $black;
-        color: $link-colour;
+        color: map.get($_govuk-colour-palette-legacy, "black");
+        color: map.get($_govuk-colour-palette-legacy, "blue");
       }
       &:hover {
         box-shadow: 0px 2px 9px 2px darken(#f8f9fb, 30%);
         svg {
-          fill: $link-colour
+          fill: map.get($_govuk-colour-palette-legacy, "blue")
         }
       }
 
     }
   }
   .school {
-    border-bottom: 1px solid lighten($light-blue, 40%);
+    border-bottom: 1px solid lighten(map.get($_govuk-colour-palette-legacy, "light-blue"), 40%);
     padding-bottom: 15px;
     margin-bottom: 25px;
     p {

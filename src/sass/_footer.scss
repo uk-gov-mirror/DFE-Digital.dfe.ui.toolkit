@@ -2,13 +2,13 @@ footer#footer {
   margin-bottom: 80px;
   nav {
     margin-bottom: 20px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin-bottom: 0;
     }
     ul {
       list-style: none;
       li {
-        @include media(tablet) {
+        @include govuk-media-query($until: tablet) {
           display: inline-block;
           margin-right: 15px;
         }

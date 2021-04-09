@@ -1,16 +1,16 @@
-$success: $turquoise;
-$warning: $orange;
+$success: map.get($_govuk-colour-palette-legacy, "turquoise");
+$warning: map.get($_govuk-colour-palette-legacy, "orange");
 
 .notification {
-  background: $grey-3;
+  background: map.get($_govuk-colour-palette-legacy, "grey-3");
   margin: 15px 0;
   padding: 10px;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     padding: 15px;
   }
-  border:3px solid $border-colour;
+  border:3px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   position: relative;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     border-width: 5px;
   }
   h2 {
@@ -27,14 +27,14 @@ $warning: $orange;
   }
   a.action {
     display: block;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       display: inline-block;
       text-align: right;
       float: right;
     }
   }
   &:focus {
-    outline: 3px solid $focus-colour;
+    outline: 3px solid map.get($_govuk-colour-palette-legacy, "yellow");
   }
   .icon {
     position: absolute;
@@ -72,7 +72,7 @@ $warning: $orange;
       top: 10px;
       left: 10px;
     }
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       padding-left: 70px;
       img {
         width: 40px;
@@ -97,8 +97,8 @@ $warning: $orange;
 
 .alert-default {
   margin: 15px 0;
-  border-color: $light-blue;
-  background-color: mix(white, $light-blue, 90%);
+  border-color: map.get($_govuk-colour-palette-legacy, "light-blue");
+  background-color: mix(white, #2b8cc4, 90%);
 }
 
 .notification-warning {
@@ -106,14 +106,14 @@ $warning: $orange;
 }
 
 .notification-information {
-  border-color: $govuk-blue;
+  border-color: map.get($_govuk-colour-palette-legacy, "blue");
   background: #fff;
   &.with-icon {
     background-image: url('../images/icon-info.svg');
     background-repeat: no-repeat;
     background-position: 10px 10px;
     background-size: 30px 30px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       background-position: 15px 15px;
       background-size: 40px 40px;
     }
@@ -121,5 +121,5 @@ $warning: $orange;
 }
 
 .notification-error {
-  border-color: $error-colour;
+  border-color: map.get($_govuk-colour-palette-legacy, "red");
 }

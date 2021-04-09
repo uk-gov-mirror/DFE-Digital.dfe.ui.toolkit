@@ -1,10 +1,10 @@
 .request {
   padding: 10px;
-  background: $grey-4;
+  background: map.get($_govuk-colour-palette-legacy, "grey-4");
   margin-bottom: 10px;
   position: relative;
-  border: 1px solid $grey-3;
-  border-left: 5px solid $grey-3;
+  border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+  border-left: 5px solid map.get($_govuk-colour-palette-legacy, "grey-3");
   p {
     margin: 0;
     a {
@@ -37,13 +37,13 @@
 
 .requestV2 {
   padding: 15px;
-  background: $grey-4;
+  background: map.get($_govuk-colour-palette-legacy, "grey-4");
   margin-bottom: 10px;
   position: relative;
-  border: 1px solid $grey-3;
-  border-left: 5px solid $grey-3;
+  border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+  border-left: 5px solid map.get($_govuk-colour-palette-legacy, "grey-3");
   p {
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin: 0;
       width: 75%;
     }
@@ -52,7 +52,7 @@
     }
   }
   .button-respond {
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       padding: 5px 15px;
       border-left: 1px solid #dee0e2;
       margin-top: 10px;
@@ -89,9 +89,9 @@
 }
 
 .overdue {
-  border-left: 5px solid $error-colour;
+  border-left: 5px solid map.get($_govuk-colour-palette-legacy, "red");
 }
 
 .overdue-text {
-  color: $error-colour;
+  color: map.get($_govuk-colour-palette-legacy, "red");
 }

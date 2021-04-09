@@ -1,5 +1,5 @@
 .manage-organisations {
   #global-header {
-    border-bottom: 10px solid $govuk-blue;
+    border-bottom: 10px solid map.get($_govuk-colour-palette-legacy, "blue");
   }
 }

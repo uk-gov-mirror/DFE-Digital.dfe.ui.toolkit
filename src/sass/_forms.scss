@@ -12,11 +12,11 @@
 }
 
 fieldset.highlight {
-  background: lighten($grey-3, 5%);
+  background: lighten(map.get($_govuk-colour-palette-legacy, "grey-3"), 5%);
   padding: 15px;
   box-sizing: border-box;
   margin-bottom: 20px;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     padding: 30px;
   }
   .form-control {
@@ -37,7 +37,7 @@ fieldset.highlight {
   .help-text {
 
   }
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     &.indent {
       padding-left: 210px;
     }
@@ -57,7 +57,7 @@ fieldset.highlight {
   width:100%;
 }
 
-@include media(tablet) {
+@include govuk-media-query($until: tablet) {
   .full-width {
     width:100%;
     &.form-group-error {
@@ -71,7 +71,7 @@ form {
     padding-top: 7px;
     padding-bottom: 5px;
     margin-bottom: 15px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin-bottom: 30px;
     }
   }
@@ -92,7 +92,7 @@ form.inline {
 }
 
 fieldset.with-sub-title {
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     position: relative;
     margin-left: 210px;
     width: auto;
@@ -126,7 +126,7 @@ div.show-password {
     top: 0;
     label {
       background-image: url("../images/icon-view-password.png");
-      @include device-pixel-ratio {
+      @include govuk-device-pixel-ratio {
         background-image: url("../images/icon-view-password-2x.png");
         background-size: 27px 27px;
       }
@@ -138,7 +138,7 @@ div.show-password {
       width: 27px;
       height: 27px;
       margin: 2px 5px;
-      @include media(tablet) {
+      @include govuk-media-query($until: tablet) {
         margin: 5px 7px;
       }
     }
@@ -149,7 +149,7 @@ div.show-password {
     &.type-password {
       label {
         background-image: url("../images/icon-hide-password.png");
-        @include device-pixel-ratio {
+        @include govuk-device-pixel-ratio {
           background-image: url("../images/icon-hide-password-2x.png");
           background-size: 27px 27px;
         }
@@ -158,7 +158,7 @@ div.show-password {
   }
 }
 
-@include media(tablet) {
+@include govuk-media-query($until: tablet) {
   div.show-password {
     display: inline-block;
     width: 50%;
@@ -183,16 +183,16 @@ div.show-password {
 .button-start,
 .button-get-started {
   background-image: url("../images/icon-pointer.png");
-  @include device-pixel-ratio {
+  @include govuk-device-pixel-ratio {
     background-image: url("../images/icon-pointer-2x.png");
     background-size: 30px 19px;
   }
 }
 
 .button-secondary {
-  @include button($grey-3);
+  // @include button(map.get($_govuk-colour-palette-legacy, "grey-3"));
   &[disabled="disabled"] {
-    background-color: $grey-3;
+    background-color: map.get($_govuk-colour-palette-legacy, "grey-3");
   }
 }
 
@@ -213,13 +213,13 @@ div.show-password {
 .buttons {
   .button {
     margin-bottom: 5px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       display: inline-block;
       margin-right: 5px;
     }
   }
   &.pull-right .button {
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin-right: 0;
       margin-left: 5px;
     }
@@ -227,18 +227,18 @@ div.show-password {
 }
 
 .delete-org .button-text {
-  color: $link-colour;
+  color: map.get($_govuk-colour-palette-legacy, "blue");
   text-align: left;
 }
 
 .notification-information .button-text {
-  color: $link-colour;
+  color: map.get($_govuk-colour-palette-legacy, "blue");
 }
 
 .submit-buttons {
   .button {
     margin-bottom: 10px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       margin-right: 5px;
     }
   }
@@ -264,7 +264,7 @@ div.show-password {
   }
   input {
     border: none;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "black");
     padding: 7px 0;
     min-width: 300px;
   }
@@ -283,7 +283,7 @@ div.show-password {
       padding: 0 0 0 10px;
       display: block;
       height: 40px;
-      border-color: $black;
+      border-color: map.get($_govuk-colour-palette-legacy, "black");
       line-height: 38px;
     }
   }
@@ -307,7 +307,7 @@ div.show-password {
       overflow: hidden;
       text-indent: -5000px;
       color: #fff;
-      background-color: $green;
+      background-color: map.get($_govuk-colour-palette-legacy, "green");
       background-image: url("../images/search-icon.svg");
       background-repeat: no-repeat;
       background-size: 20px 20px;
@@ -327,7 +327,7 @@ form.show-filters {
 }
 
 .select2-container--default .select2-selection--single {
-  border: 2px solid $black;
+  border: 2px solid map.get($_govuk-colour-palette-legacy, "black");
 }
 
 .select2-container--focus {
@@ -338,7 +338,7 @@ form.show-filters {
 .button-link {
   border: none;
   background: none;
-  color: $link-colour;
+  color: map.get($_govuk-colour-palette-legacy, "blue");
   text-decoration: underline;
   padding: 0;
   margin: 0;
@@ -347,20 +347,20 @@ form.show-filters {
   cursor: pointer;
   font-size: inherit;
   &:hover {
-    color: $link-hover-colour;
+    color: map.get($_govuk-colour-palette-legacy, "light-blue");
   }
 }
 
 .filter-link {
   margin-bottom: 15px;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     margin: 7px 0 15px 0;
   }
 }
 
 .email-editor {
   border: 1px solid $border-color;
-  background: $grey-4;
+  background: map.get($_govuk-colour-palette-legacy, "grey-4");
   padding: 10px;
   .static-text {
     padding: 5px;
@@ -373,7 +373,7 @@ form.show-filters {
 }
 
 form#form-service-config {
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     .inputConfig, #secret-input {
       width: 75%
     }
@@ -381,7 +381,7 @@ form#form-service-config {
 }
 
 form#form-new-banner {
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     .banner-input {
       width: 65%
     }

@@ -2,7 +2,7 @@
 
 // Override column width for tablet and up
 .column-minimum {
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     min-width: 600px;
   }
 }
@@ -11,62 +11,62 @@
 $task-list-indent: 35px;
 
 .task-list {
-  margin-top: $gutter;
-  @include media(tablet) {
-    margin-top: ($gutter * 2);
-  }
+  @include govuk-responsive-margin(6, "top");
+  // @include govuk-media-query($until: tablet) {
+  //   margin-top: ($govuk-gutter * 2);
+  // }
 }
 
 
 .task-list-section {
   display: table;
 
-  @include bold-24;
-  padding-bottom: ($gutter / 6);
+  @include govuk-font(24, $weight: bold);
+  @include govuk-responsive-padding(6, "bottom");
 }
 
 .task-list-section-number {
   display: table-cell;
-  padding-right: ($gutter / 6);
+  @include govuk-responsive-padding(6, "right");
 
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     min-width: $task-list-indent;
-    padding-right: 0;
+    // padding-right: 0;
   }
 }
 
 
 .task-list-items {
-  margin-bottom: $gutter;
-  @include media(tablet) {
-    margin-bottom: ($gutter * 2);
-  }
+  @include govuk-responsive-margin(6, "bottom");
+  // @include govuk-media-query($until: tablet) {
+  //   margin-bottom: ($govuk-gutter * 2);
+  // }
 
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     padding-left: $task-list-indent;
   }
 }
 
 .task-list-item {
-  border-bottom: 1px solid $border-colour;
-  padding-top: $gutter-one-third;
-  padding-bottom: $gutter-one-third;
-  @extend %contain-floats;
+  border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+  @include govuk-responsive-padding(6, "top");
+  @include govuk-responsive-padding(6, "bottom");
+  @include govuk-clearfix;
 }
 
 .task-list-item:first-child {
-  border-top: 1px solid $border-colour;
+  border-top: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
 }
 
 
 .task-name {
-  width: $two-thirds;
+  // width: $two-thirds;
   float: left;
   margin: 0 0;
 }
 
 .task-completed, .task-pending, .task-rejected {
-  @include phase-tag;
+  // @include phase-tag;
 
   float: right;
   margin-right: 0;
@@ -76,7 +76,7 @@ $task-list-indent: 35px;
 }
 
 .task-pending {
-  background-color: $grey-1;
+  background-color: map.get($_govuk-colour-palette-legacy, "grey-1");
 }
 .task-rejected {
   background-color: #d32f32;

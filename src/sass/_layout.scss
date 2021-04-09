@@ -1,20 +1,20 @@
 // Grid layout
 
 .row {
-  @extend %grid-row;
+  @extend .govuk-grid-row;
   &.row-spacer {
     margin-bottom: 20px;
   }
 }
 
 .row > div > span {
-  background: $grey-3;
-  color: $grey-4;
+  background: map.get($_govuk-colour-palette-legacy, "grey-3");
+  color: map.get($_govuk-colour-palette-legacy, "grey-4");
   display: block;
   text-align: center;
   padding: 15px 0;
   margin-bottom: 15px;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     margin-bottom: 30px;
   }
 }
@@ -23,14 +23,8 @@
   margin-top: 20px;
 }
 
-@for $i from 1 through 12 {
-  .col-#{$i} {
-    @include grid-column($i / 12);
-  }
-}
-
 .services-list {
-  @extend %grid-row;
+  @extend .govuk-grid-row;
   li {
     margin-bottom: -1px;
     h2 {
@@ -42,36 +36,35 @@
   }
 }
 
-@include media(tablet) {
+@include govuk-media-query($until: tablet) {
   .services-list {
     li {
-      @include grid-column(6 / 12);
       padding: 15px;
     }
   }
 }
 
 aside {
-  border-top: 5px solid $govuk-blue;
+  border-top: 5px solid map.get($_govuk-colour-palette-legacy, "blue");
   padding-top: 15px;
   margin-top: 15px;
   > h2.heading-medium {
     margin-top: 0;
     margin-bottom: 15px;
   }
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     margin-top: 70px;
   }
 }
 
 .pull-left {
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     float: left;
   }
 }
 
 .pull-right {
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     float: right;
   }
 }
@@ -80,14 +73,14 @@ aside {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     margin: 0 -15px;
   }
   a.card {
     flex: 0 0 100%;
     box-sizing: border-box;
     margin-bottom: 15px;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       flex-basis: calc(50% - 30px);
       margin: 0 15px 30px;
     }
@@ -98,7 +91,7 @@ aside {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     margin: 0 -15px;
   }
   div.manage-card, div.manage-card-disabled {
@@ -106,7 +99,7 @@ aside {
     box-sizing: border-box;
     margin-bottom: 15px;
     position: relative;
-    @include media(tablet) {
+    @include govuk-media-query($until: tablet) {
       flex-basis: calc(50% - 30px);
       margin: 0 15px 30px;
     }
@@ -157,7 +150,7 @@ dl.inline {
 
 .heading-group {
   margin: 15px 0;
-  @extend %contain-floats;
+  @include govuk-clearfix;
   h2, h3 {
     margin: 0;
     float: left;
@@ -174,14 +167,14 @@ ul.list-table {
   margin-bottom: 15px;
   li {
     padding: 10px 0;
-    border-top: 1px solid $border-colour;
+    border-top: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
     p {
       font-weight:bold;
       margin: 0;
     }
     .meta {
-      @include core-16;
-      color: $grey-1;
+      @include govuk-font(16);
+      color: map.get($_govuk-colour-palette-legacy, "grey-1");
     }
   }
 }
@@ -199,8 +192,8 @@ img.responsive {
 .highlight {
   margin: 25px 0;
   padding: 25px;
-  border: 1px solid $border-colour;
-  @include media(tablet) {
+  border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+  @include govuk-media-query($until: tablet) {
     margin: 0 25px 25px;
   }
   & > h3 {
@@ -213,13 +206,13 @@ img.responsive {
 
 img.spacing {
   margin: 20px 0;
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     margin: 30px 20px;
   }
 }
 
 .col-6 img.spacing {
-  @include media(tablet) {
+  @include govuk-media-query($until: tablet) {
     margin: 30px 50px;
   }
 }
