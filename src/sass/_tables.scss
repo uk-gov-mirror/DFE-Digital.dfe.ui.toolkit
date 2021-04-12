@@ -34,7 +34,7 @@ th.sorted, th a.sorted {
     border-top-color: map.get($_govuk-colour-palette-legacy, "blue");
     border-left-width: 5px;
     border-right-width: 5px;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       top: 16px;
     }
   }
@@ -43,7 +43,7 @@ th.sorted, th a.sorted {
       border-top-color: transparent;
       border-bottom-color: map.get($_govuk-colour-palette-legacy, "blue");
       top: 7px;
-      @include govuk-media-query($until: tablet) {
+      @include govuk-media-query(tablet) {
         top: 10px;
       }
     }

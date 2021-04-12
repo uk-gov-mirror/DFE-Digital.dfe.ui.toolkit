@@ -7,7 +7,7 @@
     width:100%;
     h2 {
       font-weight: bold;
-      @include govuk-media-query($until: tablet) {
+      @include govuk-media-query(tablet) {
         display: table-cell;
         padding-right: 10px;
       }
@@ -15,7 +15,7 @@
     a {
       padding: 5px 0;
       font-size: 15px;
-      @include govuk-media-query($until: tablet) {
+      @include govuk-media-query(tablet) {
         border-left: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
         padding: 5px 15px;
         float: right;
@@ -159,7 +159,7 @@
   right: 0;
   z-index: 9999;
   box-sizing: border-box;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     width: 600px;
     top: 100px;
     left: 50%;
@@ -223,7 +223,7 @@ html.modal-open body {
   }
   .my-orgs {
     margin-bottom: 0.625em;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       margin-top: 4.0em;
     }
   }

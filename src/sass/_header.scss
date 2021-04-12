@@ -6,7 +6,7 @@
   background-image: url('../images/gov.uk_logotype_crown.png');
 }
 
-@include govuk-media-query($until: tablet) {
+@include govuk-media-query(tablet) {
   #proposition-name {
     margin-top: 5px;
     display: block;
@@ -24,13 +24,13 @@
   margin-top: 14px;
   font-size: 18px;
   line-height: 1.2;
-  @include govuk-media-query($until: mobile) {
-    margin: 14px 0 0 0;
-  }
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     font-size: 24px;
     line-height: 1.25;
     margin-top: 8px;
+  }
+  @include govuk-media-query($until: tablet) {
+    margin: 14px 0 0 0;
   }
 }
 
@@ -39,16 +39,16 @@
   position: relative;
   margin-bottom: -1px;
   padding: 0 15px;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     padding: 0;
   }
   .phase-banner {
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       margin: 0 30px;
       max-width: 960px;
       border: none;
     }
-    @include govuk-media-query($until: desktop) {
+    @include govuk-media-query(desktop) {
       margin: 0 auto;
     }
   }
@@ -61,11 +61,11 @@
     margin: 0 15px;
     font-size: 14px;
     line-height: 1.2em;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       margin: 0 30px;
       max-width: 960px;
     }
-    @include govuk-media-query($until: desktop) {
+    @include govuk-media-query(desktop) {
       margin: 0 auto;
     }
   }
@@ -73,7 +73,7 @@
     margin: 0;
     padding: 12px 0 10px;
     @include govuk-font(19, $weight: bold);
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       float: left;
     }
   }
@@ -87,7 +87,7 @@
 }
 
 #user-nav {
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     font-size: 16px;
     margin: 5px 0;
     float: right;
@@ -97,7 +97,7 @@
     margin-right: -15px;
     list-style: none;
     li {
-      @include govuk-media-query($until: tablet) {
+      @include govuk-media-query(tablet) {
         float: left;
       }
     }

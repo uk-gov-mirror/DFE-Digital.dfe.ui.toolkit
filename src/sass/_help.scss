@@ -1,5 +1,5 @@
 .toggle-help {
-  @extend .form-hint;
+  @extend .govuk-label__hint;
   border-left: 3px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   padding-top: 5px;
   padding-left: 10px;

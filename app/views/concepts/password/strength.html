@@ -3,8 +3,8 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="column-two-thirds">
-    <h1 class="heading-xlarge">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
       Change password
     </h1>
   </div>
@@ -15,17 +15,17 @@
     <form method="post" action="/change-password-new">
       <fieldset>
         <legend class="vh">Enter your current password</legend>
-        <div class="form-group">
-          <label for="new-password" class="form-label-bold">Create new password</label>
+        <div class="govuk-form-group">
+          <label for="new-password" class="govuk-label govuk-label--s">Create new password</label>
           <div class="tooltip">
             <h2>Try these suggestions for a more secure password</h2>
-            <ul class="list list-bullet">
+            <ul class="govuk-list govuk-list--bullet">
               <li>Use 3 or more random words e.g. yellowLaptopPaper</li>
               <li>The longer the better, easy to remember, hard to guess</li>
             </ul>
           </div>
           <div class="show-password">
-          <input class="form-control" id="new-password" name="new-password" type="password" required="required"></div>
+          <input class="govuk-input govuk-!-width-one-half" id="new-password" name="new-password" type="password" required="required"></div>
         </div>
 
         <div class="form-submit">
@@ -35,14 +35,14 @@
     </form>
 
 
-    <h2 class="heading-medium">Output </h2>
+    <h2 class="govuk-heading-m">Output </h2>
     <ul>
-      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
-      <li><span class="form-hint">score (0-4): </span>  <span id="score"></span></li>
-      <li><span class="form-hint">warning: </span>  <span id="warning"></span></li>
-      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
-      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
-      <li><span class="form-hint">password: </span>  <span id="password"></span></li>
+      <li><span class="govuk-label__hint">password: </span>  <span id="password"></span></li>
+      <li><span class="govuk-label__hint">score (0-4): </span>  <span id="score"></span></li>
+      <li><span class="govuk-label__hint">warning: </span>  <span id="warning"></span></li>
+      <li><span class="govuk-label__hint">password: </span>  <span id="password"></span></li>
+      <li><span class="govuk-label__hint">password: </span>  <span id="password"></span></li>
+      <li><span class="govuk-label__hint">password: </span>  <span id="password"></span></li>
 
     </ul>
 

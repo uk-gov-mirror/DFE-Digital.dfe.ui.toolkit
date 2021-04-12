@@ -14,7 +14,7 @@
   text-align: center;
   padding: 15px 0;
   margin-bottom: 15px;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin-bottom: 30px;
   }
 }
@@ -36,7 +36,7 @@
   }
 }
 
-@include govuk-media-query($until: tablet) {
+@include govuk-media-query(tablet) {
   .services-list {
     li {
       padding: 15px;
@@ -48,23 +48,23 @@ aside {
   border-top: 5px solid map.get($_govuk-colour-palette-legacy, "blue");
   padding-top: 15px;
   margin-top: 15px;
-  > h2.heading-medium {
+  > h2.govuk-heading-m {
     margin-top: 0;
     margin-bottom: 15px;
   }
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin-top: 70px;
   }
 }
 
 .pull-left {
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     float: left;
   }
 }
 
 .pull-right {
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     float: right;
   }
 }
@@ -73,14 +73,14 @@ aside {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin: 0 -15px;
   }
   a.card {
     flex: 0 0 100%;
     box-sizing: border-box;
     margin-bottom: 15px;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       flex-basis: calc(50% - 30px);
       margin: 0 15px 30px;
     }
@@ -91,7 +91,7 @@ aside {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin: 0 -15px;
   }
   div.manage-card, div.manage-card-disabled {
@@ -99,7 +99,7 @@ aside {
     box-sizing: border-box;
     margin-bottom: 15px;
     position: relative;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       flex-basis: calc(50% - 30px);
       margin: 0 15px 30px;
     }
@@ -193,7 +193,7 @@ img.responsive {
   margin: 25px 0;
   padding: 25px;
   border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin: 0 25px 25px;
   }
   & > h3 {
@@ -206,20 +206,20 @@ img.responsive {
 
 img.spacing {
   margin: 20px 0;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin: 30px 20px;
   }
 }
 
 .col-6 img.spacing {
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin: 30px 50px;
   }
 }
 
 .govuk-box-highlight {
   padding: 1.5em;
-  h1.heading-xlarge {
+  h1.govuk-heading-xl {
     margin: 0.5em 0;
   }
 }

@@ -43,7 +43,7 @@
   border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
   border-left: 5px solid map.get($_govuk-colour-palette-legacy, "grey-3");
   p {
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       margin: 0;
       width: 75%;
     }
@@ -52,7 +52,7 @@
     }
   }
   .button-respond {
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       padding: 5px 15px;
       border-left: 1px solid #dee0e2;
       margin-top: 10px;

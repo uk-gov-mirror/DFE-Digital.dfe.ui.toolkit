@@ -3,8 +3,8 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="column-two-thirds">
-    <h1 class="heading-xlarge">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
       Change password
     </h1>
   </div>
@@ -15,10 +15,10 @@
     <form method="post" action="/change-password-new">
       <fieldset>
         <legend class="vh">Enter your current password</legend>
-        <div class="form-group">
-          <label for="new-password" class="form-label">Create a secure password - <a href="#modal-password" class="modal-link">what is this?</a> </label>
+        <div class="govuk-form-group">
+          <label for="new-password" class="govuk-label">Create a secure password - <a href="#modal-password" class="modal-link">what is this?</a> </label>
           <div class="show-password">
-            <input class="form-control" id="new-password" name="new-password" type="password" required="required">
+            <input class="govuk-input govuk-!-width-one-half" id="new-password" name="new-password" type="password" required="required">
           </div>
         </div>
         <div class="form-submit">
@@ -32,15 +32,15 @@
 <div class="service-list">
   <div class="modal" id="modal-password" style="display: none;">
     <a href="#" class="close">Close</a>
-    <h3 class="heading-large">Secure passwords</h3>
-    <h4 class="heading-medium">A secure password is:</h4>
-    <ul class="list-bullet">
+    <h3 class="govuk-heading-l">Secure passwords</h3>
+    <h4 class="govuk-heading-m">A secure password is:</h4>
+    <ul class="govuk-list--bullet">
       <li><b>Long</b> - the more characters the better, all DfE Sign-in passwords must be at least 12 characters long. Short passwords are simple to crack with modern equipment.</li>
       <li><b>Memorable</b> - writing down or storing passwords unencrypted on your computer is not secure, it is better to make then easy to remember, or use a password manager.</li>
       <li><b>Unique</b> - keeping passwords for each service unique means that if another service is compriomised you don't have to go about changing all your passwords at once.</li>
     </ul>
-    <h4 class="heading-medium">Examples of strong passwords:</h4>
-    <ul class="list-bullet">
+    <h4 class="govuk-heading-m">Examples of strong passwords:</h4>
+    <ul class="govuk-list--bullet">
       <li>clearglasswindow</li>
       <li>ten-times-twelve-is-120</li>
       <li>bigPaperHat</li>

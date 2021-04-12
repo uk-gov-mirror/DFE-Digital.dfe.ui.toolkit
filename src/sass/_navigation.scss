@@ -1,7 +1,7 @@
 .global-navigation {
   border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   nav {
-    @include govuk-media-query($until: desktop) {
+    @include govuk-media-query(desktop) {
       margin: 0 auto;
       max-width: 960px
     }
@@ -11,17 +11,17 @@
     list-style: none;
     position: relative;
     bottom: -1px;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       margin: 0 15px;
     }
-    @include govuk-media-query($until: desktop) {
+    @include govuk-media-query(desktop) {
       margin: 0 -15px;
     }
   }
   li {
     border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
     position: relative;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       float: left;
       &.pull-right {
         float: right;
@@ -46,7 +46,7 @@
         left: 0;
         bottom: 0;
         position: absolute;
-        @include govuk-media-query($until: tablet) {
+        @include govuk-media-query(tablet) {
           top: auto;
           left: 15px;
           right: 15px;
@@ -63,7 +63,7 @@
 .main-nav {
   border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   nav {
-    @include govuk-media-query($until: desktop) {
+    @include govuk-media-query(desktop) {
       margin: 0 auto;
       max-width: 960px
     }
@@ -73,17 +73,17 @@
     list-style: none;
     position: relative;
     bottom: -1px;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       margin: 0 15px;
     }
-    @include govuk-media-query($until: desktop) {
+    @include govuk-media-query(desktop) {
       margin: 0 -15px;
     }
   }
   li {
     border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
     position: relative;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       float: left;
       &.pull-right {
         float: right;
@@ -106,7 +106,7 @@
         left: 0;
         bottom: 0;
         position: absolute;
-        @include govuk-media-query($until: tablet) {
+        @include govuk-media-query(tablet) {
           top: auto;
           left: 15px;
           right: 15px;
@@ -123,7 +123,7 @@ ul.tabs {
   border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   margin:20px 0;
   @include govuk-clearfix;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     border: none;
     border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   }
@@ -132,19 +132,19 @@ ul.tabs {
     border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
     position: relative;
     margin-bottom: -1px;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       float: left;
     }
   }
   li > a, li.active {
     padding: 15px 15px 10px;
     display: block;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       padding: 15px 30px 10px;
     }
   }
   li.active {
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       border-color: map.get($_govuk-colour-palette-legacy, "grey-2");
       border-bottom-color: #fff;
     }
@@ -170,7 +170,7 @@ ul.tabs {
   }
 }
 
-@include govuk-media-query($until: tablet) {
+@include govuk-media-query(tablet) {
   .pagination {
     float: right;
     margin-top: .26316em;

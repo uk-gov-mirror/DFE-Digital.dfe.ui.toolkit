@@ -3,40 +3,44 @@
 
 {% block content %}
         <div class="govuk-grid-row">
-            <div class="col-9">
-                <h1 class="heading-xlarge">
+            <div class="govuk-grid-column-three-quarters">
+                <h1 class="govuk-heading-xl">
                   Sign in to access DfE services
                 </h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-8">
+            <div class="govuk-grid-column-two-thirds">
                 <form method="post" action="login.html?">
                   <fieldset>
                       <legend class="vh">Sign in form</legend>
-                      <div class="form-group">
-                          <label class="form-label-bold" for="first-name-2">Email address</label>
-                          <input class="form-control" id="first-name-2" name="first-name-2" type="email" required="required">
+                      <div class="govuk-form-group">
+                          <label class="govuk-label govuk-label--s" for="first-name-2">Email address</label>
+                          <input class="govuk-input govuk-!-width-one-half" id="first-name-2" name="first-name-2" type="email" required="required">
                       </div>
-                      <div class="form-group">
-                          <label class="form-label-bold" for="last-name-2">Password</label>
-                          <input class="form-control" id="last-name-2" name="last-name-2" type="password" required="required">
+                      <div class="govuk-form-group">
+                          <label class="govuk-label govuk-label--s" for="last-name-2">Password</label>
+                          <input class="govuk-input govuk-!-width-one-half" id="last-name-2" name="last-name-2" type="password" required="required">
                       </div>
-                      <div class="panel">
-                          <p>By continuing you accept the <a href="#">terms and conditions</a>.</p>
+                      <div class="govuk-inset-text">
+                          <p class="govuk-body">By continuing you accept the <a href="#" class="govuk-link">terms and conditions</a>.</p>
                       </div>
-                      <div class="form-submit">
-                          <button type="submit" class="button">Sign in</button>
-                      </div>
+                      <button class="govuk-button" data-module="govuk-button">
+                        Sign in
+                      </button>
                   </fieldset>
                 </form>
             </div>
-            <div class="col-4">
+            <div class="govuk-grid-column-one-third">
               <aside>
-                <h2 class="heading-medium">Problems signing in?</h2>
+                <h2 class="govuk-heading-m">Problems signing in?</h2>
                 <nav class="subnav">
                   <ul>
-                    <li><a href="#">Forgotten your password?</a></li>
+                    <li>
+                      <p class="govuk-body">
+                        <a href="#" class="govuk-link">Forgotten your password?</a>
+                      </p>
+                    </li>
                   </ul>
                 </nav>
               </aside>

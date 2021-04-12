@@ -45,14 +45,14 @@ ol.search-results {
 .filter-box {
   background: map.get($_govuk-colour-palette-legacy, "grey-3");
   margin-bottom: 15px;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     margin-bottom: 30px;
   }
   .option-select-label {
     font-weight: bold;
     font-size: 16px;
     padding: 8px 10px 6px;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       font-size: 19px;
     }
   }
@@ -89,7 +89,7 @@ ol.search-results {
     overflow-x: hidden;
     border: 5px solid map.get($_govuk-colour-palette-legacy, "grey-3");
     border-top: none;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       max-height: 200px;
     }
     label {
@@ -98,7 +98,7 @@ ol.search-results {
       border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
       cursor: pointer;
       margin: 0;
-      @include govuk-media-query($until: tablet) {
+      @include govuk-media-query(tablet) {
         font-size: 16px;
       }
       &:hover, &:focus {

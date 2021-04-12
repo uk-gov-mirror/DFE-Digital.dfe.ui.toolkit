@@ -5,12 +5,12 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
   background: map.get($_govuk-colour-palette-legacy, "grey-3");
   margin: 15px 0;
   padding: 10px;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     padding: 15px;
   }
   border:3px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   position: relative;
-  @include govuk-media-query($until: tablet) {
+  @include govuk-media-query(tablet) {
     border-width: 5px;
   }
   h2 {
@@ -27,7 +27,7 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
   }
   a.action {
     display: block;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       display: inline-block;
       text-align: right;
       float: right;
@@ -72,7 +72,7 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
       top: 10px;
       left: 10px;
     }
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       padding-left: 70px;
       img {
         width: 40px;
@@ -113,7 +113,7 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
     background-repeat: no-repeat;
     background-position: 10px 10px;
     background-size: 30px 30px;
-    @include govuk-media-query($until: tablet) {
+    @include govuk-media-query(tablet) {
       background-position: 15px 15px;
       background-size: 40px 40px;
     }

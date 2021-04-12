@@ -39,7 +39,7 @@ var showValidationMessage = function (field) {
 
     var labelText = $field.data('label') || $("label[for='" + $field.attr('id') + "']").text(),
       errorMessageText = 'Enter a valid ' + labelText.toLowerCase(),
-      errorMessage = $('<p>')
+      errorMessage = $('<p class="govuk-body">')
         .html(errorMessageText)
         .prop('class', 'error-message')
         .prop('id', 'validation-' + slugify(labelText));

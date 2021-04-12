@@ -26,7 +26,7 @@
   }
 }
 
-@include govuk-media-query($until: tablet) {
+@include govuk-media-query(tablet) {
   .splash {
     margin: 100px auto;
     border: 20px solid map.get($_govuk-colour-palette-legacy, "blue");

@@ -80,7 +80,7 @@ NSA.signin = {
   showValidationMessage: function (messages) {
 
     var $div = $('<div />').attr('class', 'error-summary').attr('role', 'alert').attr('tabindex', '-1');
-    var $h2 = $('<h2 />').attr('class', 'heading-medium error-summary-heading').attr('id', 'error-summary');
+    var $h2 = $('<h2 />').attr('class', 'govuk-heading-m error-summary-heading').attr('id', 'error-summary');
     var $ul = $('<ul />').attr('class', 'error-summary-list');
 
     if (messages) {
@@ -130,7 +130,7 @@ NSA.signin = {
 
       if (!$parent.hasClass('form-group-error')) {
 
-        var errorMessage = $('<p>')
+        var errorMessage = $('<p class="govuk-body">')
           .html(value)
           .prop('class', 'error-message')
           .prop('id', 'validation-' + index);
