@@ -55,9 +55,9 @@
 }
 
 .header-user {
-  border-bottom:1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+  // border-bottom:1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
   .header-inner {
-    border-top: 10px solid map.get($_govuk-colour-palette-legacy, "blue");
+    // border-top: 10px solid map.get($_govuk-colour-palette-legacy, "blue");
     margin: 0 15px;
     font-size: 14px;
     line-height: 1.2em;

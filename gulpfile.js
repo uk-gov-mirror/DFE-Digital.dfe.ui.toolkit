@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const sass = require('gulp-dart-sass');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const cleanCSS = require('gulp-clean-css');
+// const cleanCSS = require('gulp-clean-css');
 
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
@@ -16,25 +16,26 @@ const child = require('child_process');
 const isDevEnv = process.env.NODE_ENV === 'development';
 
 const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
-const output = './dist/css/';
+const output = './dist/gds-upgrade/css/';
 
 const sassOptions = {
   errLogToConsole: true,
   outputStyle: 'compressed',
   includePaths: [
-    'node_modules/govuk_frontend_toolkit/stylesheets',
-    'node_modules/govuk-elements-sass/public/sass',
+    // 'node_modules/govuk_frontend_toolkit/stylesheets',
+    // 'node_modules/govuk-elements-sass/public/sass',
+    'node_modules/govuk-frontend/govuk/assets',
   ],
 };
 
-gulp.task('copy-minify', () => {
-  gulp.src([
-    'node_modules/govuk_template_jinja/assets/stylesheets/fonts.css',
-    'node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css',
-  ])
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(gulp.dest(`${output}govuk/`));
-});
+// gulp.task('copy-minify', () => {
+//   gulp.src([
+//     'node_modules/govuk_template_jinja/assets/stylesheets/fonts.css',
+//     'node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css',
+//   ])
+//     .pipe(cleanCSS({ compatibility: 'ie8' }))
+//     .pipe(gulp.dest(`${output}govuk/`));
+// });
 
 gulp.task('browserify', () => {
   const entries = path.join(
@@ -48,7 +49,7 @@ gulp.task('browserify', () => {
     .pipe(source('vendors.min.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/javascript/vendors/'));
+    .pipe(gulp.dest('./dist/gds-upgrade/javascript/vendors/'));
 });
 
 gulp.task('copy-js', ['browserify'], () => {
@@ -56,19 +57,19 @@ gulp.task('copy-js', ['browserify'], () => {
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/select2/dist/js/select2.min.js',
   ])
-    .pipe(gulp.dest('./dist/javascript/vendors/'));
+    .pipe(gulp.dest('./dist/gds-upgrade/javascript/vendors/'));
 });
 
 gulp.task('copy-assets', () => {
   gulp.src([
     'node_modules/govuk-frontend/govuk/assets/**/*',
   ])
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/gds-upgrade/'));
 });
 
 // script paths
 const jsFiles = 'src/javascript/!(vendors)*.js';
-const jsDest = 'dist/javascript';
+const jsDest = 'dist/gds-upgrade/javascript';
 
 gulp.task('scripts', function() {
   return gulp.src(jsFiles)
@@ -99,7 +100,8 @@ gulp.task('sass', () => gulp
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(output)));
 
-const defaultScripts = ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js', 'copy-assets'];
+// const defaultScripts = ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js', 'copy-assets'];
+const defaultScripts = ['sass', 'scripts', 'watch', 'copy-js', 'copy-assets'];
 
 gulp.task('run-server', defaultScripts, () => {
   const server = child.spawn('node', ['server.js']);
