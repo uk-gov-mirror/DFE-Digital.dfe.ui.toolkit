@@ -1,12 +1,12 @@
 table {
-  border-top: 1px solid map.get($_govuk-colour-palette-legacy, "black");
-  border-bottom: 2px solid map.get($_govuk-colour-palette-legacy, "black");
+  border-top: 1px solid map.get($govuk-colours, "black");
+  border-bottom: 2px solid map.get($govuk-colours, "black");
   margin-bottom: 20px;
   th, td {
     vertical-align: top;
   }
   thead th {
-    border-bottom: 2px solid map.get($_govuk-colour-palette-legacy, "black");
+    border-bottom: 2px solid map.get($govuk-colours, "black");
   }
 }
 
@@ -31,7 +31,7 @@ th.sorted, th a.sorted {
     left: 0;
     top: 13px;
     border: 7px solid transparent;
-    border-top-color: map.get($_govuk-colour-palette-legacy, "blue");
+    border-top-color: map.get($govuk-colours, "blue");
     border-left-width: 5px;
     border-right-width: 5px;
     @include govuk-media-query(tablet) {
@@ -41,7 +41,7 @@ th.sorted, th a.sorted {
   &.dir-a {
     &:before {
       border-top-color: transparent;
-      border-bottom-color: map.get($_govuk-colour-palette-legacy, "blue");
+      border-bottom-color: map.get($govuk-colours, "blue");
       top: 7px;
       @include govuk-media-query(tablet) {
         top: 10px;
@@ -51,10 +51,10 @@ th.sorted, th a.sorted {
 }
 
 th a {
-  color:map.get($_govuk-colour-palette-legacy, "blue");
+  color:map.get($govuk-colours, "blue");
   text-decoration: none;
   &:visited {
-    color: map.get($_govuk-colour-palette-legacy, "blue");
+    color: map.get($govuk-colours, "blue");
   }
   &:hover {
     text-decoration: underline;
@@ -93,12 +93,12 @@ table tr td:last-child:not(:first-child) {
 }
 
 tr.pending {
-  color: map.get($_govuk-colour-palette-legacy, "grey-1");
+  color: map.get($govuk-colours, "dark-grey");
   font-style: italic;
 }
 
 .empty-state {
-  background: map.get($_govuk-colour-palette-legacy, "grey-4");
+  background: map.get($govuk-colours, "light-grey");
   padding: 15px;
   text-align: center;
   p {

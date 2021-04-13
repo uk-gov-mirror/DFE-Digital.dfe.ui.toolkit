@@ -5,7 +5,7 @@ ol.search-results {
   li {
     padding: 15px;
     margin: 0;
-    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+    border-bottom: 1px solid map.get($govuk-colours, "mid-grey");
     &:last-child {
       border-bottom: none;
     }
@@ -25,11 +25,11 @@ ol.search-results {
       margin-bottom: 5px;
     }
     &.added {
-      background: map.get($_govuk-colour-palette-legacy, "grey-4");
-      border: 3px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+      background: map.get($govuk-colours, "light-grey");
+      border: 3px solid map.get($govuk-colours, "mid-grey");
       border-top-width: 2px;
       p {
-        border-top: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+        border-top: 1px solid map.get($govuk-colours, "mid-grey");
         margin: 15px -15px -15px;
         font-size: 15px;
         padding: 5px 15px;
@@ -43,7 +43,7 @@ ol.search-results {
 }
 
 .filter-box {
-  background: map.get($_govuk-colour-palette-legacy, "grey-3");
+  background: map.get($govuk-colours, "light-grey");
   margin-bottom: 15px;
   @include govuk-media-query(tablet) {
     margin-bottom: 30px;
@@ -65,11 +65,11 @@ ol.search-results {
     cursor: pointer;
     z-index: 100;
     padding: 0 30px 0 0;
-    background: map.get($_govuk-colour-palette-legacy, "grey-3") url("../images/option-select-toggle-sprite.png") no-repeat right 5px;
+    background: map.get($govuk-colours, "light-grey") url("../images/option-select-toggle-sprite.png") no-repeat right 5px;
     &:hover, &:focus {
-      background-color: map.get($_govuk-colour-palette-legacy, "grey-2");
+      background-color: map.get($govuk-colours, "mid-grey");
       &+.options-container {
-        border-color: map.get($_govuk-colour-palette-legacy, "grey-2");
+        border-color: map.get($govuk-colours, "mid-grey");
       }
     }
     &.closed {
@@ -87,7 +87,7 @@ ol.search-results {
     background-color: #fff;
     overflow-y: auto;
     overflow-x: hidden;
-    border: 5px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+    border: 5px solid map.get($govuk-colours, "light-grey");
     border-top: none;
     @include govuk-media-query(tablet) {
       max-height: 200px;
@@ -95,14 +95,14 @@ ol.search-results {
     label {
       display: block;
       padding: 7px 7px 7px 35px;
-      border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+      border-bottom: 1px solid map.get($govuk-colours, "light-grey");
       cursor: pointer;
       margin: 0;
       @include govuk-media-query(tablet) {
         font-size: 16px;
       }
       &:hover, &:focus {
-        background: map.get($_govuk-colour-palette-legacy, "grey-4");
+        background: map.get($govuk-colours, "light-grey");
       }
       &:last-child {
         border: none;

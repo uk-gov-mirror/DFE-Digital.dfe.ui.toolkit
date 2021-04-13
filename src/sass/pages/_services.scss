@@ -16,7 +16,7 @@
       padding: 5px 0;
       font-size: 15px;
       @include govuk-media-query(tablet) {
-        border-left: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+        border-left: 1px solid map.get($govuk-colours, "light-grey");
         padding: 5px 15px;
         float: right;
         display: table-cell;
@@ -40,18 +40,18 @@
     }
   }
   .meta {
-    background: map.get($_govuk-colour-palette-legacy, "grey-4");
+    background: map.get($govuk-colours, "light-grey");
     padding: 10px;
     margin-top: 10px;
     position: relative;
-    border-top: 3px solid darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
-    border-bottom: 1px solid darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
+    border-top: 3px solid darken(map.get($govuk-colours, "light-grey"), 5%);
+    border-bottom: 1px solid darken(map.get($govuk-colours, "light-grey"), 5%);
     visibility: visible;
     &:before {
       content: '';
       position: absolute;
       border: 10px solid transparent;
-      border-bottom-color: map.get($_govuk-colour-palette-legacy, "grey-4");
+      border-bottom-color: map.get($govuk-colours, "light-grey");
       top: -19px;
       z-index: 10;
     }
@@ -59,7 +59,7 @@
       content: '';
       position: absolute;
       border: 10px solid transparent;
-      border-bottom-color: darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
+      border-bottom-color: darken(map.get($govuk-colours, "light-grey"), 5%);
       top: -23px;
       z-index: 3;
     }
@@ -74,15 +74,15 @@
   > li {
     margin-bottom: 10px;
     .links {
-      border: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+      border: 1px solid map.get($govuk-colours, "light-grey");
       @include govuk-clearfix;
-      background: map.get($_govuk-colour-palette-legacy, "grey-4");
+      background: map.get($govuk-colours, "light-grey");
       margin-left: 5px;
       position: relative;
     }
     div.service-link, div.service-link-disabled {
       display: block;
-      border-left: 5px solid map.get($_govuk-colour-palette-legacy, "blue");
+      border-left: 5px solid map.get($govuk-colours, "blue");
       padding: 15px;
       font-weight: bold;
       line-height: 1;
@@ -90,16 +90,16 @@
       margin: -1px;
       background: none;
       &:hover {
-        color: map.get($_govuk-colour-palette-legacy, "light-blue");
-        border-left-color: map.get($_govuk-colour-palette-legacy, "light-blue");
+        color: map.get($govuk-colours, "light-blue");
+        border-left-color: map.get($govuk-colours, "light-blue");
       }
     }
     div.service-link-disabled {
       &:hover {
-        color: map.get($_govuk-colour-palette-legacy, "grey-1");
-        border-left-color: map.get($_govuk-colour-palette-legacy, "blue");
+        color: map.get($govuk-colours, "dark-grey");
+        border-left-color: map.get($govuk-colours, "blue");
       }
-      color: map.get($_govuk-colour-palette-legacy, "grey-1");
+      color: map.get($govuk-colours, "dark-grey");
       h3 {
         margin-top: 0;
       }
@@ -114,10 +114,10 @@
     a.information {
       float: right;
       padding: 5px 15px;
-      border-left: 1px solid map.get($_govuk-colour-palette-legacy, "grey-3");
+      border-left: 1px solid map.get($govuk-colours, "light-grey");
       font-size: 15px;
       margin-top: 10px;
-      background: map.get($_govuk-colour-palette-legacy, "grey-4");
+      background: map.get($govuk-colours, "light-grey");
       position: absolute;
       top: 0;
       right: 0;
@@ -125,8 +125,8 @@
     .service-description {
       font-size: 15px;
       padding: 15px;
-      background: map.get($_govuk-colour-palette-legacy, "grey-4");
-      border-top: 3px solid darken(map.get($_govuk-colour-palette-legacy, "grey-4"), 5%);
+      background: map.get($govuk-colours, "light-grey");
+      border-top: 3px solid darken(map.get($govuk-colours, "light-grey"), 5%);
       margin-left: 10px;
       visibility: visible;
       p {
@@ -136,7 +136,7 @@
     }
     .service-descriptionv2 {
       font-size: 15px;
-      background: map.get($_govuk-colour-palette-legacy, "grey-4");
+      background: map.get($govuk-colours, "light-grey");
       p {
         margin: 0;
         padding: 0;
@@ -228,7 +228,7 @@ html.modal-open body {
     }
   }
   .wrapper {
-    background: lighten(map.get($_govuk-colour-palette-legacy, "light-blue"), 50%);
+    background: lighten(map.get($govuk-colours, "light-blue"), 50%);
     background: #f8f9fb;
   }
   h2 {
@@ -244,9 +244,9 @@ html.modal-open body {
       padding: 15px;
       padding-right: 40px;
       min-height: 2.8em;
-      color: map.get($_govuk-colour-palette-legacy, "blue");
+      color: map.get($govuk-colours, "blue");
       font-weight: bold;
-      border: 3px solid map.get($_govuk-colour-palette-legacy, "blue");
+      border: 3px solid map.get($govuk-colours, "blue");
       border-radius: 5px;
       font-size: 100%;
       box-shadow: 0px 2px 5px 0px darken(#f8f9fb, 30%);
@@ -259,24 +259,24 @@ html.modal-open body {
         right: 10px;
         width: 20px;
         height: 20px;
-        fill: map.get($_govuk-colour-palette-legacy, "blue");
-        fill: map.get($_govuk-colour-palette-legacy, "grey-2");
+        fill: map.get($govuk-colours, "blue");
+        fill: map.get($govuk-colours, "mid-grey");
       }
       &:visited {
-        color: map.get($_govuk-colour-palette-legacy, "black");
-        color: map.get($_govuk-colour-palette-legacy, "blue");
+        color: map.get($govuk-colours, "black");
+        color: map.get($govuk-colours, "blue");
       }
       &:hover {
         box-shadow: 0px 2px 9px 2px darken(#f8f9fb, 30%);
         svg {
-          fill: map.get($_govuk-colour-palette-legacy, "blue")
+          fill: map.get($govuk-colours, "blue")
         }
       }
 
     }
   }
   .school {
-    border-bottom: 1px solid lighten(map.get($_govuk-colour-palette-legacy, "light-blue"), 40%);
+    border-bottom: 1px solid lighten(map.get($govuk-colours, "light-blue"), 40%);
     padding-bottom: 15px;
     margin-bottom: 25px;
     p {

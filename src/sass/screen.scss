@@ -28,7 +28,7 @@ $govuk-assets-path: "/gds-upgrade/";
 @import "pages/cookies";
 
 html, body {
-  background: map.get($_govuk-colour-palette-legacy, "grey-3");
+  background: map.get($govuk-colours, "light-grey");
   &.white-bg {
     background: #fff;
   }
@@ -67,7 +67,7 @@ nav.prototype {
     margin: 0 auto;
     li {
       display: inline-block;
-      color: map.get($_govuk-colour-palette-legacy, "grey-3");
+      color: map.get($govuk-colours, "light-grey");
       margin: 0 5px;
       a {
         display: inline-block;

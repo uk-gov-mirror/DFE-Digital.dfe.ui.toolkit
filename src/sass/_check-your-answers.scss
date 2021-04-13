@@ -29,7 +29,7 @@
 
 .app-check-your-answers__contents {
   position: relative;
-  border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+  border-bottom: 1px solid map.get($govuk-colours, "mid-grey");
 
   @include govuk-media-query(tablet) {
     display: table-row;
@@ -63,7 +63,7 @@
   margin: 0;
   @include govuk-media-query(tablet) {
     display: table-cell;
-    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+    border-bottom: 1px solid map.get($govuk-colours, "mid-grey");
     padding: em(12, 19) em(20, 19) em(9, 19) 0;
   }
 }

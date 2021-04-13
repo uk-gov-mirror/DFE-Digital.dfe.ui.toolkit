@@ -1,22 +1,22 @@
-$success: map.get($_govuk-colour-palette-legacy, "turquoise");
-$warning: map.get($_govuk-colour-palette-legacy, "orange");
+$success: map.get($govuk-colours, "turquoise");
+$warning: map.get($govuk-colours, "orange");
 
 .notification {
-  background: map.get($_govuk-colour-palette-legacy, "grey-3");
+  background: map.get($govuk-colours, "light-grey");
   margin: 15px 0;
   padding: 10px;
   @include govuk-media-query(tablet) {
     padding: 15px;
   }
-  border:3px solid map.get($_govuk-colour-palette-legacy, "grey-2");
+  border:3px solid map.get($govuk-colours, "mid-grey");
   position: relative;
   @include govuk-media-query(tablet) {
     border-width: 5px;
   }
-  h2 {
-    font-weight:bold;
-    font-size: 120%;
-  }
+  // h2 {
+  //   font-weight:bold;
+  //   font-size: 120%;
+  // }
   p {
     margin-bottom: 0;
     a {
@@ -34,7 +34,7 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
     }
   }
   &:focus {
-    outline: 3px solid map.get($_govuk-colour-palette-legacy, "yellow");
+    outline: 3px solid map.get($govuk-colours, "yellow");
   }
   .icon {
     position: absolute;
@@ -97,7 +97,7 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
 
 .alert-default {
   margin: 15px 0;
-  border-color: map.get($_govuk-colour-palette-legacy, "light-blue");
+  border-color: map.get($govuk-colours, "light-blue");
   background-color: mix(white, #2b8cc4, 90%);
 }
 
@@ -106,7 +106,7 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
 }
 
 .notification-information {
-  border-color: map.get($_govuk-colour-palette-legacy, "blue");
+  border-color: map.get($govuk-colours, "blue");
   background: #fff;
   &.with-icon {
     background-image: url('../images/icon-info.svg');
@@ -121,5 +121,5 @@ $warning: map.get($_govuk-colour-palette-legacy, "orange");
 }
 
 .notification-error {
-  border-color: map.get($_govuk-colour-palette-legacy, "red");
+  border-color: map.get($govuk-colours, "red");
 }

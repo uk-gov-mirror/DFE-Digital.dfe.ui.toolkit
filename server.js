@@ -1,6 +1,7 @@
 const nunjucks = require('nunjucks');
 const express = require('express');
 const routes = require('./app/routes');
+const cors = require('cors');
 
 const app = express();
 const port = (process.env.PORT || 3001);
@@ -15,8 +16,8 @@ nunjucks.configure('app/views', {
 });
 
 app.set('view engine', 'html');
-app.use('/static', express.static('dist/gds-upgrade/'));
-app.use('/gds-upgrade', express.static('dist/gds-upgrade/'));
+app.use('/static', cors(), express.static('dist/gds-upgrade/'));
+app.use('/gds-upgrade', cors(), express.static('dist/gds-upgrade/'));
 
 routes.bind(app);
 

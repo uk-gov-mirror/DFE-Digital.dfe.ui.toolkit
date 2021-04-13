@@ -12,7 +12,7 @@
 }
 
 fieldset.highlight {
-  background: lighten(map.get($_govuk-colour-palette-legacy, "grey-3"), 5%);
+  background: lighten(map.get($govuk-colours, "light-grey"), 5%);
   padding: 15px;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -190,9 +190,9 @@ div.show-password {
 }
 
 .button-secondary {
-  // @include button(map.get($_govuk-colour-palette-legacy, "grey-3"));
+  // @include button(map.get($govuk-colours, "light-grey"));
   &[disabled="disabled"] {
-    background-color: map.get($_govuk-colour-palette-legacy, "grey-3");
+    background-color: map.get($govuk-colours, "light-grey");
   }
 }
 
@@ -227,12 +227,12 @@ div.show-password {
 }
 
 .delete-org .button-text {
-  color: map.get($_govuk-colour-palette-legacy, "blue");
+  color: map.get($govuk-colours, "blue");
   text-align: left;
 }
 
 .notification-information .button-text {
-  color: map.get($_govuk-colour-palette-legacy, "blue");
+  color: map.get($govuk-colours, "blue");
 }
 
 .submit-buttons {
@@ -264,7 +264,7 @@ div.show-password {
   }
   input {
     border: none;
-    border-bottom: 1px solid map.get($_govuk-colour-palette-legacy, "black");
+    border-bottom: 1px solid map.get($govuk-colours, "black");
     padding: 7px 0;
     min-width: 300px;
   }
@@ -283,7 +283,7 @@ div.show-password {
       padding: 0 0 0 10px;
       display: block;
       height: 40px;
-      border-color: map.get($_govuk-colour-palette-legacy, "black");
+      border-color: map.get($govuk-colours, "black");
       line-height: 38px;
     }
   }
@@ -307,7 +307,7 @@ div.show-password {
       overflow: hidden;
       text-indent: -5000px;
       color: #fff;
-      background-color: map.get($_govuk-colour-palette-legacy, "green");
+      background-color: map.get($govuk-colours, "green");
       background-image: url("../images/search-icon.svg");
       background-repeat: no-repeat;
       background-size: 20px 20px;
@@ -327,7 +327,7 @@ form.show-filters {
 }
 
 .select2-container--default .select2-selection--single {
-  border: 2px solid map.get($_govuk-colour-palette-legacy, "black");
+  border: 2px solid map.get($govuk-colours, "black");
 }
 
 .select2-container--focus {
@@ -338,7 +338,7 @@ form.show-filters {
 .button-link {
   border: none;
   background: none;
-  color: map.get($_govuk-colour-palette-legacy, "blue");
+  color: map.get($govuk-colours, "blue");
   text-decoration: underline;
   padding: 0;
   margin: 0;
@@ -347,7 +347,7 @@ form.show-filters {
   cursor: pointer;
   font-size: inherit;
   &:hover {
-    color: map.get($_govuk-colour-palette-legacy, "light-blue");
+    color: map.get($govuk-colours, "light-blue");
   }
 }
 
@@ -360,7 +360,7 @@ form.show-filters {
 
 .email-editor {
   border: 1px solid $border-color;
-  background: map.get($_govuk-colour-palette-legacy, "grey-4");
+  background: map.get($govuk-colours, "light-grey");
   padding: 10px;
   .static-text {
     padding: 5px;
