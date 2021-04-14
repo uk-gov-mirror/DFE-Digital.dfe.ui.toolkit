@@ -63,9 +63,9 @@ NSA.signin = {
   },
   resetValidation: function ($form) {
 
-    var $formGroups = $form.find('.govukform-group');
-
     $('.govuk-error-summary').remove();
+
+    var $formGroups = $form.find('.govuk-form-group');
 
     $formGroups.each(function () {
       var $field = $(this).find('input').eq(0);
