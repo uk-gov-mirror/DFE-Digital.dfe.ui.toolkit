@@ -76,7 +76,8 @@ var GovUKCookie = {
     window.gtag('config', window.gaTrackingId, { cookie_flags: 'secure'});
   })();
 
-  var $cookieBanner = $('#dsi-cookie-banner.global-cookie-message-dfe-sign-in');
+  var $cookieBanner = $('#dsi-cookie-banner');
+  console.log($cookieBanner);
   var $cookieAcceptButton = $cookieBanner.find('button.cookie-accept');
 
   var getAcceptedAllPolicy = function () {
