@@ -63,15 +63,15 @@ NSA.signin = {
   },
   resetValidation: function ($form) {
 
-    var $formGroups = $form.find('.form-group');
+    var $formGroups = $form.find('.govukform-group');
 
-    $('.error-summary').remove();
+    $('.govuk-error-summary').remove();
 
     $formGroups.each(function () {
       var $field = $(this).find('input').eq(0);
-      if ($(this).hasClass('form-group-error')) {
-        $(this).removeClass('form-group-error');
-        $(this).find('p.error-message').remove();
+      if ($(this).hasClass('govuk-form-group--error')) {
+        $(this).removeClass('govuk-form-group--error');
+        $(this).find('span.govuk-error-message').remove();
         $field.removeAttr('aria-describedby').removeAttr('aria-invalid');
       }
     });
@@ -79,9 +79,10 @@ NSA.signin = {
 
   showValidationMessage: function (messages) {
 
-    var $div = $('<div />').attr('class', 'error-summary').attr('role', 'alert').attr('tabindex', '-1');
-    var $h2 = $('<h2 />').attr('class', 'govuk-heading-m error-summary-heading').attr('id', 'error-summary');
-    var $ul = $('<ul />').attr('class', 'error-summary-list');
+    var $div = $('<div />').attr('class', 'govuk-error-summary govuk-!-margin-top-6').attr('role', 'alert').attr('tabindex', '-1').attr('aria-labelledby', 'error-summary-title');
+    var $h2 = $('<h2 />').attr('class', 'govuk-error-summary__title').attr('id', 'error-summary');
+    var $ulContainer = $('<div />').attr('class', 'govuk-error-summary__body');
+    var $ul = $('<ul />').attr('class', 'govuk-list govuk-error-summary__list');
 
     if (messages) {
       $h2.text('Information missing or incorrect');
@@ -93,7 +94,7 @@ NSA.signin = {
             event_label: 'Users login credentials were wrong',
           });
         }
-        var $a = $('<a />').attr('href', '#' + index).text(value);
+        var $a = $('<a />').attr('class', 'govuk-link').attr('href', '#' + index).text(value);
         var $li = $('<li />').append($a);
         $ul.append($li);
       });
@@ -108,7 +109,7 @@ NSA.signin = {
       });
     }
 
-    $div.append($h2).append($ul);
+    $div.append($h2).append($ulContainer.append($ul));
     $('main').prepend($div);
 
     $('html, body').animate({
@@ -128,16 +129,16 @@ NSA.signin = {
 
       var $label = $parent.find('label').first();
 
-      if (!$parent.hasClass('form-group-error')) {
+      if (!$parent.hasClass('govuk-form-group--error')) {
 
-        var errorMessage = $('<p class="govuk-body">')
+        var errorMessage = $('<span class="govuk-body">')
           .html(value)
-          .prop('class', 'error-message')
+          .prop('class', 'govuk-error-message')
           .prop('id', 'validation-' + index);
       }
 
       $label.after(errorMessage);
-      $parent.addClass('form-group-error');
+      $parent.addClass('govuk-form-group--error');
       $field.attr({
         'aria-describedby' : 'validation-' + index,
         'aria-invalid': 'true'
