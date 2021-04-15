@@ -16,7 +16,7 @@ nunjucks.configure('app/views', {
 });
 
 app.set('view engine', 'html');
-app.use('/static', cors(), express.static('dist/gds-upgrade/'));
+app.use('/', cors(), express.static('dist/'));
 app.use('/gds-upgrade', cors(), express.static('dist/gds-upgrade/'));
 
 routes.bind(app);

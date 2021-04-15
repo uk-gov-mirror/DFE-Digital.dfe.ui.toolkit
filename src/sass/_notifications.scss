@@ -2,6 +2,7 @@ $success: map.get($govuk-colours, "turquoise");
 $warning: map.get($govuk-colours, "orange");
 
 .notification {
+  font-family: $govuk-font-family;
   background: map.get($govuk-colours, "light-grey");
   margin: 15px 0;
   padding: 10px;
@@ -13,12 +14,17 @@ $warning: map.get($govuk-colours, "orange");
   @include govuk-media-query(tablet) {
     border-width: 5px;
   }
+  .notification-header {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
   // h2 {
   //   font-weight:bold;
   //   font-size: 120%;
   // }
   p {
     margin-bottom: 0;
+    font-size: 1.2rem;
     a {
       &:hover {
         text-decoration: none;
