@@ -25,8 +25,8 @@ NSA = {
     });
   },
   backLink: function () {
-    var backLink = $('<a class="govuk-back-link">')
-      .attr({ 'href': '#', 'class': 'link-back' })
+    var backLink = $('<a>')
+      .attr({ 'href': '#', "class": "govuk-back-link" })
       .text('Back')
       .on('click', function (e) { window.history.back(); e.preventDefault(); });
     $('.js-back-link').html(backLink);

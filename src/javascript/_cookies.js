@@ -77,7 +77,6 @@ var GovUKCookie = {
   })();
 
   var $cookieBanner = $('#dsi-cookie-banner');
-  console.log($cookieBanner);
   var $cookieAcceptButton = $cookieBanner.find('button.cookie-accept');
 
   var getAcceptedAllPolicy = function () {
@@ -86,7 +85,6 @@ var GovUKCookie = {
     $.each(acceptedPolicy, function (key) {
       acceptedPolicy[key] = true;
     });
-
     return acceptedPolicy;
   };
 
