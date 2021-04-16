@@ -1,24 +1,30 @@
-$success: $turquoise;
-$warning: $orange;
+$success: map.get($govuk-colours, "turquoise");
+$warning: map.get($govuk-colours, "orange");
 
 .notification {
-  background: $grey-3;
+  font-family: $govuk-font-family;
+  background: map.get($govuk-colours, "light-grey");
   margin: 15px 0;
   padding: 10px;
-  @include media(tablet) {
+  @include govuk-media-query(tablet) {
     padding: 15px;
   }
-  border:3px solid $border-colour;
+  border:3px solid map.get($govuk-colours, "mid-grey");
   position: relative;
-  @include media(tablet) {
+  @include govuk-media-query(tablet) {
     border-width: 5px;
   }
-  h2 {
-    font-weight:bold;
-    font-size: 120%;
+  .notification-header {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
+  // h2 {
+  //   font-weight:bold;
+  //   font-size: 120%;
+  // }
   p {
     margin-bottom: 0;
+    font-size: 1.2rem;
     a {
       &:hover {
         text-decoration: none;
@@ -27,14 +33,14 @@ $warning: $orange;
   }
   a.action {
     display: block;
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       display: inline-block;
       text-align: right;
       float: right;
     }
   }
   &:focus {
-    outline: 3px solid $focus-colour;
+    outline: 3px solid map.get($govuk-colours, "yellow");
   }
   .icon {
     position: absolute;
@@ -72,7 +78,7 @@ $warning: $orange;
       top: 10px;
       left: 10px;
     }
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       padding-left: 70px;
       img {
         width: 40px;
@@ -97,8 +103,8 @@ $warning: $orange;
 
 .alert-default {
   margin: 15px 0;
-  border-color: $light-blue;
-  background-color: mix(white, $light-blue, 90%);
+  border-color: map.get($govuk-colours, "light-blue");
+  background-color: mix(white, #2b8cc4, 90%);
 }
 
 .notification-warning {
@@ -106,14 +112,14 @@ $warning: $orange;
 }
 
 .notification-information {
-  border-color: $govuk-blue;
+  border-color: map.get($govuk-colours, "blue");
   background: #fff;
   &.with-icon {
     background-image: url('../images/icon-info.svg');
     background-repeat: no-repeat;
     background-position: 10px 10px;
     background-size: 30px 30px;
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       background-position: 15px 15px;
       background-size: 40px 40px;
     }
@@ -121,5 +127,5 @@ $warning: $orange;
 }
 
 .notification-error {
-  border-color: $error-colour;
+  border-color: map.get($govuk-colours, "red");
 }

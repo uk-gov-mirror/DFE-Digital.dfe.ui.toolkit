@@ -1,6 +1,6 @@
 .toggle-help {
-  @extend .form-hint;
-  border-left: 3px solid $border-colour;
+  @extend .govuk-label__hint;
+  border-left: 3px solid map.get($govuk-colours, "mid-grey");
   padding-top: 5px;
   padding-left: 10px;
 }
@@ -10,7 +10,7 @@
   button, a {
     font-weight:700;
     font-size: 16px;
-    background: $govuk-blue;
+    background: map.get($govuk-colours, "blue");
     text-align: center;
     border-radius: 50%;
     color: #fff;
@@ -27,7 +27,7 @@
     line-height: 1.4 !important;
   }
   .bubble {
-    background: $black;
+    background: map.get($govuk-colours, "black");
     color: #fff;
     border-radius: 3px;
     padding:5px 10px;
@@ -47,7 +47,7 @@
       display: block;
       position: absolute;
       border: 5px solid transparent;
-      border-top-color: $black;
+      border-top-color: map.get($govuk-colours, "black");
       margin-bottom: -10px;
     }
   }

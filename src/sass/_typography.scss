@@ -11,7 +11,7 @@ h1 {
 
 .heading-secondary {
   font-weight: normal;
-  color: $grey-1;
+  color: map.get($govuk-colours, "dark-grey");
 }
 
 ul.list-bullet {
@@ -34,7 +34,7 @@ dl.rows {
   }
   dt {
     font-weight:bold;
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       float: left;
       clear: left;
       width: 200px;
@@ -52,7 +52,7 @@ dl.rows {
   }
   dd {
     margin-bottom: 5px;
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       margin-left: 210px
     }
   }
@@ -80,9 +80,9 @@ dl.inline {
 }
 
 blockquote {
-  background: $grey-4;
+  background: map.get($govuk-colours, "light-grey");
   padding: 15px;
-  border-left:5px solid $grey-3;
+  border-left:5px solid map.get($govuk-colours, "light-grey");
   margin: 15px 0;
 }
 
@@ -97,7 +97,7 @@ blockquote {
 
 .meta {
   font-size: 14px;
-  @include media(tablet) {
+  @include govuk-media-query(tablet) {
     font-size: 16px;
   }
 }
