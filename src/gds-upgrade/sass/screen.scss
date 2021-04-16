@@ -3,8 +3,8 @@
 // $govuk-compatibility-govukfrontendtoolkit: true;
 $govuk-assets-path: "/gds-upgrade/";
 
-@import '../../node_modules/govuk-frontend/govuk/all';
-@import "../../node_modules/select2/src/scss/core";
+@import '../../../node_modules/govuk-frontend/govuk/all';
+@import "../../../node_modules/select2/src/scss/core";
 @import "variables";
 @import "mixins";
 @import "layout";

@@ -5,6 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.2",
+    "govuk-elements-sass": "^3.1.2",
+    "govuk_frontend_toolkit": "^7.2.0",
+    "govuk_template_jinja": "^0.22.3",
     "govuk-frontend": "^3.11.0",
     "jquery": "^3.2.1",
     "js-cookie": "^2.2.1",
@@ -30,6 +33,7 @@
   },
   "scripts": {
     "dev": "NODE_ENV='development' gulp run-server",
+    "build": "gulp",
     "start": "node server.js"
   },
   "repository": {

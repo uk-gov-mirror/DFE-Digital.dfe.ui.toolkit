@@ -1,9 +1,10 @@
-"use strict";
+
+
 const gulp = require('gulp');
 const sass = require('gulp-dart-sass');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-// const cleanCSS = require('gulp-clean-css');
+const cleanCSS = require('gulp-clean-css');
 
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
@@ -15,32 +16,83 @@ const child = require('child_process');
 
 const isDevEnv = process.env.NODE_ENV === 'development';
 
-const input = ['./src/sass/*.scss', './src/sass/pages/*.scss'];
-const output = './dist/gds-upgrade/css/';
+/**
+ * SASS build
+ */
+
+const sassInput = ['./src/pre-gds/sass/*.scss', './src/pre-gds/sass/pages/*.scss'];
+const output = './dist/css/';
+
+const gdsUpgradeSassInput = ['./src/gds-upgrade/sass/*.scss', './src/gds-upgrade/sass/pages/*.scss'];
+const gdsUpgradeOutput = './dist/gds-upgrade/css/';
 
 const sassOptions = {
   errLogToConsole: true,
   outputStyle: 'compressed',
   includePaths: [
-    // 'node_modules/govuk_frontend_toolkit/stylesheets',
-    // 'node_modules/govuk-elements-sass/public/sass',
+    'node_modules/govuk_frontend_toolkit/stylesheets',
+    'node_modules/govuk-elements-sass/public/sass'
+  ],
+};
+
+const gdsUpgradeSassOptions = {
+  errLogToConsole: true,
+  outputStyle: 'compressed',
+  includePaths: [
     'node_modules/govuk-frontend/govuk/assets',
   ],
 };
 
-// gulp.task('copy-minify', () => {
-//   gulp.src([
-//     'node_modules/govuk_template_jinja/assets/stylesheets/fonts.css',
-//     'node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css',
-//   ])
-//     .pipe(cleanCSS({ compatibility: 'ie8' }))
-//     .pipe(gulp.dest(`${output}govuk/`));
-// });
+gulp.task('sass', () => gulp
+  .src(sassInput)
+  .pipe(sass(sassOptions))
+  .pipe(gulp.dest(output)));
+
+gulp.task('gds-upgrade-sass', () => gulp
+  .src(gdsUpgradeSassInput)
+  .pipe(sass(gdsUpgradeSassOptions))
+  .pipe(gulp.dest(gdsUpgradeOutput)));
+
+
+/**
+ * Copy govuk-template files to dist
+ */
+
+gulp.task('copy-minify', () => {
+  gulp.src([
+    'node_modules/govuk_template_jinja/assets/stylesheets/fonts.css',
+    'node_modules/govuk_template_jinja/assets/stylesheets/govuk-template.css',
+  ])
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(gulp.dest(`${output}govuk/`));
+});
+
+
+/**
+ * Copy some external dependencies
+ */
 
 gulp.task('browserify', () => {
   const entries = path.join(
     __dirname,
     'src',
+    'pre-gds',
+    'javascript',
+    'vendors.js',
+  );
+  return browserify(entries)
+    .bundle()
+    .pipe(source('vendors.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/javascript/vendors/'));
+});
+
+gulp.task('gds-upgrade-browserify', () => {
+  const entries = path.join(
+    __dirname,
+    'src',
+    'gds-upgrade',
     'javascript',
     'vendors.js',
   );
@@ -57,36 +109,62 @@ gulp.task('copy-js', ['browserify'], () => {
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/select2/dist/js/select2.min.js',
   ])
+    .pipe(gulp.dest('./dist/javascript/vendors/'));
+});
+
+gulp.task('gds-upgrade-copy-js', ['gds-upgrade-browserify'], () => {
+  gulp.src([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/select2/dist/js/select2.min.js',
+  ])
     .pipe(gulp.dest('./dist/gds-upgrade/javascript/vendors/'));
 });
 
-gulp.task('copy-assets', () => {
+
+/**
+ * Build JS script
+ */
+
+// script paths
+const jsFiles = 'src/pre-gds/javascript/!(vendors)*.js';
+const jsDest = 'dist/javascript';
+const gdsUpgradeJsFiles = 'src/gds-upgrade/javascript/!(vendors)*.js';
+const gdsUpgradeJsDest = 'dist/gds-upgrade/javascript';
+
+gulp.task('scripts', () => gulp.src(jsFiles)
+  .pipe(gulpIf(isDevEnv, sourcemaps.init()))
+  .pipe(concat('app.min.js'))
+  .pipe(uglify())
+  .pipe(gulpIf(isDevEnv, sourcemaps.write()))
+  .pipe(gulp.dest(jsDest)));
+
+gulp.task('gds-upgrade-scripts', () => gulp.src(gdsUpgradeJsFiles)
+  .pipe(gulpIf(isDevEnv, sourcemaps.init()))
+  .pipe(concat('app.min.js'))
+  .pipe(uglify())
+  .pipe(gulpIf(isDevEnv, sourcemaps.write()))
+  .pipe(gulp.dest(gdsUpgradeJsDest)));
+
+
+/**
+ * Copy static assets
+ */
+
+gulp.task('gds-upgrade-copy-assets', () => {
   gulp.src([
     'node_modules/govuk-frontend/govuk/assets/**/*',
-    'src/assets/**/*',
+    'src/gds-upgrade/assets/**/*',
   ])
     .pipe(gulp.dest('./dist/gds-upgrade/'));
 });
 
-// script paths
-const jsFiles = 'src/javascript/!(vendors)*.js';
-const jsDest = 'dist/gds-upgrade/javascript';
 
-gulp.task('scripts', function() {
-  return gulp.src(jsFiles)
-    .pipe(
-      gulpIf(isDevEnv, sourcemaps.init()),
-    )
-    .pipe(concat('app.min.js'))
-    .pipe(uglify())
-    .pipe(
-      gulpIf(isDevEnv, sourcemaps.write()),
-    )
-    .pipe(gulp.dest(jsDest));
-});
+/**
+ * Watch for changes
+ */
 
 gulp.task('watch', () => {
-  gulp.watch(input, ['sass'])
+  gulp.watch(sassInput, ['sass'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
@@ -96,19 +174,30 @@ gulp.task('watch', () => {
     });
 });
 
-gulp.task('sass', () => gulp
-  .src(input)
-  .pipe(sass(sassOptions))
-  .pipe(gulp.dest(output)));
+gulp.task('gds-upgrade-watch', () => {
+  gulp.watch(gdsUpgradeSassInput, ['sass'])
+    .on('change', (event) => {
+      console.log(`File ${event.path} was ${event.type}, running tasks...`);
+    });
+  gulp.watch(gdsUpgradeJsFiles, ['scripts'])
+    .on('change', (event) => {
+      console.log(`File ${event.path} was ${event.type}, running tasks...`);
+    });
+});
 
-// const defaultScripts = ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js', 'copy-assets'];
-const defaultScripts = ['sass', 'scripts', 'watch', 'copy-js', 'copy-assets'];
 
-gulp.task('run-server', defaultScripts, () => {
+/**
+ * Task definition
+ */
+
+gulp.task('preGdsBuild', ['sass', 'scripts', 'watch', 'copy-minify', 'copy-js']);
+gulp.task('gdsUpgradeBuild', ['gds-upgrade-sass', 'gds-upgrade-scripts', 'gds-upgrade-watch', 'gds-upgrade-copy-js', 'gds-upgrade-copy-assets']);
+
+gulp.task('run-server', ['preGdsBuild', 'gdsUpgradeBuild'], () => {
   const server = child.spawn('node', ['server.js']);
   const outputToConsole = data => console.log(data.toString());
   server.stdout.on('data', outputToConsole);
   server.stderr.on('data', outputToConsole);
 });
 
-gulp.task('default', defaultScripts);
+gulp.task('default', ['preGdsBuild', 'gdsUpgradeBuild']);
