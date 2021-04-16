@@ -22,10 +22,10 @@
       </div>
   
       <div class="govuk-button-group">
-        <button value="accept" type="button" name="cookies" class="govuk-button cookie-accept" data-module="govuk-button">
+        <button id="cookie-accept" value="accept" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
             Accept analytics cookies
         </button>
-        <!-- TODO check if we want button or link -->
+        <!-- TODO decide if we want button or link to set preferences -->
         <a href="<%=locals.urls.interactions || ''%>/cookies" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
             Set cookie preferences
         </a>

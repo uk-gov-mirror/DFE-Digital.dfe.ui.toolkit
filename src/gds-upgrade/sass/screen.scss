@@ -8,7 +8,6 @@ $govuk-assets-path: "/gds-upgrade/";
 @import "variables";
 @import "mixins";
 @import "layout";
-@import "components";
 @import "forms";
 @import "tables";
 @import "notifications";
@@ -25,7 +24,6 @@ $govuk-assets-path: "/gds-upgrade/";
 @import "pages/splash";
 @import "pages/requests";
 @import "pages/task-list";
-@import "pages/cookies";
 
 html, body {
   background: map.get($govuk-colours, "light-grey");

@@ -77,7 +77,7 @@ var GovUKCookie = {
   })();
 
   var $cookieBanner = $('#dsi-cookie-banner');
-  var $cookieAcceptButton = $cookieBanner.find('button.cookie-accept');
+  var $cookieAcceptButton = $cookieBanner.find('#cookie-accept');
 
   var getAcceptedAllPolicy = function () {
     var acceptedPolicy = $.extend(DEFAULT_POLICY, {}); // deep copy
@@ -118,7 +118,7 @@ var GovUKCookie = {
     }
   }
 
-  var $preferencesForm = $('#dsi-cookie-form.cookies-page-dfe-sign-in__preferences-form');
+  var $preferencesForm = $('#dsi-cookie-form');
 
   $preferencesForm.length && $preferencesForm.on('submit', function (event) {
     event.preventDefault();
