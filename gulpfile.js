@@ -175,11 +175,11 @@ gulp.task('watch', () => {
 });
 
 gulp.task('gds-upgrade-watch', () => {
-  gulp.watch(gdsUpgradeSassInput, ['sass'])
+  gulp.watch(gdsUpgradeSassInput, ['gds-upgrade-sass'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
-  gulp.watch(gdsUpgradeJsFiles, ['scripts'])
+  gulp.watch(gdsUpgradeJsFiles, ['gds-upgrade-scripts'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
