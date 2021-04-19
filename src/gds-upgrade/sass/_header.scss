@@ -1,0 +1,121 @@
+#global-header {
+
+}
+
+#global-header #logo {
+  background-image: url('../images/gov.uk_logotype_crown.png');
+}
+
+@include govuk-media-query(tablet) {
+  #proposition-name {
+    margin-top: 5px;
+    display: block;
+  }
+}
+
+#global-header .header-wrapper .header-global .header-logo {
+  width: auto;
+}
+
+.header-title {
+  float: left;
+  color: #fff;
+  margin: 5px 15px 0;
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.2;
+  @include govuk-media-query(tablet) {
+    font-size: 24px;
+    line-height: 1.25;
+    margin-top: 8px;
+  }
+  @include govuk-media-query($until: tablet) {
+    margin: 14px 0 0 0;
+  }
+}
+
+.service-status {
+  border-bottom:1px solid map.get($govuk-colours, "mid-grey");
+  position: relative;
+  margin-bottom: -1px;
+  padding: 0 15px;
+  @include govuk-media-query(tablet) {
+    padding: 0;
+  }
+  .phase-banner {
+    @include govuk-media-query(tablet) {
+      margin: 0 30px;
+      max-width: 960px;
+      border: none;
+    }
+    @include govuk-media-query(desktop) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.header-user {
+  // border-bottom:1px solid map.get($govuk-colours, "mid-grey");
+  .header-inner {
+    // border-top: 10px solid map.get($govuk-colours, "blue");
+    margin: 0 15px;
+    font-size: 14px;
+    line-height: 1.2em;
+    @include govuk-media-query(tablet) {
+      margin: 0 30px;
+      max-width: 960px;
+    }
+    @include govuk-media-query(desktop) {
+      margin: 0 auto;
+    }
+  }
+  p.signed-in-as {
+    margin: 0;
+    padding: 12px 0 10px;
+    @include govuk-font(19, $weight: bold);
+    @include govuk-media-query(tablet) {
+      float: left;
+    }
+  }
+  .account-information {
+    @include govuk-clearfix;
+  }
+}
+
+.phase-banner-alpha, .phase-banner-beta {
+  margin-bottom: -1px;
+}
+
+#user-nav {
+  @include govuk-media-query(tablet) {
+    font-size: 16px;
+    margin: 5px 0;
+    float: right;
+  }
+  & > ul {
+    margin-left: -15px;
+    margin-right: -15px;
+    list-style: none;
+    li {
+      @include govuk-media-query(tablet) {
+        float: left;
+      }
+    }
+  }
+  a {
+    display: block;
+    padding: 12px 15px 10px;
+    color: map.get($govuk-colours, "black");
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+button.link-back {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-right: 0;
+}
+

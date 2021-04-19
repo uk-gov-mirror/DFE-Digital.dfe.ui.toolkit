@@ -1,0 +1,87 @@
+// Task list pattern
+
+// Override column width for tablet and up
+.column-minimum {
+  @include govuk-media-query(tablet) {
+    min-width: 600px;
+  }
+}
+
+// Spacing to the left of the task list
+$task-list-indent: 35px;
+
+.task-list {
+  @include govuk-responsive-margin(6, "top");
+  // @include govuk-media-query(tablet) {
+  //   margin-top: ($govuk-gutter * 2);
+  // }
+}
+
+
+.task-list-section {
+  display: table;
+
+  @include govuk-font(24, $weight: bold);
+  @include govuk-responsive-padding(6, "bottom");
+}
+
+.task-list-section-number {
+  display: table-cell;
+  @include govuk-responsive-padding(6, "right");
+
+  @include govuk-media-query(tablet) {
+    min-width: $task-list-indent;
+    // padding-right: 0;
+  }
+}
+
+
+.task-list-items {
+  @include govuk-responsive-margin(6, "bottom");
+  // @include govuk-media-query(tablet) {
+  //   margin-bottom: ($govuk-gutter * 2);
+  // }
+
+  @include govuk-media-query(tablet) {
+    padding-left: $task-list-indent;
+  }
+}
+
+.task-list-item {
+  border-bottom: 1px solid map.get($govuk-colours, "mid-grey");
+  @include govuk-responsive-padding(6, "top");
+  @include govuk-responsive-padding(6, "bottom");
+  @include govuk-clearfix;
+}
+
+.task-list-item:first-child {
+  border-top: 1px solid map.get($govuk-colours, "mid-grey");
+}
+
+
+.task-name {
+  // width: $two-thirds;
+  float: left;
+  margin: 0 0;
+}
+
+.task-completed, .task-pending, .task-rejected {
+  // @include phase-tag;
+
+  float: right;
+  margin-right: 0;
+  padding-top: 3px;
+  min-width: 105px;
+  text-align: center;
+}
+
+.task-pending {
+  background-color: map.get($govuk-colours, "dark-grey");
+}
+.task-rejected {
+  background-color: #d32f32;
+}
+
+.pending-task {
+  color: #6f777b;
+}

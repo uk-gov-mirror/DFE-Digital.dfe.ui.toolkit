@@ -1,5 +1,7 @@
 const nunjucks = require('nunjucks');
 const express = require('express');
+const cors = require('cors');
+
 const routes = require('./app/routes');
 
 const app = express();
@@ -7,7 +9,15 @@ const port = (process.env.PORT || 3001);
 
 const https = require('https');
 
-nunjucks.configure('app/views', {
+// Choose what sample pages you want to serve: pre-gds or GDS upgrade
+
+// nunjucks.configure('app/pre-gds/views', {
+//   express: app,
+//   autoescape: true,
+//   watch: true,
+//   noCache: true,
+// });
+nunjucks.configure('app/gds-upgrade/views', {
   express: app,
   autoescape: true,
   watch: true,
@@ -15,7 +25,9 @@ nunjucks.configure('app/views', {
 });
 
 app.set('view engine', 'html');
-app.use('/static', express.static('dist'));
+app.use('/', cors(), express.static('dist/'));
+app.use('/static', cors(), express.static('dist/'));
+app.use('/gds-upgrade', cors(), express.static('dist/gds-upgrade/'));
 
 routes.bind(app);
 

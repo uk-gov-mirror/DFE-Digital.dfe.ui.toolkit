@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="step1" class="link-back">Back</a>
+<div class="govuk-grid-row">
+  <div class="col-8">
+    <h1 class="govuk-heading-xl">
+      Add a new user
+    </h1>
+    <p class="govuk-body-l">Enter the user's email address</p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="col-12">
+    <form method="get" action="step2">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">User's email address</label>
+        <input class="govuk-input govuk-!-width-one-half" type="email" name="email" id="email" required="required" data-label="Email address">
+      </div>
+      <div class="submit-buttons">
+        <input type="submit" class="button" value="Continue">
+        <a href="/" class="button button-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="step1" class="link-back">Back</a>
+<div class="govuk-grid-row">
+  <div class="col-8">
+    <h1 class="govuk-heading-xl">
+      Add user's details
+    </h1>
+    <p class="govuk-body-l">Provide further details for the new user.</p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="col-12">
+    <form method="get" action="step3">
+      <fieldset>
+        <legend class="govuk-heading-m">User's personal details</legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="firstname">First name</label>
+          <input class="govuk-input govuk-!-width-one-half" type="text" name="firstname" id="firstname" required="required">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="lastname">Last name</label>
+          <input class="govuk-input govuk-!-width-one-half" type="text" name="lastname" id="lastname" required="required">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="jobtitle">Job title (optional)</label>
+          <input class="govuk-input govuk-!-width-one-half" type="text" name="jobtitle" id="jobtitle">
+        </div>
+      </fieldset>
+      <div class="submit-buttons">
+        <input type="submit" class="button" value="Continue">
+        <a href="/" class="button button-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
